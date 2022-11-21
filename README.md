@@ -75,6 +75,7 @@ will be lost.
 
 ### Built With
 
+- [Next.js](https://nextjs.org/)
 - [React.js](https://reactjs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 
