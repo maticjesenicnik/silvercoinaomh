@@ -1,8 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+  content: ['./app/**/*.{js,ts,jsx,tsx}', './pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        background: 'rgba(40, 40, 40, <alpha-value>)',
+        'on-background': 'rgba(255, 255, 255, <alpha-value>)',
+      },
+      data: {
+        open: 'open=true',
+      },
+    },
   },
   plugins: [],
 }
