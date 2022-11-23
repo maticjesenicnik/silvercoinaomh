@@ -13,7 +13,7 @@ const Newsletters = () => {
           {rss.newsletters.map((newsletter) => (
             <Link href={newsletter.url}>
               <div className="bg-white/[.12] rounded-lg shadow-lg p-4 aspect-square pl-0 pr-0 pt-0 motion-safe:animate-fadeIn">
-                <img className="w-full h-full object-cover" src={"/" + newsletter.image} alt={newsletter.title} />
+                <img className="w-full h-full object-cover rounded-t-lg" src={"/" + newsletter.image} alt={newsletter.title} />
                 <div className="flex flex-col items-start m-1">
                   <small className="text-gray-200 text-left">NEWSLETTER</small>
                   <h2 className="text-xl font-bold text-center">{newsletter.title}</h2>
