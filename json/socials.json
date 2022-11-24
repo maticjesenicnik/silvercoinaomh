@@ -3,12 +3,12 @@
     {
       "name": "Facebook",
       "url": "https://www.facebook.com/silvercoinageofmonsterhunters/",
-      "image": "/images/socials/facebook.png"
+      "image": "/images/socials/fb.png"
     },
     {
       "name": "Instagram",
       "url": "https://www.instagram.com/silvercoinaomh/",
-      "image": "/images/socials/instagram.png"
+      "image": "/images/socials/ig.png"
     },
     {
       "name": "BGG",
@@ -23,7 +23,7 @@
     {
       "name": "Youtube",
       "url": "https://www.youtube.com/channel/UCJubiQxl7DSBweyIGmaK6-A",
-      "image": "/images/socials/youtube.png"
+      "image": "/images/socials/yt.png"
     }
   ]
 }
