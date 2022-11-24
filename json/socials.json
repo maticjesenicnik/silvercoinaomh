@@ -3,27 +3,27 @@
     {
       "name": "Facebook",
       "url": "https://www.facebook.com/silvercoinageofmonsterhunters/",
-      "image": "/images/socials/fb.png"
+      "image": "/images/socials/fb.webp"
     },
     {
       "name": "Instagram",
       "url": "https://www.instagram.com/silvercoinaomh/",
-      "image": "/images/socials/ig.png"
+      "image": "/images/socials/ig.webp"
     },
     {
       "name": "BGG",
       "url": "https://boardgamegeek.com/boardgame/312682/silver-coin-age-monster-hunters",
-      "image": "/images/socials/bgg.png"
+      "image": "/images/socials/bgg.webp"
     },
     {
       "name": "Discord",
       "url": "https://discord.gg/NfQqrSgW3u",
-      "image": "/images/socials/discord.png"
+      "image": "/images/socials/discord.webp"
     },
     {
       "name": "Youtube",
       "url": "https://www.youtube.com/channel/UCJubiQxl7DSBweyIGmaK6-A",
-      "image": "/images/socials/yt.png"
+      "image": "/images/socials/yt.webp"
     }
   ]
 }

@@ -8,7 +8,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/maticjesenicnik/silvercoinaomh">
-    <img src="public/background_art.jpg" alt="Logo" width="425" height="318">
+    <img src="public/background_art.webp" alt="Logo" width="425" height="318">
   </a>
 
 <h3 align="center">Silver Coin: Age of Monster Hunters</h3>

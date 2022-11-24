@@ -8,7 +8,7 @@ export const Header = () => {
     <header className="fixed top-0 z-40 w-full bg-background text-on-background">
       <div className="mx-auto flex flex-wrap justify-between p-4 transition-all">
         <div>
-          <img className={'h-12'} src={'/images/logos/silvercoin.png'} alt={'Logo'} />
+          <img className={'h-12'} src={'/images/logos/silvercoin.webp'} alt={'Logo'} />
         </div>
 
         <button onClick={() => setIsOpen(!isOpen)} className="md:hidden">

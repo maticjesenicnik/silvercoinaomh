@@ -1,0 +1,52 @@
+{
+  "world": {
+    "image": "/images/kingdoms/world.webp"
+  },
+  "kingdoms": [
+    {
+      "name": "Oldemor",
+      "image": "/images/kingdoms/oldemor.webp",
+      "description": [
+        "Kingdoms of North have always been known for their constant wars, raids and knowing no time of peace.",
+        "There was always a fight for dominance and in the centuries that have come before, there were always different ones which rose and fell in power. Until finally there was one that prevailed and has, in the so called war of the Sigils, managed to pull ahead and unite them all under one flag.",
+        "It was the oldest of them all, Kingdom of Tarinor it was called, but the enemies would always call it by a nickname Oldemor, which would, in their own language, mean The Great Grandmother and it’s Capital of Ari likewise was called Oldefar or The Great Grandfather.",
+        "After the unification they decided to use those names, together with a general symbol of the Crown to show that all of them  now are one and the same and live and die under the flag and name of Oldemor."
+      ]
+    },
+    {
+      "name": "Jorvik",
+      "image": "/images/kingdoms/jorvik.webp",
+      "description": [
+        "Current rulers are not the native inhabitants of Jorvik, they are in fact invaders, who came to York and Jorvik overseas. They have invaded Jorvik twice. The first time, the former King of Jorvik bought them off with a grand gift of horses. Although invaders brought none, the kingdom was always known for its vast number of horses, that they have bred. The King was at the time busy with another war he waged with the Kingdom of Lys Blanc, so he wanted to make the deal with the newcomers. The second time, a few years after the first invasion, the invaders returned. However, this time with the horses the king has so kindly gifted them, and even though Jorvik was not wagging any wars at that time, the invaders proved to be too strong and have claimed the land, settled in the region’s castles and high positions. They quickly assimilated with the old inhabitants of Jorvik. They kept the name but changed its banner, which now is a proud Black horse in remembrance of the great gift they have once received."
+      ]
+    },
+    {
+      "name": "Lys Blanc",
+      "image": "/images/kingdoms/lysblanc.webp",
+      "description": [
+        "The Kingdom of Lys Blanc also known as the Kingdom of Flowers is the richest Kingdom of them all. Its lands are fertile and its people are known as great merchants. So they feel better than the rest of the continent. The Kingdom is also quite peaceful as Lys Blanc is known to have not fought any offensive wars in the last 300 years. The main reason being, that they do not see the need to conquer anything else as they are self-sufficient and rich enough. It is they who actually need to constantly fight off the invaders who are attracted by their riches. Peaceful they may be, but their might is real and the coffers full of coins, can raise a mercenary army, that could rival any other. Other Kingdoms of Atosia know this very well and are reluctant to pursue conflict, at least for now…"
+      ]
+    },
+    {
+      "name": "Fabula",
+      "image": "/images/kingdoms/fabula.webp",
+      "description": [
+        "Fabula is a Kingdom known for its mysterious places, magic, wisdom, and vast vineyards. The surrounding mountains give it good protection. The vineyards, and many mines nice riches and it’s great universities, both magical as academic, a lot of famous scholars and wizards. They often stay away from the affairs of others and keep to their own agendas, but the entire kingdom is shrouded in many Mysteries. It is said that their capital Mantygern, was created by a beast not a human, and it is said that the beast still resides within its walls its intentions unknown."
+      ]
+    },
+    {
+      "name": "Abaris",
+      "image": "/images/kingdoms/abaris.webp",
+      "description": [
+        "If the Kingdom of Fabula is Mysterious on its own the same can be said for Abaris. Its people practice some strange and mystical rituals. The crab that is seen in the sigil is used in those. Abarisians use its guts to fortune tell and by some beliefs can even see a glimpse of the future. To make matters even stranger, it was King Bladud of Abaris who warned the continent of the great cataclysm that befell it 80 years ago. A great disease that spread through the land and had its origins in the far south. At that point, it was the Abarisians who played the main part in ending the cataclysm and ultimately getting rid of the disease with their superior healing knowledge. It is known that the rulers of Abaris live far longer than the other monarchs, and no one has any doubt that the medical knowledge sealed within the capital Lemuria plays a great role in all of it."
+      ]
+    },
+    {
+      "name": "Morahan",
+      "image": "/images/kingdoms/morahan.webp",
+      "description": [
+        "The origin of civilization as we know it is said to originate from the lands of Morahan. Its numerous relics and ancient sites speak of it. Its vastness and the language of its people are whispering it. It sounds similar when spoken to the sound of winds of their endless deserts. Lots of wisps and hisses when you hear them speak. The Capital of Gobekli Tepe is a marvel of the world. Built thousands of years ago by their ancestors but of unknown origin. No one knows how they have managed to create such big and complex structures and scholars of Morahan are spending their entire lives researching them. Morahanians are the best architects and engineers on the continent. Their war machines strike terror in the heart of their enemies and their beautiful structures make people marvel and stand in awe. The Great Cataclysm that happened 80 years ago, the great disease that ended the lives of over the half of population of the entire continent and made a stop to all the wars that were fought at the time, had its origins in Morahan. While no one knows how it came to be, one thing is known. It was not just King Bladud of Abaris who foretold the disaster, rather it was the ancient engravings in a temple inside of a Gobekli Tepe as well…and the monsters that roam the land, have seen a spike in appearance as it happened…"
+      ]
+    }
+  ]
+}
