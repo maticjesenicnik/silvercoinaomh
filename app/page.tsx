@@ -5,6 +5,7 @@ export default function Page() {
 
   return (
     <>
+      <title>Front Page</title>
       <section className={'relative'}>
         <img src={'/cover_art.webp'} alt={'Background'} />
         <div className={'absolute top-0 left-0 w-full h-full bg-black/40 flex justify-center items-center'}>
