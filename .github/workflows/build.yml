@@ -8,10 +8,23 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      
-      - uses: actions/setup-node@v1
+      - name: Checkout
+        uses: actions/checkout@v3
+        
+      - name: Install Node.js
+        uses: actions/setup-node@v3
         with: 
-          node-version: 12
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm buid
+          node-version: 16
+          
+      - name: Install pnpm
+        uses: pnpm/actions-setup@2
+        id: pnpm-install
+        with: 
+          version: 7
+          run_install: false
+        
+      - name: Install dependencies
+        run: pnpm install
+        
+      - name: Build project
+        run: pnpm buid
