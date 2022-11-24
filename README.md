@@ -107,8 +107,8 @@ will be lost.
 - [ ] Gallery
   - [ ] Monster art
   - [ ] Character art
-- [ ] Newsletters
-  - [ ] Newsletter archive
+- [x] Newsletters
+  - [x] Newsletter archive
 - [ ] World & lore page
   - [ ] Kingdoms
   - [ ] Characters
