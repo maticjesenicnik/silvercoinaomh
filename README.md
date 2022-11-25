@@ -112,7 +112,7 @@ will be lost.
 - [ ] World & lore page
   - [ ] Kingdoms
   - [ ] Characters
-  - [ ] Short stories
+  - [x] Short stories
 - [x] Videos & podcasts
 - [ ] Team
   - [ ] Team members
