@@ -87,7 +87,7 @@ will be lost.
 
 - [ ] Landing page
   - [ ] Newsletter signup form
-  - [ ] Box art picture
+  - [x] Box art picture
   - [ ] Short game description
   - [ ] Game board art
   - [ ] Bullet points about the game
@@ -96,7 +96,7 @@ will be lost.
   - [ ] Call to Action buttons
     - [ ] Sign up for the newsletter
     - [ ] Playtest the game
-  - [ ] Social media links
+  - [x] Social media links
 - [ ] Learn
   - [ ] Video
   - [ ] Rulebook
@@ -113,7 +113,7 @@ will be lost.
   - [ ] Kingdoms
   - [ ] Characters
   - [ ] Short stories
-- [ ] Videos & podcasts
+- [x] Videos & podcasts
 - [ ] Team
   - [ ] Team members
   - [ ] Team members' bios
