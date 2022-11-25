@@ -31,7 +31,9 @@ export const Footer = () => {
             )
           })}
         </div>
-        <a className={'hover:text-gray-400'} href={'mailto:silvercoinaomh@gmail.com'}>silvercoinaomh@gmail.com</a>
+        <a className={'hover:text-gray-400'} href={'mailto:silvercoinaomh@gmail.com'}>
+          silvercoinaomh@gmail.com
+        </a>
       </div>
     </footer>
   )
