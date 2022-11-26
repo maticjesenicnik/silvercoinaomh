@@ -26,6 +26,7 @@ export const Header = () => {
           <Navlink icon={'rss_feed'} text={'Newsletters'} href={'/newsletters/'} />
           <Navlink icon={'explore'} text={'Stories'} href={'/lore/stories/'} />
           <Navlink icon={'explore'} text={'Characters'} href={'/lore/characters/'} />
+          <Navlink icon={'explore'} text={'Kingdoms'} href={'/lore/kingdoms/'} />
           <Navlink icon={'smart_display'} text={'Videos & Podcasts'} href={'/videos/'} />
           <Navlink icon={'groups'} text={'Team'} href={'/'} />
         </nav>

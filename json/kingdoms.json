@@ -1,6 +1,7 @@
 {
   "world": {
-    "image": "images/lore/kingdoms/world.webp"
+    "image": "images/lore/kingdoms/world.webp",
+    "name": "World Map of the Kingdoms"
   },
   "kingdoms": [
     {
