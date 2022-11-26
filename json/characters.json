@@ -2,8 +2,8 @@
   "characters": [
     {
       "name": "Chronomancer",
-      "image": "/images/lore/characters/chronomancer.webp",
-      "logo": "/images/lore/characters/logo/chronomancer.webp",
+      "image": "images/lore/characters/chronomancer.webp",
+      "logo": "images/lore/characters/logo/chronomancer.webp",
       "description": [
         "“It may be true after all,”  he said to himself. The old ones, the Makkai have spoken and it was not the first time they have spoken of it, however, it was the first time that they have convinced Vakkash. He now knows he has seen it too. Now he is certain. He pressed his teeth against his lips. What seemed like a fading image passing by during the practice of the tul-nuk, a mere effect of blood rushing to the head as he was handing from the tal-nar bar he thought. It happens very often and young disciples are warned about it all the time to not mistake the effects of tal-nar hanging for the visions of tul-nuk or dream of the future as the practice was called in the ever-tongue.",
         "Chronomancers believe that, just as a man dreams of the past, so too he can dream of the future. All people of Atosia can do it and are doing it throughout their life without knowing about it. In Lys Blanc it is called the “Déjà Vu”. It seems to the person as if something was already seen once in the past, when in fact they have already dreamt about it and are now just reliving that moment.",
@@ -15,8 +15,8 @@
     },
     {
       "name": "Fighter",
-      "image": "/images/lore/characters/fighter.webp",
-      "logo": "/images/lore/characters/logo/fighter.webp",
+      "image": "images/lore/characters/fighter.webp",
+      "logo": "images/lore/characters/logo/fighter.webp",
       "description": [
         "She felt the stares on her as she was walking the street, every now and then she would notice heads peeking from the windows above her. It was perfectly normal and what to be expected entering this rural small town at the edge of the world. The people of Fjelby were not used to the outside visitors. The name of this small town itself meant “Mountain town” in a local language, and them not often seeing a 6-foot-tall member of the Thorn’s Company was probably an understatement. Most likely this town has never seen one. Yet here she was in her full glory. The sun rays were bouncing off her shiny armor as if they were hitting a mirror, blinding anyone who happened to be unlucky enough to come at the wrong angle. The huge shield on her back in the shape of a Gillian flower offered an even grander sight, with the so-called red jewel of Gloriosa in its center, it was creating a scattering effect and the entire jewel would glow in red.",
         "All 7 mercenary companies of Lys Blanc have their type of jewel in the middle. From the blue jewel of Loon, the white jewel of Edelweiss, or her own jewel of Gloriosa, they are all marking the company from which the warrior is from. Azalea was part of the Thorn’s Company. An army of mercenaries from the southeast of Lys Blanc. Although the kingdom hasn’t entered into an offensive war against its neighbors in a long time, it was these 7 armies that would regularly be called into action to defend some border dispute or to help fill the coffers of the greedy kings who would often lend them for great sums to whoever needed them. On some occasions they would even travel to the continents beyond the Cold and Warm sea. She wasn’t supposed to wear the company’s attire while not under the official mission, but Azalea was beyond caring, she broke the vow she took the very second she crossed the great Simul river and headed up north. No member of the mercenary army could leave the borders of the Flower kingdom on their own accord and especially not in full battle attire. It would send the wrong message and make the individual unable to defend the realm if need be. The punishment for doing so was the loss of citizenship, the right to buy a property within the kingdom, and perhaps the most important, a death penalty unless the individual would pay off the entire sum of coins he or she has gained while serving.",
@@ -26,8 +26,8 @@
     },
     {
       "name": "Natural Chaos",
-      "image": "/images/lore/characters/naturalchaos.webp",
-      "logo": "/images/lore/characters/logo/naturalchaos.webp",
+      "image": "images/lore/characters/natural_chaos.webp",
+      "logo": "images/lore/characters/logo/natural_chaos.webp",
       "description": [
         "Leaves were falling in Dahlia Forest as it happens in Autumn months across half of the continent. The nearby Bayard’s mountains have not yet received their magnificent white peaks, but you could already see them across the valley on top of the higher peaks of the White mountains. It was not windy, but a small air vortex suddenly appeared out of thin air. It was slowly growing in size until out of the twisting air a form was beginning to take shape and just as sudden as was the appearance of the vortex, just so was the figure that would walk through the recently created disturbed shape.",
         "It was a tall man. Not that one could tell at a glance. The figure was wearing a hood that would connect with a long fine piece of clothing. But what drew the most attention, other than the fact that this man just came out of nowhere, was the mask he was wearing on his face. It was white and gold of color and full of finely detailed ornament pieces. On his hands were big gloves and around his neck was a long silk scarf. Despite the heavy clothing, it was evident that the material was light. With the certainty he was walking you knew he was comfortable in it and could see well through his strange mask.",
@@ -37,8 +37,8 @@
     },
     {
       "name": "Seeker",
-      "image": "/images/lore/characters/seeker.webp",
-      "logo": "/images/lore/characters/logo/seeker.webp",
+      "image": "images/lore/characters/seeker.webp",
+      "logo": "images/lore/characters/logo/seeker.webp",
       "description": [
         "Long gone are the days when the land was untainted. Long gone are the moments when one could travel without meeting a soul for months. There still are mysterious places and undiscovered secrets out there, but mankind has taken his chisel and started sculpting the world of Atosia in his image.",
         "Where once were forests, now lay fields, where once was a quiet river delta, now lay a giant city. Even so, not all is known, not all unchanged and in the far north on the other side of the Oppskalla mountains, beyond the reach of the proud kingdom of Oldemor there live people called the Seekers, the journeymen. They know the secret paths through the mountains, they find their ways through the deadly marshes, and they have even explored the wastelands in the south and have crossed the deadliest of deserts.",
@@ -48,8 +48,8 @@
     },
     {
       "name": "Shapeshifter",
-      "image": "/images/lore/characters/shapeshifter.webp",
-      "logo": "/images/lore/characters/logo/shapeshifter.webp",
+      "image": "images/lore/characters/shapeshifter.webp",
+      "logo": "images/lore/characters/logo/shapeshifter.webp",
       "description": [
         "“Stay away!” The shout was so loud that the man instinctively grabbed his ears with both of his hands. He could not believe what he saw unfolding before his very own eyes, yet he felt the urge to help and took a step forward before she roared again. “I will hurt you, stay away and begone, this is no place for you, peasant…”",
         "Black veins started to appear on her neck slowly growing in size towards her cheeks. From her left-hand root-like structures connected with the ground itself.  She clenched her fists and pulled on them as if she was trying to tear the fabric of space itself. Slowly, but surely a shape was emerging and splitting from Rhea. She knew she reached the point of no return. Not that she wanted it, but this local peasant was getting in her way and she knew she soon would not be able to control herself. That thing will take over, as it always does, and it may just happen that this poor soul who happened to stumble upon her will be caught in the crossfire. She was able to tell from the corner of her eyes he was slowly starting to move away. What just moments ago appeared to have been an act of great chivalry and courage was quickly turning into pure terror as the dread was seen all over his face. He backtracked his movements, awkwardly falling over a small wooden lump standing in his way. He then picked himself up and started to run away from this horror scene, forgetting his pitchfork and hat in the process.",
