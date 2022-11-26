@@ -111,7 +111,7 @@ will be lost.
   - [x] Newsletter archive
 - [ ] World & lore page
   - [ ] Kingdoms
-  - [ ] Characters
+  - [x] Characters
   - [x] Short stories
 - [x] Videos & podcasts
 - [ ] Team
