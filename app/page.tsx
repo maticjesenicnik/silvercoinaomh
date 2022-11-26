@@ -1,6 +1,15 @@
 import Image from 'next/image'
 import { ListTitle } from '../components/frontpage/ListTitle'
 import { ListBody } from '../components/frontpage/ListBody'
+import box from '../public/images/frontpage/box.webp'
+import latePledge from '../public/images/kickstarter/late_pledge.webp'
+import freeCopy from '../public/images/kickstarter/subscribe_for_free_copy.webp'
+import wantPlaytest from '../public/images/buttons/want_to_playtest.webp'
+import signUpNewsletter from '../public/images/buttons/sign_up_newsletter.webp'
+import welcome from '../public/images/frontpage/welcome.webp'
+import gameArt from '../public/images/frontpage/naslovna_slika_igre.webp'
+import coverArt from '../public/cover_art.webp'
+import infographic from '../public/images/frontpage/infographics.webp'
 
 export default function Page() {
   const socialsData = require('/json/socials.json')
@@ -8,20 +17,19 @@ export default function Page() {
   return (
     <>
       <title>Front Page</title>
-      <section className={'relative'}>
-        <img src={'/cover_art.webp'} alt={'Background'} />
-        <div className={'absolute top-0 left-0 w-full h-full bg-black/40 flex justify-center items-center'}>
-          <div className={'mr-16 flex gap-32 justify-center'}>
-            <img src={'/images/frontpage/box.webp'} className={'w-1/2 flex-shrink-0'} alt={'Box'} />
 
-            <div className={'flex flex-col items-center gap-4'}>
-              <Image width={361} height={77} src={'/images/kickstarter/late_pledge.webp'} alt={'Late pledge'} />
-              <Image
-                width={290}
-                height={68}
-                src={'/images/kickstarter/subscribe_for_free_copy.webp'}
-                alt={'Subscribe for free copy'}
-              />
+      <section className={'relative'}>
+        <div className={'absolute top-0 left-0 w-full h-full z-0'}>
+          <Image src={coverArt} fill={true} className={'object-cover'} alt={'Background'} />
+        </div>
+
+        <div className={'relative bg-black/40 flex justify-center items-center py-32 px-6'}>
+          <div className={'lg:mr-16 flex flex-col lg:flex-row gap-x-32 items-center justify-center'}>
+            <Image src={box} className={'flex-shrink-0 lg:w-1/2'} alt={'Box'} />
+
+            <div className={'flex flex-col items-center gap-6'}>
+              <Image src={latePledge} alt={'Late pledge'} />
+              <Image src={freeCopy} alt={'Subscribe for free copy'} />
               <div className={'flex flex-col items-center gap-2'}>
                 <div className={'flex gap-3'}>
                   <label>Email address</label>
@@ -34,7 +42,7 @@ export default function Page() {
                 <Image width={138} height={77} src={'/images/buttons/sign_up.webp'} alt={'Sign Up'} />
               </div>
 
-              <p className={'text-sm w-96 font-light'}>
+              <p className={'text-sm font-light'}>
                 Earn a chance to <span className={'font-bold'}>win a free copy of the game</span> by subscribing.
                 Subscribe to be updated on the <span className={'font-bold'}>latest news</span>!
               </p>
@@ -58,8 +66,9 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className={'container mx-auto mt-16 flex flex-col text-center items-center gap-6'}>
-        <img src={'/images/frontpage/infographics.webp'} alt={'Inforgraphic'} />
+
+      <section className={'container mx-auto mt-16 flex flex-col text-center items-center gap-6 px-6'}>
+        <Image src={infographic} alt={'Infographic'} />
 
         <h2 className={'text-5xl font-bold'}>SILVER COIN: Age of Monster Hunters</h2>
 
@@ -87,17 +96,17 @@ export default function Page() {
         </ListBody>
       </section>
 
-      <section className={'my-6 container mx-auto'}>
-        <img src={'/images/frontpage/naslovna_slika_igre.webp'} />
+      <section className={'my-6 container mx-auto px-6'}>
+        <Image src={gameArt} alt={'Game art'} />
       </section>
 
-      <hr className={'container mx-auto'} />
+      <hr className={'container mx-auto px-6'} />
 
-      <section className={'my-6 container px-56 mx-auto'}>
-        <img src={'/images/frontpage/welcome.webp'} />
+      <section className={'my-6 container px-56 mx-auto px-6'}>
+        <Image src={welcome} alt={'Welcome'} />
       </section>
 
-      <section className={'my-6 flex flex-col gap-4 items-center text-center'}>
+      <section className={'my-6 flex flex-col gap-4 items-center text-center px-6'}>
         <h2 className={'text-5xl font-bold mb-6'}>WHY BACK NOW</h2>
 
         <ListTitle>1. Kickstarter exclusive content!</ListTitle>
@@ -130,9 +139,9 @@ export default function Page() {
         </ListBody>
       </section>
 
-      <hr className={'container mx-auto'} />
+      <hr className={'container mx-auto px-6'} />
 
-      <section className={'my-6 flex flex-col items-center gap-6'}>
+      <section className={'my-6 flex flex-col items-center gap-6 px-6'}>
         <h2 className={'text-5xl font-bold mb-6'}>How to play</h2>
 
         <iframe
@@ -144,9 +153,9 @@ export default function Page() {
         ></iframe>
       </section>
 
-      <section className={'mt-24 flex flex-col items-center gap-6'}>
-        <Image width={367} height={62} src={'/images/buttons/want_to_playtest.webp'} alt={'Want to playtest?'} />
-        <Image width={512} height={98} src={'/images/buttons/sign_up_newsletter.webp'} alt={'Sign up for newsletter'} />
+      <section className={'mt-24 flex flex-col items-center gap-6 px-6'}>
+        <Image src={wantPlaytest} alt={'Want to playtest?'} />
+        <Image src={signUpNewsletter} alt={'Sign up for newsletter'} />
       </section>
     </>
   )
