@@ -1,4 +1,4 @@
-const Stories = () : JSX.Element => {
+const Stories = (): JSX.Element => {
   const stories = require('/json/stories.json')
 
   return (
