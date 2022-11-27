@@ -17,11 +17,13 @@ const Playtest = () => {
         <ListTitle>HOW TO PLAYTEST?</ListTitle>
 
         <ListBody>
-          Silver Coin: Age of Monster Hunters is being playtested via Tabletopia. So what is Tabletopia?
+          <strong>Silver Coin: Age of Monster Hunters</strong> is being playtested via <strong>Tabletopia</strong>. So
+          what is Tabletopia?
         </ListBody>
 
         <ListBody>
-          TABLETOPIA is an online board gaming platform, where people can play their favorite table top games online.
+          <strong>TABLETOPIA</strong> is an online board gaming platform, where people can <strong>play</strong> their
+          favorite <strong>table top games online</strong>.
         </ListBody>
 
         <ListBody>
@@ -46,8 +48,8 @@ const Playtest = () => {
         <Image src={browser} alt={'Browser'} />
 
         <ListBody>
-          You would be playtesting either in solo mode, cooperative mode or competitive mode, which is designed for 2-5
-          players.
+          You would be playtesting either in <strong>solo mode</strong>, <strong>cooperative mode</strong> or{' '}
+          <strong>competitive mode</strong>, which is designed for 2-5 players.
         </ListBody>
 
         <ListBody>
@@ -60,13 +62,17 @@ const Playtest = () => {
           Discord server.
         </ListBody>
 
-        <Image className={'self-center'} src={playtest} alt={'Playtest'} />
+        <a href={'https://discord.com/invite/MDxUced'} className={'self-center'}>
+          <Image src={playtest} alt={'Playtest'} />
+        </a>
 
         <ListBody>
           To learn the game, read the rulebook or watch the how to play video. You can find both under the Learn tab.
         </ListBody>
 
-        <Image className={'self-center'} src={learn} alt={'Learn'} />
+        <a href={'/learn'} className={'self-center'}>
+          <Image src={learn} alt={'Learn'} />
+        </a>
 
         <ListBody>
           The things we are looking for in the playtest are your general impressions and balance of the game. Hence you
@@ -85,7 +91,9 @@ const Playtest = () => {
 
         <ListBody>
           For any questions or inquiries, we are available on our email:{' '}
-          <a href={'mailto:silvercoinaomh@gmail.com'}>silvercoinaomh@gmail.com</a>
+          <a className={'underline'} href={'mailto:silvercoinaomh@gmail.com'}>
+            silvercoinaomh@gmail.com
+          </a>
         </ListBody>
       </section>
     </>
