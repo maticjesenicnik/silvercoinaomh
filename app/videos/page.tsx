@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { PageHeader } from '../../components/PageHeader'
 
 const Videos = (): JSX.Element => {
   const videos = require('/json/videos.json')
@@ -7,7 +8,7 @@ const Videos = (): JSX.Element => {
   return (
     <div className="text-center">
       <title>Videos</title>
-      <h1 className="text-4xl font-bold">Videos</h1>
+      <PageHeader title={'Videos'} />
       <p className="text-xl">Coming soon!</p>
 
       <div className="mx-auto">

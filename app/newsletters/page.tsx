@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { PageHeader } from '../../components/PageHeader'
 
 const Newsletters = (): JSX.Element => {
   const rss = require('/json/newsletters.json')
@@ -8,7 +9,7 @@ const Newsletters = (): JSX.Element => {
   return (
     <div className="text-center">
       <title>Newsletters</title>
-      <h1 className="text-4xl font-bold">Newsletters</h1>
+      <PageHeader title={'Newsletters'} />
       <p className="text-xl">Coming soon!</p>
       <div className="container mx-auto">
         <div className="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3 mt-12 ml-12 mr-12">
