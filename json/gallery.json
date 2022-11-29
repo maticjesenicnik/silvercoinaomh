@@ -1,0 +1,158 @@
+{
+  "characters": [
+    {
+      "name": "Berserker",
+      "image": "images/lore/characters/berserker.webp"
+    },
+    {
+      "name": "Chronomancer",
+      "image": "images/lore/characters/chronomancer.webp"
+    },
+    {
+      "name": "Fighter",
+      "image": "images/lore/characters/fighter.webp"
+    },
+    {
+      "name": "Hussar",
+      "image": "images/lore/characters/hussar.webp"
+    },
+    {
+      "name": "Natural Chaos",
+      "image": "images/lore/characters/natural_chaos.webp"
+    },
+    {
+      "name": "Seeker",
+      "image": "images/lore/characters/seeker.webp"
+    },
+    {
+      "name": "Shapeshifter",
+      "image": "images/lore/characters/shapeshifter.webp"
+    }
+  ],
+  "monsters": [
+    {
+      "name": "alu.webp",
+      "description": "images/monsters/alu.webp"
+    },
+    {
+      "name": "arachne.webp",
+      "description": "images/monsters/arachne.webp"
+    },
+    {
+      "name": "ash_golem.webp",
+      "description": "images/monsters/ash_golem.webp"
+    },
+    {
+      "name": "atosian_dragon.webp",
+      "description": "images/monsters/atosian_dragon.webp"
+    },
+    {
+      "name": "baba_yaga.webp",
+      "description": "images/monsters/baba_yaga.webp"
+    },
+    {
+      "name": "basilisk.webp",
+      "description": "images/monsters/basilisk.webp"
+    },
+    {
+      "name": "cyclops.webp",
+      "description": "images/monsters/cyclops.webp"
+    },
+    {
+      "name": "earth_worm.webp",
+      "description": "images/monsters/earth_worm.webp"
+    },
+    {
+      "name": "forest_nymph.webp",
+      "description": "images/monsters/forest_nymph.webp"
+    },
+    {
+      "name": "gargoyle.webp",
+      "description": "images/monsters/gargoyle.webp"
+    },
+    {
+      "name": "giant_centipede.webp",
+      "description": "images/monsters/giant_centipede.webp"
+    },
+    {
+      "name": "goldhorn.webp",
+      "description": "images/monsters/goldhorn.webp"
+    },
+    {
+      "name": "great_carnae_bat.webp",
+      "description": "images/monsters/great_carnae_bat.webp"
+    },
+    {
+      "name": "griffin.webp",
+      "description": "images/monsters/griffin.webp"
+    },
+    {
+      "name": "hydra.webp",
+      "description": "images/monsters/hydra.webp"
+    },
+    {
+      "name": "imdugud.webp",
+      "description": "images/monsters/imdugud.webp"
+    },
+    {
+      "name": "kurent.webp",
+      "description": "images/monsters/kurent.webp"
+    },
+    {
+      "name": "manticore.webp",
+      "description": "images/monsters/manticore.webp"
+    },
+    {
+      "name": "mind_flayer.webp",
+      "description": "images/monsters/mind_flayer.webp"
+    },
+    {
+      "name": "name.txt",
+      "description": "images/monsters/name.txt"
+    },
+    {
+      "name": "necromancer.webp",
+      "description": "images/monsters/necromancer.webp"
+    },
+    {
+      "name": "proteus_olm.webp",
+      "description": "images/monsters/proteus_olm.webp"
+    },
+    {
+      "name": "river_troll.webp",
+      "description": "images/monsters/river_troll.webp"
+    },
+    {
+      "name": "skull_snatcher.webp",
+      "description": "images/monsters/skull_snatcher.webp"
+    },
+    {
+      "name": "the_white_lady.webp",
+      "description": "images/monsters/the_white_lady.webp"
+    },
+    {
+      "name": "vampire.webp",
+      "description": "images/monsters/vampire.webp"
+    },
+    {
+      "name": "water_horror.webp",
+      "description": "images/monsters/water_horror.webp"
+    },
+    {
+      "name": "water_man.webp",
+      "description": "images/monsters/water_man.webp"
+    },
+    {
+      "name": "water_nymph.webp",
+      "description": "images/monsters/water_nymph.webp"
+    },
+    {
+      "name": "werewolf.webp",
+      "description": "images/monsters/werewolf.webp"
+    },
+    {
+      "name": "witch.webp",
+      "description": "images/monsters/witch.webp"
+    }
+  ]
+}
