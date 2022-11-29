@@ -81,7 +81,7 @@ export default function Page() {
           Combining a{' '}
           <strong>
             true adventure like feeling with strong eurogames mechanics, Silver Coin: Age of Monster Hunters
-          </strong>
+          </strong>{' '}
           offers a unique gaming experience. Bid for your character, starting location and initial resources, while
           putting your Victory Points on the line. Now you are ready to start your journey.
         </ListBody>
