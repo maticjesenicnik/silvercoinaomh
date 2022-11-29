@@ -12,6 +12,7 @@ const Playtest = () => {
   return (
     <>
       <PageHeader title={'Playtest'} />
+      <title>Playtest</title>
 
       <section className={'container mx-auto px-6 flex flex-col gap-6'}>
         <ListTitle>HOW TO PLAYTEST?</ListTitle>

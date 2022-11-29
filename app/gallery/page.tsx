@@ -4,6 +4,7 @@ const Gallery = () => {
   return (
     <>
       <PageHeader title={'Gallery'} />
+      <title>Gallery</title>
     </>
   )
 }
