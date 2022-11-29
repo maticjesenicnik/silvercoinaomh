@@ -7,9 +7,8 @@ const Videos = (): JSX.Element => {
 
   return (
     <div className="text-center">
-      <title>Videos</title>
       <PageHeader title={'Videos'} />
-      <p className="text-xl">Coming soon!</p>
+      <title>Videos</title>
 
       <div className="mx-auto">
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4 mt-12 ml-12 mr-12">

@@ -8,9 +8,9 @@ const Newsletters = (): JSX.Element => {
 
   return (
     <div className="text-center">
-      <title>Newsletters</title>
       <PageHeader title={'Newsletters'} />
-      <p className="text-xl">Coming soon!</p>
+      <title>Newsletters</title>
+
       <div className="container mx-auto">
         <div className="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3 mt-12 ml-12 mr-12">
           {rss.newsletters.map((newsletter: any, index: number) => (
