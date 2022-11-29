@@ -18,7 +18,7 @@ const Learn = () => {
         ></iframe>
       </section>
 
-      <section className={'container mx-auto mt-12 px-6 flex flex-col gap-8'}>
+      <section className={'container mx-auto mt-12 px-6 flex flex-col justify-center md:flex-row gap-8'}>
         <BookEntry title={'Standard rules v1.0.9'} image={rulebookImg} subtitle={'Things are bound to change'} />
         <BookEntry title={'Scenario book v1.0.9 '} image={scenarioImg} subtitle={'CO-OP and SOLO'} />
       </section>

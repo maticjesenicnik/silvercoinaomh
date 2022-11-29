@@ -102,41 +102,41 @@ export default function Page() {
 
       <hr className={'container mx-auto px-6'} />
 
-      <section className={'my-6 container px-56 mx-auto px-6'}>
-        <Image src={welcome} alt={'Welcome'} />
-      </section>
+      <section className={'my-6 container mx-auto flex flex-col md:flex-row justify-center items-center gap-6 px-6'}>
+        <Image className={'max-w-xl w-full'} src={welcome} alt={'Welcome'} />
 
-      <section className={'my-6 flex flex-col gap-4 items-center text-center px-6'}>
-        <h2 className={'text-5xl font-bold mb-6'}>WHY BACK NOW</h2>
+        <div className={'flex flex-col gap-4 items-center text-center'}>
+          <h2 className={'text-5xl font-bold mb-6'}>WHY BACK NOW</h2>
 
-        <ListTitle>1. Kickstarter exclusive content!</ListTitle>
-        <ListBody>
-          Retail version and Kickstarter version will differ a lot, so make sure you get all the exclusive content.
-        </ListBody>
+          <ListTitle>1. Kickstarter exclusive content!</ListTitle>
+          <ListBody>
+            Retail version and Kickstarter version will differ a lot, so make sure you get all the exclusive content.
+          </ListBody>
 
-        <ListTitle>2. Crowdfunding exclusive add-ons!</ListTitle>
-        <ListBody>Add-ons will only be available to buy in a crowdfunding campaign.</ListBody>
+          <ListTitle>2. Crowdfunding exclusive add-ons!</ListTitle>
+          <ListBody>Add-ons will only be available to buy in a crowdfunding campaign.</ListBody>
 
-        <ListTitle>3. Help this project come to life!</ListTitle>
-        <ListBody>
-          We are first time creators that have been working on this game every day for more than 4 years. The only way
-          it can get on the shelves and see the light of day is to help us get funded. Thank you!
-        </ListBody>
+          <ListTitle>3. Help this project come to life!</ListTitle>
+          <ListBody>
+            We are first time creators that have been working on this game every day for more than 4 years. The only way
+            it can get on the shelves and see the light of day is to help us get funded. Thank you!
+          </ListBody>
 
-        <ListTitle>4. Kickstarter exclusive price!</ListTitle>
-        <ListBody>Both pledges will be offered at a reduced price.</ListBody>
+          <ListTitle>4. Kickstarter exclusive price!</ListTitle>
+          <ListBody>Both pledges will be offered at a reduced price.</ListBody>
 
-        <ListTitle>5. Help shape the game!</ListTitle>
-        <ListBody>
-          Receive all the stretch goals for free! The more backers we get, the more content we can unlock through the
-          stretch goals and social goals.
-        </ListBody>
+          <ListTitle>5. Help shape the game!</ListTitle>
+          <ListBody>
+            Receive all the stretch goals for free! The more backers we get, the more content we can unlock through the
+            stretch goals and social goals.
+          </ListBody>
 
-        <ListTitle>6. Potential expansions!</ListTitle>
-        <ListBody>
-          The bigger the community will be and the the better the response, the bigger potential we have for creating
-          further content for this game (expansions, fan made scenarios, custom monsters and more)!
-        </ListBody>
+          <ListTitle>6. Potential expansions!</ListTitle>
+          <ListBody>
+            The bigger the community will be and the the better the response, the bigger potential we have for creating
+            further content for this game (expansions, fan made scenarios, custom monsters and more)!
+          </ListBody>
+        </div>
       </section>
 
       <hr className={'container mx-auto px-6'} />
@@ -154,8 +154,12 @@ export default function Page() {
       </section>
 
       <section className={'mt-24 flex flex-col items-center gap-6 px-6'}>
-        <Image src={wantPlaytest} alt={'Want to playtest?'} />
-        <Image src={signUpNewsletter} alt={'Sign up for newsletter'} />
+        <a href={'/playtest'}>
+          <Image src={wantPlaytest} alt={'Want to playtest?'} />
+        </a>
+        <a href={'/#'}>
+          <Image src={signUpNewsletter} alt={'Sign up for newsletter'} />
+        </a>
       </section>
     </>
   )
