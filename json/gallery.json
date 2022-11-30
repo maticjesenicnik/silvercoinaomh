@@ -31,127 +31,123 @@
   ],
   "monsters": [
     {
-      "name": "alu.webp",
+      "name": "Alu",
       "image": "/images/monsters/alu.webp"
     },
     {
-      "name": "arachne.webp",
+      "name": "Arachne",
       "image": "/images/monsters/arachne.webp"
     },
     {
-      "name": "ash_golem.webp",
+      "name": "Ash Golem",
       "image": "/images/monsters/ash_golem.webp"
     },
     {
-      "name": "atosian_dragon.webp",
+      "name": "Atosian Dragon",
       "image": "/images/monsters/atosian_dragon.webp"
     },
     {
-      "name": "baba_yaga.webp",
+      "name": "Baba Yaga",
       "image": "/images/monsters/baba_yaga.webp"
     },
     {
-      "name": "basilisk.webp",
+      "name": "Basilisk",
       "image": "/images/monsters/basilisk.webp"
     },
     {
-      "name": "cyclops.webp",
+      "name": "Cyclops",
       "image": "/images/monsters/cyclops.webp"
     },
     {
-      "name": "earth_worm.webp",
+      "name": "Earth Worm",
       "image": "/images/monsters/earth_worm.webp"
     },
     {
-      "name": "forest_nymph.webp",
+      "name": "Forest Nymph",
       "image": "/images/monsters/forest_nymph.webp"
     },
     {
-      "name": "gargoyle.webp",
+      "name": "Gargoyle",
       "image": "/images/monsters/gargoyle.webp"
     },
     {
-      "name": "giant_centipede.webp",
+      "name": "Giant Centipede",
       "image": "/images/monsters/giant_centipede.webp"
     },
     {
-      "name": "goldhorn.webp",
+      "name": "Goldhorn",
       "image": "/images/monsters/goldhorn.webp"
     },
     {
-      "name": "great_carnae_bat.webp",
+      "name": "Great Carnae Bat",
       "image": "/images/monsters/great_carnae_bat.webp"
     },
     {
-      "name": "griffin.webp",
+      "name": "Griffin",
       "image": "/images/monsters/griffin.webp"
     },
     {
-      "name": "hydra.webp",
+      "name": "Hydra",
       "image": "/images/monsters/hydra.webp"
     },
     {
-      "name": "imdugud.webp",
+      "name": "Imdugud",
       "image": "/images/monsters/imdugud.webp"
     },
     {
-      "name": "kurent.webp",
+      "name": "Kurent",
       "image": "/images/monsters/kurent.webp"
     },
     {
-      "name": "manticore.webp",
+      "name": "Manticore",
       "image": "/images/monsters/manticore.webp"
     },
     {
-      "name": "mind_flayer.webp",
+      "name": "Mind Flayer",
       "image": "/images/monsters/mind_flayer.webp"
     },
     {
-      "name": "name.txt",
-      "image": "/images/monsters/name.txt"
-    },
-    {
-      "name": "necromancer.webp",
+      "name": "Necromancer",
       "image": "/images/monsters/necromancer.webp"
     },
     {
-      "name": "proteus_olm.webp",
+      "name": "Proteus Olm",
       "image": "/images/monsters/proteus_olm.webp"
     },
     {
-      "name": "river_troll.webp",
+      "name": "River Troll",
       "image": "/images/monsters/river_troll.webp"
     },
     {
-      "name": "skull_snatcher.webp",
+      "name": "Skull Snatcher",
       "image": "/images/monsters/skull_snatcher.webp"
     },
     {
-      "name": "the_white_lady.webp",
+      "name": "The White Lady",
       "image": "/images/monsters/the_white_lady.webp"
     },
     {
-      "name": "vampire.webp",
+      "name": "Vampire",
       "image": "/images/monsters/vampire.webp"
     },
     {
-      "name": "water_horror.webp",
+      "name": "Water Horror",
       "image": "/images/monsters/water_horror.webp"
     },
     {
-      "name": "water_man.webp",
+      "name": "Water Man",
       "image": "/images/monsters/water_man.webp"
     },
     {
-      "name": "water_nymph.webp",
+      "name": "Water Nymph",
       "image": "/images/monsters/water_nymph.webp"
     },
     {
-      "name": "werewolf.webp",
+      "name": "Werewolf",
       "image": "/images/monsters/werewolf.webp"
     },
     {
-      "name": "witch.webp",
+      "name": "Witch",
       "image": "/images/monsters/witch.webp"
     }
   ]
