@@ -21,6 +21,10 @@
       "image": "/images/lore/characters/natural_chaos.webp"
     },
     {
+      "name": "Necromancer",
+      "image": "/images/lore/characters/necromancer.webp"
+    },
+    {
       "name": "Seeker",
       "image": "/images/lore/characters/seeker.webp"
     },
@@ -105,10 +109,6 @@
     {
       "name": "Mind Flayer",
       "image": "/images/monsters/mind_flayer.webp"
-    },
-    {
-      "name": "Necromancer",
-      "image": "/images/monsters/necromancer.webp"
     },
     {
       "name": "Proteus Olm",
