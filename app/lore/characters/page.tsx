@@ -1,18 +1,17 @@
 import Image from 'next/image'
+import { PageHeader } from '../../../components/PageHeader'
 
 const Characters = (): JSX.Element => {
   const characters = require('/json/characters.json')
 
   return (
     <div className="text-center">
-      <title>Characters</title>
-      <h1 className="text-4xl font-bold">Characters</h1>
-      <p className="text-xl">Coming soon!</p>
+      <PageHeader title={'Characters'} />
 
       <div className="container mx-auto w-1/2">
         {characters.characters.map((character: any, index: number) => (
-          <div className="flex flex-col mt-6">
-            <div className="text-3xl text-center mb-4">
+          <div className="flex flex-col mt-24">
+            <div className="text-5xl text-center mb-4">
               {character.name}
               <Image
                 className="inline-block ml-4"
