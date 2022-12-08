@@ -82,11 +82,18 @@
       ]
     },
     {
+      "name": "Hussar",
+      "image": "images/lore/characters/hussar.webp",
+      "logo": "images/lore/characters/logo/hussar.webp",
+      "description": [
+      ]
+    },
+    {
       "name": "Spellblade",
       "image": "images/lore/characters/spellblade.webp",
       "logo": "images/lore/characters/logo/spellblade.webp",
       "description": [
-""      ]
+      ]
     }
   ]
 }
