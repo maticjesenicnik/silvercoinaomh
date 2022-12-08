@@ -7,7 +7,7 @@ const Stories = (): JSX.Element => {
     <div className="text-center">
       <PageHeader title={'Stories'} />
 
-      <div className="container mx-auto w-1/2">
+      <div className="container mx-auto lg:w-1/2 sm:w-full pl-6 pr-6">
         {stories.stories.map((story: any, index: number) => (
           <div className="flex flex-col mt-6">
             <div className="text-5xl text-center">{story.title}</div>

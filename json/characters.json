@@ -14,9 +14,9 @@
       ]
     },
     {
-      "name": "Fighter",
-      "image": "images/lore/characters/fighter.webp",
-      "logo": "images/lore/characters/logo/fighter.webp",
+      "name": "Mercenary",
+      "image": "images/lore/characters/mercenary.webp",
+      "logo": "images/lore/characters/logo/mercenary.webp",
       "description": [
         "She felt the stares on her as she was walking the street, every now and then she would notice heads peeking from the windows above her. It was perfectly normal and what to be expected entering this rural small town at the edge of the world. The people of Fjelby were not used to the outside visitors. The name of this small town itself meant “Mountain town” in a local language, and them not often seeing a 6-foot-tall member of the Thorn’s Company was probably an understatement. Most likely this town has never seen one. Yet here she was in her full glory. The sun rays were bouncing off her shiny armor as if they were hitting a mirror, blinding anyone who happened to be unlucky enough to come at the wrong angle. The huge shield on her back in the shape of a Gillian flower offered an even grander sight, with the so-called red jewel of Gloriosa in its center, it was creating a scattering effect and the entire jewel would glow in red.",
         "All 7 mercenary companies of Lys Blanc have their type of jewel in the middle. From the blue jewel of Loon, the white jewel of Edelweiss, or her own jewel of Gloriosa, they are all marking the company from which the warrior is from. Azalea was part of the Thorn’s Company. An army of mercenaries from the southeast of Lys Blanc. Although the kingdom hasn’t entered into an offensive war against its neighbors in a long time, it was these 7 armies that would regularly be called into action to defend some border dispute or to help fill the coffers of the greedy kings who would often lend them for great sums to whoever needed them. On some occasions they would even travel to the continents beyond the Cold and Warm sea. She wasn’t supposed to wear the company’s attire while not under the official mission, but Azalea was beyond caring, she broke the vow she took the very second she crossed the great Simul river and headed up north. No member of the mercenary army could leave the borders of the Flower kingdom on their own accord and especially not in full battle attire. It would send the wrong message and make the individual unable to defend the realm if need be. The punishment for doing so was the loss of citizenship, the right to buy a property within the kingdom, and perhaps the most important, a death penalty unless the individual would pay off the entire sum of coins he or she has gained while serving.",
@@ -85,15 +85,13 @@
       "name": "Hussar",
       "image": "images/lore/characters/hussar.webp",
       "logo": "images/lore/characters/logo/hussar.webp",
-      "description": [
-      ]
+      "description": []
     },
     {
       "name": "Spellblade",
       "image": "images/lore/characters/spellblade.webp",
       "logo": "images/lore/characters/logo/spellblade.webp",
-      "description": [
-      ]
+      "description": []
     }
   ]
 }
