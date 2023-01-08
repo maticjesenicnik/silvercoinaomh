@@ -17,14 +17,14 @@ const Kingdoms = (): JSX.Element => {
           alt={kingdoms.world.name}
         />
 
-        {kingdoms.kingdoms.map((kingdom: any, index: number) => (
-          <div className="flex flex-col mt-24">
+        {kingdoms.kingdoms.map((kingdom: any, kingdomIndex: number) => (
+          <div key={kingdomIndex} className="flex flex-col mt-24">
             <div className="text-3xl text-center mb-2">
               <Image className="w-full mx-auto" src={'/' + kingdom.image} alt={kingdom.name} width={640} height={360} />
             </div>
 
-            {kingdom.description.map((description: any, index: number) => (
-              <div className="mt-3 text-justify">{description}</div>
+            {kingdom.description.map((description: any, descriptionIndex: number) => (
+              <div key={kingdomIndex + '-' + descriptionIndex} className="mt-3 text-justify">{description}</div>
             ))}
           </div>
         ))}

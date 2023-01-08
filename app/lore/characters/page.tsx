@@ -9,8 +9,8 @@ const Characters = (): JSX.Element => {
       <PageHeader title={'Characters'} />
 
       <div className="container mx-auto w-1/2">
-        {characters.characters.map((character: any, index: number) => (
-          <div className="flex flex-col mt-24">
+        {characters.characters.map((character: any, characterIndex: number) => (
+          <div key={characterIndex} className="flex flex-col mt-24">
             <div className="text-5xl text-center mb-4">
               {character.name}
               <Image
@@ -28,8 +28,8 @@ const Characters = (): JSX.Element => {
               src={'/' + character.image}
               alt={character.name}
             />
-            {character.description.map((description: any, index: number) => (
-              <div className="mt-3 text-justify">{description}</div>
+            {character.description.map((description: any, descriptionIndex: number) => (
+              <div key={characterIndex + ' - ' + descriptionIndex} className="mt-3 text-justify">{description}</div>
             ))}
           </div>
         ))}

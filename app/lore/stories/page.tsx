@@ -8,11 +8,11 @@ const Stories = (): JSX.Element => {
       <PageHeader title={'Stories'} />
 
       <div className="container mx-auto lg:w-1/2 sm:w-full pl-6 pr-6">
-        {stories.stories.map((story: any, index: number) => (
-          <div className="flex flex-col mt-6">
+        {stories.stories.map((story: any, storyIndex: number) => (
+          <div className="flex flex-col mt-6" key={storyIndex}>
             <div className="text-5xl text-center">{story.title}</div>
-            {story.chapters.map((chapter: any, index: number) => (
-              <div className="mt-3 text-justify">{chapter}</div>
+            {story.chapters.map((chapter: any, chapterIndex: number) => (
+              <div className="mt-3 text-justify" key={storyIndex + '-' + chapterIndex}>{chapter}</div>
             ))}
           </div>
         ))}
