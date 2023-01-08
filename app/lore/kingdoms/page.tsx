@@ -24,7 +24,9 @@ const Kingdoms = (): JSX.Element => {
             </div>
 
             {kingdom.description.map((description: any, descriptionIndex: number) => (
-              <div key={kingdomIndex + '-' + descriptionIndex} className="mt-3 text-justify">{description}</div>
+              <div key={kingdomIndex + '-' + descriptionIndex} className="mt-3 text-justify">
+                {description}
+              </div>
             ))}
           </div>
         ))}

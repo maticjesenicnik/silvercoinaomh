@@ -29,7 +29,9 @@ const Characters = (): JSX.Element => {
               alt={character.name}
             />
             {character.description.map((description: any, descriptionIndex: number) => (
-              <div key={characterIndex + ' - ' + descriptionIndex} className="mt-3 text-justify">{description}</div>
+              <div key={characterIndex + ' - ' + descriptionIndex} className="mt-3 text-justify">
+                {description}
+              </div>
             ))}
           </div>
         ))}

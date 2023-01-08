@@ -12,7 +12,9 @@ const Stories = (): JSX.Element => {
           <div className="flex flex-col mt-6" key={storyIndex}>
             <div className="text-5xl text-center">{story.title}</div>
             {story.chapters.map((chapter: any, chapterIndex: number) => (
-              <div className="mt-3 text-justify" key={storyIndex + '-' + chapterIndex}>{chapter}</div>
+              <div className="mt-3 text-justify" key={storyIndex + '-' + chapterIndex}>
+                {chapter}
+              </div>
             ))}
           </div>
         ))}
