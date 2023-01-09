@@ -9,7 +9,6 @@ const Newsletters = (): JSX.Element => {
   return (
     <div className="text-center">
       <PageHeader title={'Newsletters'} />
-      <title>Newsletters</title>
 
       <div className="container mx-auto">
         <div className="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3 mt-12 ml-12 mr-12">

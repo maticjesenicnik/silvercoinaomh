@@ -8,12 +8,14 @@ const Videos = (): JSX.Element => {
   return (
     <div className="text-center">
       <PageHeader title={'Videos'} />
-      <title>Videos</title>
 
       <div className="mx-auto">
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4 mt-12 ml-12 mr-12">
           {videos.videos.map((video: any, index: number) => (
-            <div className="rounded-lg shadow-lg p-4 aspect-video pl-0 pr-0 pt-0 motion-safe:animate-fadeIn">
+            <div
+              key={index}
+              className="rounded-lg shadow-lg p-4 aspect-video pl-0 pr-0 pt-0 motion-safe:animate-fadeIn"
+            >
               <Link href={video.url} target="_blank" key={index}>
                 <Image
                   className="object-cover rounded-t-lg scale-100 hover:scale-95 ease-in-out duration-500"

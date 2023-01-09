@@ -7,7 +7,6 @@ const Learn = () => {
   return (
     <>
       <PageHeader title={'Learn'} />
-      <title>Learn</title>
 
       <section>
         <iframe
