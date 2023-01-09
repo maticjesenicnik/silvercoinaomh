@@ -8,11 +8,15 @@ export const Footer = () => {
       className={'bg-background text-on-background flex justify-between flex-col md:flex-row gap-4 items-center p-5'}
     >
       <div className={'flex gap-4'}>
-        <Image height={100} width={100} src={'/images/logos/bona_fide.webp'} alt={'Bona Fide'} />
-        <Image height={100} width={200} src={'/images/logos/gea_college.webp'} alt={'Gea College'} />
+        <a href="https://boardgamegeek.com/boardgamepublisher/50038/bona-fide-games">
+          <Image height={100} width={100} src={'/images/logos/bona_fide.webp'} alt={'Bona Fide'} />
+        </a>
+        <a href="https://gea-college.si/">
+          <Image height={100} width={200} src={'/images/logos/gea_college.webp'} alt={'Gea College'} />
+        </a>
       </div>
 
-      <a className={'text-center hover:text-gray-400'} href={'/'}>
+      <a className={'text-center hover:text-gray-400'} href={'/terms-and-conditions'}>
         Terms and conditions
       </a>
 
@@ -25,6 +29,7 @@ export const Footer = () => {
                 className={'flex justify-center items-center hover:opacity-60 transition-all'}
                 href={el.url}
                 target={'_blank'}
+                rel={'noreferrer'}
               >
                 <Image width={60} height={60} src={el.image} alt={el.name} />
               </a>
