@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export const Member = ({ name, title, url, info, socials }: any) => {
   return (
-    <div className="flex flex-col items-center flex-start h-full overflow-hidden bg-black shadow-xl shadow-stone-800 bg-blend-darken">
+    <div className="flex flex-col items-center flex-start h-full overflow-hidden bg-black shadow-xl shadow-stone-800 bg-blend-darken rounded-md">
       <div className="overflow-hidden mb-2">
         <Image
           className="object-cover transform transition-all duration-300 scale-100 hover:scale-110 brightness-50 aspect-square"
