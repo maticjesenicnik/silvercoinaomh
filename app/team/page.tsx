@@ -11,7 +11,14 @@ const Team = (): JSX.Element => {
       <div className="container mx-auto lg:w-3/4 md:w-full pl-6 pr-6">
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4 mt-12 ml-12 mr-12">
           {team.members.map((member: any, index: number) => (
-            <Member key={index} name={member.name} title={member.title} url={member.url} info={member.info} />
+            <Member
+              key={index}
+              name={member.name}
+              title={member.title}
+              url={member.url}
+              info={member.info}
+              socials={member.socials}
+            />
           ))}
         </div>
 
