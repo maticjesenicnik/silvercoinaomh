@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Navlink } from './Navlink'
 import logo from '../public/images/logos/silvercoin.webp'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>()
@@ -10,7 +11,9 @@ export const Header = () => {
     <header className="fixed top-0 z-40 w-full bg-background text-on-background">
       <div className="mx-auto flex flex-wrap justify-between p-4 transition-all">
         <div className={'h-12 w-52'}>
-          <Image src={logo} alt={'Logo'} />
+          <Link href={'/'}>
+            <Image src={logo} alt={'Logo'} />
+          </Link>
         </div>
 
         <button onClick={() => setIsOpen(!isOpen)} className="md:hidden">
