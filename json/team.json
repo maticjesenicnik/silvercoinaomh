@@ -32,5 +32,90 @@
         "Gal is the youngest member of this team. He is 23 years old and is currentlv finishing his masters degree in Communication and media studies. For our project he is in charge of PR, Social media and Marketing."
       ]
     }
+  ],
+  "helpers": [
+    {
+      "name": "Črtomir Dobravc",
+      "role": "Game Developer"
+    },
+    {
+      "name": "Bor Lucijan Turek",
+      "role": "Game Developer"
+    },
+    {
+      "name": "Matic Jeseničnik",
+      "role": "Website Developer"
+    },
+    {
+      "name": "Clint Hennesy",
+      "role": "3D Illustration, Art"
+    },
+    {
+      "name": "Žiga Berce",
+      "role": "Mentorship"
+    },
+    {
+      "name": "Neža Kirn",
+      "role": "Singing, Marketing"
+    },
+    {
+      "name": "Jean Markič",
+      "role": "Music Production"
+    },
+    {
+      "name": "Žiga Jamnik",
+      "role": "Music"
+    },
+    {
+      "name": "Edwin Reyes Sablaya",
+      "role": "Art"
+    },
+    {
+      "name": "Jarrett Raymond",
+      "role": "Rulebook"
+    },
+    {
+      "name": "Walker Hardin",
+      "role": "Rulebook"
+    },
+    {
+      "name": "Heath Smith",
+      "role": "Text Editing"
+    },
+    {
+      "name": "Danita",
+      "role": "Proofreading"
+    },
+    {
+      "name": "Marjeta Malovrh",
+      "role": "Convention help"
+    }
+  ],
+  "playtesters": [
+    "Lan Krajnčič",
+    "Gal Krajnčič",
+    "Marko ilić",
+    "Rok Malovrh",
+    "Črtomir Dobravc",
+    "Bor Lucijan Turek",
+    "Marjeta Malovrh",
+    "Luka Gajšt",
+    "Mavrin Gašperšič",
+    "Marko Šiškovič",
+    "Milutin Spasić",
+    "Ernest Beličić",
+    "Iztok Oder",
+    "Jure Bedenk",
+    "Klemen Hrovat",
+    "Urban Presker",
+    "Naja Krajnčič",
+    "Matic Jeseničnik",
+    "BoardGamesBren",
+    "Wouter Van der Borght",
+    "Chris Cors",
+    "Michel Fortier",
+    "Luka Valjavec",
+    "Rowen Chumacera",
+    "DadsgamingDK"
   ]
 }
