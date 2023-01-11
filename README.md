@@ -88,35 +88,35 @@ will be lost.
 - [ ] Landing page
   - [ ] Newsletter signup form
   - [x] Box art picture
-  - [ ] Short game description
-  - [ ] Game board art
-  - [ ] Bullet points about the game
-  - [ ] Why should you back the game
-  - [ ] How to play video
-  - [ ] Call to Action buttons
-    - [ ] Sign up for the newsletter
-    - [ ] Playtest the game
+  - [x] Short game description
+  - [x] Game board art
+  - [x] Bullet points about the game
+  - [x] Why should you back the game
+  - [x] How to play video
+  - [x] Call to Action buttons
+    - [x] Sign up for the newsletter
+    - [x] Playtest the game
   - [x] Social media links
 - [ ] Learn
-  - [ ] Video
+  - [x] Video
   - [ ] Rulebook
   - [ ] Scenario book
-- [ ] Playtest
-  - [ ] How to playtest
-  - [ ] Installing tabletopia
+- [x] Playtest
+  - [x] How to playtest
+  - [x] Installing tabletopia
 - [ ] Gallery
   - [ ] Monster art
   - [ ] Character art
 - [x] Newsletters
   - [x] Newsletter archive
-- [ ] World & lore page
-  - [ ] Kingdoms
+- [x] World & lore page
+  - [x] Kingdoms
   - [x] Characters
   - [x] Short stories
 - [x] Videos & podcasts
-- [ ] Team
-  - [ ] Team members
-  - [ ] Team members' bios
+- [x] Team
+  - [x] Team members
+  - [x] Team members' bios
 
 See the [open issues](https://github.com/maticjesenicnik/silvercoinaomh/issues)
 for a full list of proposed features (and known issues).
