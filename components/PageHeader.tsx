@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import bgImage from '../public/cover_art.webp'
+import bgImage from 'public/cover_art.webp'
 
 export const PageHeader = ({ title }: any) => {
   return (

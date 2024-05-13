@@ -1,6 +1,6 @@
 'use client'
 
-import { PageHeader } from '../../components/PageHeader'
+import { PageHeader } from 'components/PageHeader'
 import { Slider } from './Slider'
 import { SliderItem } from './SliderItem'
 

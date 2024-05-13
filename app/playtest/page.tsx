@@ -1,12 +1,12 @@
-import { PageHeader } from '../../components/PageHeader'
-import { ListTitle } from '../../components/frontpage/ListTitle'
-import { ListBody } from '../../components/frontpage/ListBody'
+import { PageHeader } from 'components/PageHeader'
+import { ListTitle } from 'components/frontpage/ListTitle'
+import { ListBody } from 'components/frontpage/ListBody'
 import Image from 'next/image'
 
-import steam from '../../public/images/playtest/tabletopia_steam.webp'
-import browser from '../../public/images/playtest/tabletopia_browser.webp'
-import playtest from '../../public/images/buttons/want_to_playtest.webp'
-import learn from '../../public/images/playtest/learn.webp'
+import steam from 'public/images/playtest/tabletopia_steam.webp'
+import browser from 'public/images/playtest/tabletopia_browser.webp'
+import playtest from 'public/images/buttons/want_to_playtest.webp'
+import learn from 'public/images/playtest/learn.webp'
 
 const Playtest = () => {
   return (

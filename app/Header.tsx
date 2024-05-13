@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Navlink } from './Navlink'
-import logo from '../public/images/logos/silvercoin.webp'
+import logo from 'public/images/logos/silvercoin.webp'
 import Image from 'next/image'
 import Link from 'next/link'
 

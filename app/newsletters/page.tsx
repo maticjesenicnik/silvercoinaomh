@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { PageHeader } from '../../components/PageHeader'
+import { PageHeader } from 'components/PageHeader'
 
 const Newsletters = (): JSX.Element => {
   const rss = require('/json/newsletters.json')
