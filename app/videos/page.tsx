@@ -132,7 +132,7 @@ const Videos = (): JSX.Element => {
         </div>
 
         {/* Results Count - Bottom Left */}
-        <div className="mt-8 text-left">
+        <div className="mt-8 text-right">
           <p className="text-sm text-gray-400">
             Showing <span className="text-white font-semibold">{filteredVideos.length}</span> 
             {selectedCategory !== 'All' && (
