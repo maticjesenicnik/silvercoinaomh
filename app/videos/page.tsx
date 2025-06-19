@@ -33,28 +33,28 @@ const Videos = (): JSX.Element => {
       <div className="container mx-auto px-4 lg:px-6 pb-16">
         {/* Category Filter */}
         <div className="mb-12">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl font-bold text-white mb-3">
+          <div className="text-center mb-6">
+            <h2 className="text-xl font-bold text-white mb-2">
               Explore Our Content
             </h2>
-            <p className="text-gray-300 max-w-2xl mx-auto">
+            <p className="text-sm text-gray-300 max-w-2xl mx-auto">
               Discover gameplay videos, development insights, and behind-the-scenes content
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-wrap justify-center gap-2">
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-3 rounded-full font-medium transition-all duration-200 ${
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                   selectedCategory === category
                     ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/25 scale-105'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white hover:scale-105'
                 }`}
               >
                 {category}
-                <span className="ml-2 text-xs opacity-75">
+                <span className="ml-1 text-xs opacity-75">
                   ({category === 'All' 
                     ? videos.videos.length 
                     : videos.videos.filter((v: any) => v.category.includes(category)).length
@@ -63,16 +63,6 @@ const Videos = (): JSX.Element => {
               </button>
             ))}
           </div>
-        </div>
-
-        {/* Results Count */}
-        <div className="mb-8 text-center">
-          <p className="text-gray-400">
-            Showing <span className="text-white font-semibold">{filteredVideos.length}</span> 
-            {selectedCategory !== 'All' && (
-              <span> {selectedCategory.toLowerCase()}</span>
-            )} video{filteredVideos.length !== 1 ? 's' : ''}
-          </p>
         </div>
 
         {/* Videos Grid */}
@@ -94,10 +84,10 @@ const Videos = (): JSX.Element => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   
-                  {/* Play Button Overlay */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="bg-white/20 backdrop-blur-sm rounded-full p-4 border border-white/30">
-                      <span className="material-icons-outlined text-white text-3xl">play_arrow</span>
+                  {/* Play Button Overlay - Circular */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                    <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30">
+                      <span className="material-icons-outlined text-white text-2xl">play_arrow</span>
                     </div>
                   </div>
 
@@ -139,6 +129,16 @@ const Videos = (): JSX.Element => {
               </Link>
             </div>
           ))}
+        </div>
+
+        {/* Results Count - Bottom Left */}
+        <div className="mt-8 text-left">
+          <p className="text-sm text-gray-400">
+            Showing <span className="text-white font-semibold">{filteredVideos.length}</span> 
+            {selectedCategory !== 'All' && (
+              <span> {selectedCategory.toLowerCase()}</span>
+            )} video{filteredVideos.length !== 1 ? 's' : ''}
+          </p>
         </div>
 
         {/* No Results */}
