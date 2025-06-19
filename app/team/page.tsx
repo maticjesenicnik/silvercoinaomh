@@ -3,7 +3,7 @@ import { TeamMember } from '../../components/team/TeamMember'
 import { TeamHelper } from '../../components/team/TeamHelper'
 import { PageHeader } from 'components/PageHeader'
 
-const Team = (): JSX.Element => {
+const Team = async (): JSX.Element => {
   const res = await fetch("/json/team.json");
   const team = res.json();
 
