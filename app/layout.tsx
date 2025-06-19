@@ -1,7 +1,7 @@
 'use client'
 import './globals.css'
-import { Header } from './Header'
-import { Footer } from './Footer'
+import { Header } from '../components/layout/Header'
+import { Footer } from '../components/layout/Footer'
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   // noinspection HtmlRequiredTitleElement
@@ -14,7 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className={'bg-background'}>
         <Header />
-        <main className={'min-h-[82.95vh] pb-28 bg-[url("/images/bg_texture.webp")] text-white pt-20 text-2xl'}>
+        <main className={'min-h-screen pb-28 bg-[url("/images/bg_texture.webp")] text-white pt-20 text-2xl'}>
           {children}
         </main>
         <Footer />

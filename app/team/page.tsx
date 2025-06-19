@@ -1,5 +1,5 @@
 import { PageHeader } from 'components/PageHeader'
-import { Member } from './Member'
+import { Member } from '../../components/team/Member'
 
 const Team = (): JSX.Element => {
   const team = require('/json/team.json')

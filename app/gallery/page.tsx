@@ -1,8 +1,8 @@
 'use client'
 
 import { PageHeader } from 'components/PageHeader'
-import { Slider } from './Slider'
-import { SliderItem } from './SliderItem'
+import { Slider } from '../../components/gallery/Slider'
+import { SliderItem } from '../../components/gallery/SliderItem'
 
 const Gallery = () => {
   const gallery = require('/json/gallery.json')

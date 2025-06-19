@@ -1,7 +1,7 @@
 import { PageHeader } from 'components/PageHeader'
 import rulebookImg from 'public/images/rulebook/rulebook.webp'
 import scenarioImg from 'public/images/rulebook/scenario.webp'
-import { BookEntry } from './BookEntry'
+import { BookEntry } from '../../components/learn/BookEntry'
 
 const Learn = () => {
   return (
