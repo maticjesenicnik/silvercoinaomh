@@ -4,7 +4,8 @@ import { TeamHelper } from '../../components/team/TeamHelper'
 import { PageHeader } from 'components/PageHeader'
 
 const Team = (): JSX.Element => {
-  const team = require('json/team.json')
+  const res = await fetch("/json/team.json");
+  const team = res.json();
 
   return (
     <div className="min-h-screen">
