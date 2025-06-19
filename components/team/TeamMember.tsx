@@ -46,15 +46,15 @@ export const TeamMember = ({ name, title, image, bio, socials }: TeamMemberProps
                   href={social.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="p-3 rounded-lg bg-white/10 hover:bg-white/20 transition-all duration-200 hover:scale-110"
+                  className="rounded-lg bg-white/10 hover:bg-white/20 transition-all duration-200 hover:scale-110"
                   aria-label={`${name} on ${social.name}`}
                 >
                   <Image 
                     src={social.image} 
                     alt={social.name} 
-                    width={32} 
-                    height={32}
-                    className="p-0 object-contain brightness-90 hover:brightness-100 transition-all"
+                    width={48} 
+                    height={48}
+                    className="object-contain brightness-90 hover:brightness-100 transition-all"
                   />
                 </a>
               ))}
