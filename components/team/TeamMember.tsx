@@ -54,7 +54,7 @@ export const TeamMember = ({ name, title, image, bio, socials }: TeamMemberProps
                     alt={social.name} 
                     width={32} 
                     height={32}
-                    className="object-contain brightness-90 hover:brightness-100 transition-all"
+                    className="p-0 object-contain brightness-90 hover:brightness-100 transition-all"
                   />
                 </a>
               ))}
