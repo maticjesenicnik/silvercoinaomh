@@ -70,15 +70,14 @@ export const Header = () => {
             <Navlink icon="image" text="Gallery" href="/gallery" mobile />
             <Navlink icon="rss_feed" text="Newsletters" href="/newsletters" mobile />
             
-            {/* Mobile Lore Submenu */}
-            <div className="pl-4 space-y-1">
-              <div className="flex items-center gap-2 px-3 py-2 text-gray-400 text-sm font-medium">
-                <span className="material-icons-outlined text-lg">explore</span>
-                Lore
+            {/* Mobile Lore Section */}
+            <div className="space-y-1">
+              <Navlink icon="explore" text="Lore" href="/lore/kingdoms" mobile />
+              <div className="pl-4 space-y-1">
+                <Navlink icon="auto_stories" text="Stories" href="/lore/stories/" mobile submenu />
+                <Navlink icon="person" text="Characters" href="/lore/characters/" mobile submenu />
+                <Navlink icon="public" text="Kingdoms" href="/lore/kingdoms/" mobile submenu />
               </div>
-              <Navlink icon="auto_stories" text="Stories" href="/lore/stories/" mobile submenu />
-              <Navlink icon="person" text="Characters" href="/lore/characters/" mobile submenu />
-              <Navlink icon="public" text="Kingdoms" href="/lore/kingdoms/" mobile submenu />
             </div>
             
             <Navlink icon="smart_display" text="Videos & Podcasts" href="/videos/" mobile />
