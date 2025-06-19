@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
 export const Footer = () => {
-  const socialsData = require('/json/socials.json')
+  const socialsData = require('data/json/socials.json')
 
   return (
     <footer className="bg-background/95 backdrop-blur-md border-t border-white/20 text-on-background">

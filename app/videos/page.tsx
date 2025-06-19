@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { PageHeader } from 'components/PageHeader'
 
 const Videos = (): JSX.Element => {
-  const videos = require('/json/videos.json')
+  const videos = require('data/json/videos.json')
   const [selectedCategory, setSelectedCategory] = useState<string>('All')
 
   // Extract unique categories from all videos

@@ -12,7 +12,7 @@ import coverArt from 'public/cover_art.webp'
 import infographic from 'public/images/frontpage/infographics.webp'
 
 export default function Page() {
-  const socialsData = require('/json/socials.json')
+  const socialsData = require('data/json/socials.json')
 
   return (
     <>

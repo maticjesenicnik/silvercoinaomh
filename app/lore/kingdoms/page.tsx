@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { PageHeader } from 'components/PageHeader'
 
 const Kingdoms = (): JSX.Element => {
-  const kingdoms = require('/json/kingdoms.json')
+  const kingdoms = require('data/json/kingdoms.json')
 
   return (
     <div className="text-center">

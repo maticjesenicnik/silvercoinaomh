@@ -1,7 +1,7 @@
 import { PageHeader } from 'components/PageHeader'
 
 const Stories = (): JSX.Element => {
-  const stories = require('/json/stories.json')
+  const stories = require('data/json/stories.json')
 
   return (
     <div className="text-center">

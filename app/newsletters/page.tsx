@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { PageHeader } from 'components/PageHeader'
 
 const Newsletters = (): JSX.Element => {
-  const rss = require('/json/newsletters.json')
+  const rss = require('data/json/newsletters.json')
 
   return (
     <div className="text-center">

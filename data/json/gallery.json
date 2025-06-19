@@ -1,0 +1,154 @@
+{
+  "characters": [
+    {
+      "name": "Berserker",
+      "image": "/images/lore/characters/berserker.webp"
+    },
+    {
+      "name": "Chronomancer",
+      "image": "/images/lore/characters/chronomancer.webp"
+    },
+    {
+      "name": "Fighter",
+      "image": "/images/lore/characters/fighter.webp"
+    },
+    {
+      "name": "Hussar",
+      "image": "/images/lore/characters/hussar.webp"
+    },
+    {
+      "name": "Natural Chaos",
+      "image": "/images/lore/characters/natural_chaos.webp"
+    },
+    {
+      "name": "Necromancer",
+      "image": "/images/lore/characters/necromancer.webp"
+    },
+    {
+      "name": "Seeker",
+      "image": "/images/lore/characters/seeker.webp"
+    },
+    {
+      "name": "Shapeshifter",
+      "image": "/images/lore/characters/shapeshifter.webp"
+    }
+  ],
+  "monsters": [
+    {
+      "name": "Alu",
+      "image": "/images/monsters/alu.webp"
+    },
+    {
+      "name": "Arachne",
+      "image": "/images/monsters/arachne.webp"
+    },
+    {
+      "name": "Ash Golem",
+      "image": "/images/monsters/ash_golem.webp"
+    },
+    {
+      "name": "Atosian Dragon",
+      "image": "/images/monsters/atosian_dragon.webp"
+    },
+    {
+      "name": "Baba Yaga",
+      "image": "/images/monsters/baba_yaga.webp"
+    },
+    {
+      "name": "Basilisk",
+      "image": "/images/monsters/basilisk.webp"
+    },
+    {
+      "name": "Cyclops",
+      "image": "/images/monsters/cyclops.webp"
+    },
+    {
+      "name": "Earth Worm",
+      "image": "/images/monsters/earth_worm.webp"
+    },
+    {
+      "name": "Forest Nymph",
+      "image": "/images/monsters/forest_nymph.webp"
+    },
+    {
+      "name": "Gargoyle",
+      "image": "/images/monsters/gargoyle.webp"
+    },
+    {
+      "name": "Giant Centipede",
+      "image": "/images/monsters/giant_centipede.webp"
+    },
+    {
+      "name": "Goldhorn",
+      "image": "/images/monsters/goldhorn.webp"
+    },
+    {
+      "name": "Great Carnae Bat",
+      "image": "/images/monsters/great_carnae_bat.webp"
+    },
+    {
+      "name": "Griffin",
+      "image": "/images/monsters/griffin.webp"
+    },
+    {
+      "name": "Hydra",
+      "image": "/images/monsters/hydra.webp"
+    },
+    {
+      "name": "Imdugud",
+      "image": "/images/monsters/imdugud.webp"
+    },
+    {
+      "name": "Kurent",
+      "image": "/images/monsters/kurent.webp"
+    },
+    {
+      "name": "Manticore",
+      "image": "/images/monsters/manticore.webp"
+    },
+    {
+      "name": "Mind Flayer",
+      "image": "/images/monsters/mind_flayer.webp"
+    },
+    {
+      "name": "Proteus Olm",
+      "image": "/images/monsters/proteus_olm.webp"
+    },
+    {
+      "name": "River Troll",
+      "image": "/images/monsters/river_troll.webp"
+    },
+    {
+      "name": "Skull Snatcher",
+      "image": "/images/monsters/skull_snatcher.webp"
+    },
+    {
+      "name": "The White Lady",
+      "image": "/images/monsters/the_white_lady.webp"
+    },
+    {
+      "name": "Vampire",
+      "image": "/images/monsters/vampire.webp"
+    },
+    {
+      "name": "Water Horror",
+      "image": "/images/monsters/water_horror.webp"
+    },
+    {
+      "name": "Water Man",
+      "image": "/images/monsters/water_man.webp"
+    },
+    {
+      "name": "Water Nymph",
+      "image": "/images/monsters/water_nymph.webp"
+    },
+    {
+      "name": "Werewolf",
+      "image": "/images/monsters/werewolf.webp"
+    },
+    {
+      "name": "Witch",
+      "image": "/images/monsters/witch.webp"
+    }
+  ]
+}

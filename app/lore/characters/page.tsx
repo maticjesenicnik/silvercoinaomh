@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { PageHeader } from 'components/PageHeader'
 
 const Characters = (): JSX.Element => {
-  const characters = require('/json/characters.json')
+  const characters = require('data/json/characters.json')
 
   return (
     <div className="text-center">

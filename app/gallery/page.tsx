@@ -5,7 +5,7 @@ import { Slider } from '../../components/gallery/Slider'
 import { SliderItem } from '../../components/gallery/SliderItem'
 
 const Gallery = () => {
-  const gallery = require('/json/gallery.json')
+  const gallery = require('data/json/gallery.json')
 
   // TODO: Responsive design
   return (
