@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Navlink } from '../navigation/Navlink'
@@ -7,15 +7,42 @@ import logo from 'public/images/logos/silvercoin.webp'
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
+  const [isScrolled, setIsScrolled] = useState<boolean>(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY
+      setIsScrolled(scrollPosition > 50)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
-    <header className="fixed top-0 z-50 w-full bg-background/95 backdrop-blur-md border-b border-white/10 text-on-background">
+    <header 
+      className={`fixed top-0 z-50 w-full transition-all duration-300 ease-in-out text-on-background ${
+        isScrolled 
+          ? 'bg-background/80 backdrop-blur-lg border-b border-white/20 shadow-lg' 
+          : 'bg-background/95 backdrop-blur-md border-b border-white/10'
+      }`}
+    >
       <div className="container mx-auto px-4 lg:px-6">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div 
+          className={`flex items-center justify-between transition-all duration-300 ease-in-out ${
+            isScrolled ? 'h-12 lg:h-14' : 'h-16 lg:h-20'
+          }`}
+        >
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="block">
-              <div className="h-10 w-40 lg:h-12 lg:w-48 relative">
+              <div 
+                className={`relative transition-all duration-300 ease-in-out ${
+                  isScrolled 
+                    ? 'h-8 w-32 lg:h-9 lg:w-36' 
+                    : 'h-10 w-40 lg:h-12 lg:w-48'
+                }`}
+              >
                 <Image 
                   src={logo} 
                   alt="Silver Coin: Age of Monster Hunters" 
