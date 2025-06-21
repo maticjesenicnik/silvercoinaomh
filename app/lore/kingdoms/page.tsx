@@ -1,30 +1,24 @@
-import Image from 'next/image'
-import { PageHeader } from 'components/PageHeader'
+import Image from "next/image"
 
-const Kingdoms = (): JSX.Element => {
-  const kingdoms = require('data/json/kingdoms.json')
+import { PageHeader } from "components/PageHeader"
+import { KINGDOMS } from "data/kingdoms"
 
+const Kingdoms = () => {
   return (
     <div className="text-center">
-      <PageHeader title={'Kingdoms'} />
+      <PageHeader title={"Kingdoms"} />
 
       <div className="container mx-auto w-full lg:w-1/2">
-        <Image
-          className="w-full lg:w-3/4 mx-auto mb-4"
-          width={360}
-          height={640}
-          src={'/' + kingdoms.world.image}
-          alt={kingdoms.world.name}
-        />
+        <Image className="mx-auto mb-4 w-full lg:w-3/4" width={360} height={640} src={"/" + KINGDOMS.world.image} alt={KINGDOMS.world.name} />
 
-        {kingdoms.kingdoms.map((kingdom: any, kingdomIndex: number) => (
-          <div key={kingdomIndex} className="flex flex-col mt-24">
-            <div className="text-3xl text-center mb-2">
-              <Image className="w-full mx-auto" src={'/' + kingdom.image} alt={kingdom.name} width={640} height={360} />
+        {KINGDOMS.kingdoms.map((kingdom: any, kingdomIndex: number) => (
+          <div key={kingdomIndex} className="mt-24 flex flex-col">
+            <div className="mb-2 text-center text-3xl">
+              <Image className="mx-auto w-full" src={"/" + kingdom.image} alt={kingdom.name} width={640} height={360} />
             </div>
 
             {kingdom.description.map((description: any, descriptionIndex: number) => (
-              <div key={kingdomIndex + '-' + descriptionIndex} className="mt-3 text-justify">
+              <div key={kingdomIndex + "-" + descriptionIndex} className="mt-3 text-justify">
                 {description}
               </div>
             ))}

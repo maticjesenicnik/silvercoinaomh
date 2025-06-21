@@ -1,7 +1,4 @@
-interface TeamHelperProps {
-  name: string
-  role: string
-}
+import { TeamHelperProps } from "types"
 
 export const TeamHelper = ({ name, role }: TeamHelperProps) => {
   return (

@@ -1,18 +1,5 @@
-import Image from 'next/image'
-
-interface Social {
-  name: string
-  image: string
-  url: string
-}
-
-interface TeamMemberProps {
-  name: string
-  title: string
-  image: string
-  bio: string[]
-  socials?: Social[]
-}
+import Image from "next/image"
+import { TeamMemberProps } from "types"
 
 export const TeamMember = ({ name, title, image, bio, socials }: TeamMemberProps) => {
   return (
@@ -33,9 +20,7 @@ export const TeamMember = ({ name, title, image, bio, socials }: TeamMemberProps
         <div className="p-6 flex flex-col flex-grow">
           <h3 className="text-xl font-bold text-white mb-1">{name}</h3>
           <p className="text-sm font-medium text-blue-300 mb-3">{title}</p>
-          <p className="text-sm text-gray-300 leading-relaxed mb-6 flex-grow">
-            {bio.join(' ')}
-          </p>
+          <p className="text-sm text-gray-300 leading-relaxed mb-6 flex-grow">{bio.join(" ")}</p>
 
           {/* Social Links */}
           {socials && socials.length > 0 && (
@@ -49,10 +34,10 @@ export const TeamMember = ({ name, title, image, bio, socials }: TeamMemberProps
                   className="rounded-lg bg-white/10 hover:bg-white/20 transition-all duration-200 hover:scale-110"
                   aria-label={`${name} on ${social.name}`}
                 >
-                  <Image 
-                    src={social.image} 
-                    alt={social.name} 
-                    width={48} 
+                  <Image
+                    src={social.image}
+                    alt={social.name}
+                    width={48}
                     height={48}
                     className="object-contain brightness-90 hover:brightness-100 transition-all"
                   />

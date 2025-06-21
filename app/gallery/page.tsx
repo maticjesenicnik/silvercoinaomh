@@ -1,29 +1,28 @@
-'use client'
+"use client"
 
-import { PageHeader } from 'components/PageHeader'
-import { Slider } from '../../components/gallery/Slider'
-import { SliderItem } from '../../components/gallery/SliderItem'
+import { Slider } from "components/gallery/Slider"
+import { SliderItem } from "components/gallery/SliderItem"
+import { PageHeader } from "components/PageHeader"
+import { GALLERY } from "data/gallery"
 
 const Gallery = () => {
-  const gallery = require('data/json/gallery.json')
-
   // TODO: Responsive design
   return (
     <>
       <title>Gallery</title>
-      <PageHeader title={'Gallery'} />
+      <PageHeader title={"Gallery"} />
 
-      <section className={'container mx-auto'}>
-        <h3 className={'text-4xl py-4 text-center'}>Monsters</h3>
+      <section className={"container mx-auto"}>
+        <h3 className={"py-4 text-center text-4xl"}>Monsters</h3>
         <Slider>
-          {gallery.monsters.map((el: any) => {
+          {GALLERY.monsters.map((el: any) => {
             return <SliderItem key={el.name} name={el.name} image={el.image} />
           })}
         </Slider>
 
-        <h3 className={'text-4xl py-4 text-center'}>Characters</h3>
+        <h3 className={"py-4 text-center text-4xl"}>Characters</h3>
         <Slider>
-          {gallery.characters.map((el: any) => {
+          {GALLERY.characters.map((el: any) => {
             return <SliderItem key={el.name} name={el.name} image={el.image} />
           })}
         </Slider>

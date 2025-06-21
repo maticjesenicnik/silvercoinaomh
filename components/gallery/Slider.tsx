@@ -1,6 +1,6 @@
-import 'blaze-slider/dist/blaze.css'
-import { useBlazeSlider } from 'react-blaze-slider'
-import './slider.css'
+import "blaze-slider/dist/blaze.css"
+import { useBlazeSlider } from "react-blaze-slider"
+import "./slider.css"
 
 export const Slider = ({ children }: any) => {
   const elRef = useBlazeSlider({
