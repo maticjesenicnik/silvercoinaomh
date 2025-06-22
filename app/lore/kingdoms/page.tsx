@@ -176,16 +176,15 @@ const Kingdoms = () => {
                   {/* Kingdom Image */}
                   <div className="order-2 lg:order-1">
                     <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm">
-                      {/* Flexible container that adapts to image dimensions */}
-                      <div className="relative min-h-[300px] max-h-[500px] overflow-hidden">
+                      {/* Fixed aspect ratio container that works for all image orientations */}
+                      <div className="relative aspect-[4/3] overflow-hidden">
                         <Image 
-                          className="h-full w-full object-contain object-center brightness-75 transition-all duration-500 group-hover:scale-105 group-hover:brightness-90" 
+                          className="h-full w-full object-cover object-center brightness-75 transition-all duration-500 group-hover:scale-105 group-hover:brightness-90" 
                           width={800} 
                           height={600} 
                           src={"/" + selectedKingdom.image} 
                           alt={selectedKingdom.name}
                           priority
-                          style={{ objectFit: 'contain' }}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                       </div>
@@ -315,17 +314,16 @@ const Kingdoms = () => {
                 <article className="group cursor-pointer" onClick={() => navigateToKingdom(kingdomIndex)}>
                   <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:scale-[1.02] hover:shadow-2xl">
                     <div className="grid grid-cols-1 gap-0 lg:grid-cols-2">
-                      {/* Kingdom Image - Flexible aspect ratio for overview cards */}
+                      {/* Kingdom Image - Fixed aspect ratio for overview cards */}
                       <div className={`relative overflow-hidden ${kingdomIndex % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
-                        {/* Flexible container that adapts to image dimensions */}
-                        <div className="relative min-h-[250px] max-h-[400px] overflow-hidden">
+                        {/* Fixed aspect ratio container for consistent overview layout */}
+                        <div className="relative aspect-[4/3] overflow-hidden">
                           <Image 
-                            className="h-full w-full object-contain object-center brightness-75 transition-all duration-500 group-hover:scale-105 group-hover:brightness-90" 
+                            className="h-full w-full object-cover object-center brightness-75 transition-all duration-500 group-hover:scale-105 group-hover:brightness-90" 
                             width={800} 
                             height={600} 
                             src={"/" + kingdom.image} 
                             alt={kingdom.name}
-                            style={{ objectFit: 'contain' }}
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent lg:bg-gradient-to-r" />
                           
