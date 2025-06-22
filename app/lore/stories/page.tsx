@@ -45,17 +45,17 @@ const AnimatedSection = ({ children, delay = 0 }: { children: React.ReactNode; d
 
 const Stories = () => {
   const [selectedStoryIndex, setSelectedStoryIndex] = useState<number>(0)
-  const storyHeaderRef = useRef<HTMLElement>(null)
+  const selectorRef = useRef<HTMLDivElement>(null)
 
   // Get the currently selected story
   const selectedStory = useMemo(() => {
     return STORIES.stories[selectedStoryIndex]
   }, [selectedStoryIndex])
 
-  // Function to scroll to story start
-  const scrollToStoryStart = () => {
-    if (storyHeaderRef.current) {
-      storyHeaderRef.current.scrollIntoView({ 
+  // Function to scroll to selector section
+  const scrollToSelector = () => {
+    if (selectorRef.current) {
+      selectorRef.current.scrollIntoView({ 
         behavior: 'smooth',
         block: 'start'
       })
@@ -66,7 +66,7 @@ const Stories = () => {
   const navigateToStory = (newIndex: number) => {
     setSelectedStoryIndex(newIndex)
     // Small delay to ensure the content has updated before scrolling
-    setTimeout(scrollToStoryStart, 100)
+    setTimeout(scrollToSelector, 100)
   }
 
   return (
@@ -86,7 +86,7 @@ const Stories = () => {
 
         {/* Story Selector */}
         <AnimatedSection delay={200}>
-          <div className="mb-16">
+          <div ref={selectorRef} className="mb-16">
             <div className="mb-6 text-center">
               <h3 className="mb-2 text-lg font-bold text-white">Choose Your Tale</h3>
               <p className="text-sm text-gray-300">Select a story to dive into the mysteries of Atosia</p>
@@ -115,7 +115,7 @@ const Stories = () => {
           <article className="mx-auto max-w-4xl">
             {/* Story Header */}
             <AnimatedSection delay={400}>
-              <header ref={storyHeaderRef} className="mb-12 text-center">
+              <header className="mb-12 text-center">
                 <div className="mb-6 flex justify-center">
                   <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-white/10">
                     <span className="material-icons-outlined text-3xl text-blue-300">auto_stories</span>

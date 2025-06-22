@@ -46,17 +46,17 @@ const AnimatedParagraph = ({ children, delay = 0 }: { children: React.ReactNode;
 
 const Characters = () => {
   const [selectedCharacterIndex, setSelectedCharacterIndex] = useState<number>(0)
-  const characterHeaderRef = useRef<HTMLElement>(null)
+  const selectorRef = useRef<HTMLDivElement>(null)
 
   // Get the currently selected character
   const selectedCharacter = useMemo(() => {
     return CHARACTERS.characters[selectedCharacterIndex]
   }, [selectedCharacterIndex])
 
-  // Function to scroll to character start
-  const scrollToCharacterStart = () => {
-    if (characterHeaderRef.current) {
-      characterHeaderRef.current.scrollIntoView({ 
+  // Function to scroll to selector section
+  const scrollToSelector = () => {
+    if (selectorRef.current) {
+      selectorRef.current.scrollIntoView({ 
         behavior: 'smooth',
         block: 'start'
       })
@@ -67,7 +67,7 @@ const Characters = () => {
   const navigateToCharacter = (newIndex: number) => {
     setSelectedCharacterIndex(newIndex)
     // Small delay to ensure the content has updated before scrolling
-    setTimeout(scrollToCharacterStart, 100)
+    setTimeout(scrollToSelector, 100)
   }
 
   return (
@@ -87,7 +87,7 @@ const Characters = () => {
 
         {/* Character Selector */}
         <AnimatedSection delay={200}>
-          <div className="mb-16">
+          <div ref={selectorRef} className="mb-16">
             <div className="mb-6 text-center">
               <h3 className="mb-2 text-lg font-bold text-white">Choose Your Hunter</h3>
               <p className="text-sm text-gray-300">Select a character to learn their story and abilities</p>
@@ -125,7 +125,7 @@ const Characters = () => {
           <article className="mx-auto max-w-6xl">
             {/* Character Header */}
             <AnimatedSection delay={400}>
-              <header ref={characterHeaderRef} className="mb-12">
+              <header className="mb-12">
                 <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
                   {/* Character Portrait */}
                   <div className="lg:col-span-1">
