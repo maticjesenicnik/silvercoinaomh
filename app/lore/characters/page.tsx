@@ -141,18 +141,16 @@ const Characters = () => {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                         
-                        {/* Character Logo Overlay */}
-                        <div className="absolute bottom-4 left-4 right-4">
-                          <div className="flex items-center justify-center">
-                            <div className="flex h-16 w-16 items-center justify-center rounded-full border-2 border-white/20 bg-black/40 backdrop-blur-sm">
-                              <Image 
-                                className="h-10 w-10 object-contain brightness-90" 
-                                src={"/" + selectedCharacter.logo} 
-                                alt={selectedCharacter.name + "'s logo"} 
-                                width={40} 
-                                height={40} 
-                              />
-                            </div>
+                        {/* Character Logo Overlay - Bottom Right */}
+                        <div className="absolute bottom-4 right-4">
+                          <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white/30 bg-black/50 backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:border-white/50">
+                            <Image 
+                              className="h-8 w-8 object-contain brightness-90 transition-all group-hover:brightness-100" 
+                              src={"/" + selectedCharacter.logo} 
+                              alt={selectedCharacter.name + "'s logo"} 
+                              width={32} 
+                              height={32} 
+                            />
                           </div>
                         </div>
                       </div>
@@ -185,9 +183,9 @@ const Characters = () => {
                         </div>
                       </div>
 
-                      {/* Character Description Preview */}
+                      {/* Character Introduction */}
                       <p className="text-lg text-gray-300 leading-relaxed">
-                        {selectedCharacter.description[0].substring(0, 200)}...
+                        Discover the story of {selectedCharacter.name}, one of the legendary monster hunters of Atosia. Each character brings their own unique background, abilities, and motivations to the world of Silver Coin: Age of Monster Hunters.
                       </p>
                     </div>
 
