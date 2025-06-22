@@ -26,7 +26,7 @@ const Stories = () => {
         </div>
 
         {/* Story Selector */}
-        <div className="mb-12">
+        <div className="mb-16">
           <div className="mb-6 text-center">
             <h3 className="mb-2 text-lg font-bold text-white">Choose Your Tale</h3>
             <p className="text-sm text-gray-300">Select a story to dive into the mysteries of Atosia</p>
@@ -51,123 +51,134 @@ const Stories = () => {
 
         {/* Selected Story */}
         {selectedStory && (
-          <article className="group overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300">
+          <article className="mx-auto max-w-4xl">
             {/* Story Header */}
-            <div className="border-b border-white/10 bg-gradient-to-r from-blue-600/20 to-purple-600/20 p-6 lg:p-8">
-              <div className="flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm">
-                  <span className="material-icons-outlined text-2xl text-blue-300">auto_stories</span>
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-white lg:text-xl">{selectedStory.title}</h3>
-                  <p className="text-sm text-gray-300">
-                    Story {selectedStoryIndex + 1} of {STORIES.stories.length}
-                  </p>
+            <header className="mb-12 text-center">
+              <div className="mb-6 flex justify-center">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-white/10">
+                  <span className="material-icons-outlined text-3xl text-blue-300">auto_stories</span>
                 </div>
               </div>
-            </div>
+              
+              <h1 className="mb-4 text-3xl font-bold text-white lg:text-4xl">{selectedStory.title}</h1>
+              
+              <div className="flex items-center justify-center gap-6 text-sm text-gray-400">
+                <div className="flex items-center gap-2">
+                  <span className="material-icons-outlined text-sm">schedule</span>
+                  <span>~{Math.ceil(selectedStory.chapters.join(' ').split(' ').length / 200)} min read</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="material-icons-outlined text-sm">description</span>
+                  <span>{selectedStory.chapters.join(' ').split(' ').length} words</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="material-icons-outlined text-sm">bookmark</span>
+                  <span>Story {selectedStoryIndex + 1} of {STORIES.stories.length}</span>
+                </div>
+              </div>
+
+              {/* Decorative divider */}
+              <div className="mt-8 flex items-center justify-center">
+                <div className="h-px w-24 bg-gradient-to-r from-transparent via-blue-400/50 to-transparent"></div>
+                <div className="mx-4 flex h-2 w-2 items-center justify-center rounded-full bg-blue-400/50"></div>
+                <div className="h-px w-24 bg-gradient-to-r from-transparent via-blue-400/50 to-transparent"></div>
+              </div>
+            </header>
 
             {/* Story Content */}
-            <div className="p-6 lg:p-8">
-              <div className="prose max-w-none space-y-6">
+            <div className="prose max-w-none">
+              <div className="space-y-8">
                 {selectedStory.chapters.map((chapter: string, chapterIndex: number) => (
                   <div 
                     key={chapterIndex}
                     className="group/paragraph relative"
                   >
-                    {/* Decorative line for first paragraph */}
-                    {chapterIndex === 0 && (
-                      <div className="mb-4 flex items-center gap-4">
-                        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-blue-400/50 to-transparent"></div>
-                        <div className="flex h-2 w-2 items-center justify-center rounded-full bg-blue-400/50"></div>
-                        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-blue-400/50 to-transparent"></div>
-                      </div>
-                    )}
-                    
-                    <p className="text-sm text-gray-200 leading-relaxed text-justify relative pl-4 border-l-2 border-transparent group-hover/paragraph:border-blue-400/30 transition-colors duration-300">
-                      <span className="absolute -left-1 top-0 h-full w-0.5 bg-gradient-to-b from-blue-400/20 via-purple-400/20 to-transparent opacity-0 group-hover/paragraph:opacity-100 transition-opacity duration-300"></span>
+                    <p className="text-base text-gray-200 leading-relaxed text-justify relative transition-all duration-300 hover:text-gray-100">
                       {chapter}
                     </p>
                     
-                    {/* Subtle separator between paragraphs */}
+                    {/* Elegant separator between paragraphs */}
                     {chapterIndex < selectedStory.chapters.length - 1 && (
-                      <div className="mt-6 flex justify-center">
-                        <div className="flex items-center gap-2">
+                      <div className="mt-8 flex justify-center">
+                        <div className="flex items-center gap-3">
+                          <div className="h-px w-8 bg-gradient-to-r from-transparent to-gray-600"></div>
+                          <div className="h-1.5 w-1.5 rounded-full bg-gray-500"></div>
                           <div className="h-1 w-1 rounded-full bg-gray-600"></div>
-                          <div className="h-1 w-1 rounded-full bg-gray-500"></div>
-                          <div className="h-1 w-1 rounded-full bg-gray-600"></div>
+                          <div className="h-1.5 w-1.5 rounded-full bg-gray-500"></div>
+                          <div className="h-px w-8 bg-gradient-to-l from-transparent to-gray-600"></div>
                         </div>
                       </div>
                     )}
                   </div>
                 ))}
               </div>
-
-              {/* Story Footer */}
-              <div className="mt-8 flex items-center justify-between border-t border-white/10 pt-6">
-                <div className="flex items-center gap-2 text-xs text-gray-400">
-                  <span className="material-icons-outlined text-sm">schedule</span>
-                  <span>~{Math.ceil(selectedStory.chapters.join(' ').split(' ').length / 200)} min read</span>
-                </div>
-                <div className="flex items-center gap-2 text-xs text-gray-400">
-                  <span className="material-icons-outlined text-sm">description</span>
-                  <span>{selectedStory.chapters.join(' ').split(' ').length} words</span>
-                </div>
-              </div>
             </div>
 
-            {/* Navigation */}
-            <div className="border-t border-white/10 bg-white/5 p-4">
+            {/* Story Navigation */}
+            <nav className="mt-16 border-t border-white/10 pt-8">
               <div className="flex items-center justify-between">
                 <button
                   onClick={() => setSelectedStoryIndex(Math.max(0, selectedStoryIndex - 1))}
                   disabled={selectedStoryIndex === 0}
-                  className="flex items-center gap-2 rounded-lg bg-white/10 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-white/20 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="group flex items-center gap-3 rounded-lg bg-white/5 px-6 py-3 text-sm font-medium text-white transition-all hover:bg-white/10 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105"
                 >
-                  <span className="material-icons-outlined text-lg">chevron_left</span>
-                  Previous Story
+                  <span className="material-icons-outlined text-lg transition-transform group-hover:-translate-x-1">chevron_left</span>
+                  <div className="text-left">
+                    <div className="text-xs text-gray-400">Previous</div>
+                    <div>
+                      {selectedStoryIndex > 0 ? STORIES.stories[selectedStoryIndex - 1].title : 'No previous story'}
+                    </div>
+                  </div>
                 </button>
 
-                <span className="text-sm text-gray-400">
-                  {selectedStoryIndex + 1} / {STORIES.stories.length}
-                </span>
+                <div className="text-center">
+                  <div className="text-xs text-gray-400 mb-1">Story</div>
+                  <div className="text-sm font-medium text-white">
+                    {selectedStoryIndex + 1} of {STORIES.stories.length}
+                  </div>
+                </div>
 
                 <button
                   onClick={() => setSelectedStoryIndex(Math.min(STORIES.stories.length - 1, selectedStoryIndex + 1))}
                   disabled={selectedStoryIndex === STORIES.stories.length - 1}
-                  className="flex items-center gap-2 rounded-lg bg-white/10 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-white/20 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="group flex items-center gap-3 rounded-lg bg-white/5 px-6 py-3 text-sm font-medium text-white transition-all hover:bg-white/10 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105"
                 >
-                  Next Story
-                  <span className="material-icons-outlined text-lg">chevron_right</span>
+                  <div className="text-right">
+                    <div className="text-xs text-gray-400">Next</div>
+                    <div>
+                      {selectedStoryIndex < STORIES.stories.length - 1 ? STORIES.stories[selectedStoryIndex + 1].title : 'No next story'}
+                    </div>
+                  </div>
+                  <span className="material-icons-outlined text-lg transition-transform group-hover:translate-x-1">chevron_right</span>
                 </button>
               </div>
-            </div>
+            </nav>
           </article>
         )}
 
         {/* Call to Action */}
-        <div className="mt-16 text-center">
-          <div className="mx-auto max-w-2xl rounded-2xl border border-white/10 bg-gradient-to-br from-blue-600/10 to-purple-600/10 p-8 backdrop-blur-sm">
-            <div className="mb-4">
-              <span className="material-icons-outlined text-4xl text-blue-300">explore</span>
+        <div className="mt-24 text-center">
+          <div className="mx-auto max-w-2xl">
+            <div className="mb-6">
+              <span className="material-icons-outlined text-5xl text-blue-300">explore</span>
             </div>
-            <h3 className="mb-3 text-xl font-bold text-white">Discover More of Atosia</h3>
-            <p className="mb-6 text-gray-300">
+            <h3 className="mb-4 text-2xl font-bold text-white">Discover More of Atosia</h3>
+            <p className="mb-8 text-lg text-gray-300 leading-relaxed">
               These stories are just the beginning. Explore the kingdoms, meet the characters, and uncover the mysteries that await in Silver Coin: Age of Monster Hunters.
             </p>
-            <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
+            <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
               <a 
                 href="/lore/kingdoms" 
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-6 py-3 font-medium text-white transition-colors hover:bg-blue-700"
+                className="inline-flex items-center justify-center gap-3 rounded-lg bg-blue-600 px-8 py-4 font-medium text-white transition-all hover:bg-blue-700 hover:scale-105"
               >
-                <span className="material-icons-outlined text-lg">public</span>
+                <span className="material-icons-outlined text-xl">public</span>
                 Explore Kingdoms
               </a>
               <a 
                 href="/lore/characters" 
-                className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 bg-white/10 px-6 py-3 font-medium text-white transition-colors hover:bg-white/20"
+                className="inline-flex items-center justify-center gap-3 rounded-lg border border-white/20 bg-white/5 px-8 py-4 font-medium text-white transition-all hover:bg-white/10 hover:scale-105"
               >
-                <span className="material-icons-outlined text-lg">person</span>
+                <span className="material-icons-outlined text-xl">person</span>
                 Meet Characters
               </a>
             </div>
