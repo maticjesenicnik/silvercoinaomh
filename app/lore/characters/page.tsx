@@ -53,12 +53,16 @@ const Characters = () => {
     return CHARACTERS.characters[selectedCharacterIndex]
   }, [selectedCharacterIndex])
 
-  // Function to scroll to selector section
+  // Function to scroll to selector section with proper offset for header
   const scrollToSelector = () => {
     if (selectorRef.current) {
-      selectorRef.current.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
+      const headerHeight = 80 // Approximate header height
+      const elementPosition = selectorRef.current.getBoundingClientRect().top + window.pageYOffset
+      const offsetPosition = elementPosition - headerHeight
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
       })
     }
   }
