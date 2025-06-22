@@ -19,7 +19,7 @@ const AnimatedSection = ({ children, delay = 0 }: { children: React.ReactNode; d
           : 'opacity-0 translate-y-12'
       }`}
       style={{ transitionDelay: `${delay}ms` }}
-    >
+      >
       {children}
     </div>
   )

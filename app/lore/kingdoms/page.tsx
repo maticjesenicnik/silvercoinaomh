@@ -1,10 +1,11 @@
 "use client"
+import { useMemo, useRef, useState } from "react"
 
-import Image from "next/image"
-import { useMemo, useState, useRef } from "react"
 import { PageHeader } from "components/PageHeader"
+import { READ_TIME_PER_WORD } from "data/constants"
 import { KINGDOMS } from "data/kingdoms"
 import { useIntersectionObserver } from "hooks/useIntersectionObserver"
+import Image from "next/image"
 
 const AnimatedSection = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
   const { ref, hasIntersected } = useIntersectionObserver()
@@ -105,11 +106,10 @@ const Kingdoms = () => {
             
             <div className="mx-auto max-w-2xl">
               <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm">
-                <div className="relative aspect-[9/16] overflow-hidden">
+                <div className="relative aspect-[3/4.08] overflow-hidden">
                   <Image 
                     className="h-full w-full object-cover object-center brightness-75 transition-all duration-500 group-hover:scale-105 group-hover:brightness-90" 
-                    width={600} 
-                    height={1067} 
+                    fill
                     src={"/" + KINGDOMS.world.image} 
                     alt={KINGDOMS.world.name}
                     priority
@@ -177,7 +177,7 @@ const Kingdoms = () => {
                   <div className="order-2 lg:order-1">
                     <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm">
                       {/* Fixed aspect ratio container that works for all image orientations */}
-                      <div className="relative aspect-[4/3] overflow-hidden">
+                      <div className="relative overflow-hidden">
                         <Image 
                           className="h-full w-full object-cover object-center brightness-75 transition-all duration-500 group-hover:scale-105 group-hover:brightness-90" 
                           width={800} 
@@ -204,12 +204,8 @@ const Kingdoms = () => {
                           <span>Kingdom of Atosia</span>
                         </div>
                         <div className="flex items-center gap-2">
-                          <span className="material-icons-outlined text-sm">auto_stories</span>
-                          <span>{selectedKingdom.description.length} paragraphs</span>
-                        </div>
-                        <div className="flex items-center gap-2">
                           <span className="material-icons-outlined text-sm">schedule</span>
-                          <span>~{Math.ceil(selectedKingdom.description.join(' ').split(' ').length / 200)} min read</span>
+                          <span>~{Math.ceil(selectedKingdom.description.join(' ').split(' ').length / READ_TIME_PER_WORD)} min read</span>
                         </div>
                         <div className="flex items-center gap-2">
                           <span className="material-icons-outlined text-sm">bookmark</span>
@@ -317,7 +313,7 @@ const Kingdoms = () => {
                       {/* Kingdom Image - Fixed aspect ratio for overview cards */}
                       <div className={`relative overflow-hidden ${kingdomIndex % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
                         {/* Fixed aspect ratio container for consistent overview layout */}
-                        <div className="relative aspect-[4/3] overflow-hidden">
+                        <div className="relative max-w-2xl overflow-hidden">
                           <Image 
                             className="h-full w-full object-cover object-center brightness-75 transition-all duration-500 group-hover:scale-105 group-hover:brightness-90" 
                             width={800} 
@@ -347,7 +343,7 @@ const Kingdoms = () => {
                             <span className="material-icons-outlined text-sm">public</span>
                             <span>Kingdom {kingdomIndex + 1} of {KINGDOMS.kingdoms.length}</span>
                             <span>•</span>
-                            <span>~{Math.ceil(kingdom.description.join(' ').split(' ').length / 200)} min read</span>
+                            <span>~{Math.ceil(kingdom.description.join(' ').split(' ').length / READ_TIME_PER_WORD)} min read</span>
                           </div>
                         </div>
 

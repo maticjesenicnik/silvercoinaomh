@@ -1,7 +1,8 @@
 "use client"
+import { useMemo, useRef, useState } from "react"
 
-import { useMemo, useState, useRef, useEffect } from "react"
 import { PageHeader } from "components/PageHeader"
+import { READ_TIME_PER_WORD } from "data/constants"
 import { STORIES } from "data/stories"
 import { useIntersectionObserver } from "hooks/useIntersectionObserver"
 
@@ -131,7 +132,7 @@ const Stories = () => {
                 <div className="flex items-center justify-center gap-6 text-sm text-gray-400">
                   <div className="flex items-center gap-2">
                     <span className="material-icons-outlined text-sm">schedule</span>
-                    <span>~{Math.ceil(selectedStory.chapters.join(' ').split(' ').length / 200)} min read</span>
+                    <span>~{Math.ceil(selectedStory.chapters.join(' ').split(' ').length / READ_TIME_PER_WORD)} min read</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="material-icons-outlined text-sm">description</span>

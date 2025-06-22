@@ -1,10 +1,11 @@
 "use client"
+import { useMemo, useRef, useState } from "react"
 
-import Image from "next/image"
-import { useMemo, useState, useRef } from "react"
 import { PageHeader } from "components/PageHeader"
 import { CHARACTERS } from "data/characters"
+import { READ_TIME_PER_WORD } from "data/constants"
 import { useIntersectionObserver } from "hooks/useIntersectionObserver"
+import Image from "next/image"
 
 const AnimatedSection = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
   const { ref, hasIntersected } = useIntersectionObserver()
@@ -179,7 +180,7 @@ const Characters = () => {
                         </div>
                         <div className="flex items-center gap-2">
                           <span className="material-icons-outlined text-sm">schedule</span>
-                          <span>~{Math.ceil(selectedCharacter.description.join(' ').split(' ').length / 200)} min read</span>
+                          <span>~{Math.ceil(selectedCharacter.description.join(' ').split(' ').length / READ_TIME_PER_WORD)} min read</span>
                         </div>
                         <div className="flex items-center gap-2">
                           <span className="material-icons-outlined text-sm">bookmark</span>

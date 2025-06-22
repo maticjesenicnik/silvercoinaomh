@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react"
 export function useIntersectionObserver(options?: IntersectionObserverInit) {
   const [isIntersecting, setIsIntersecting] = useState(false)
   const [hasIntersected, setHasIntersected] = useState(false)
-  const ref = useRef<HTMLElement>(null)
+  const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const element = ref.current
@@ -20,7 +20,7 @@ export function useIntersectionObserver(options?: IntersectionObserverInit) {
         threshold: 0.1,
         rootMargin: "0px 0px -10% 0px",
         ...options,
-      }
+      },
     )
 
     observer.observe(element)
