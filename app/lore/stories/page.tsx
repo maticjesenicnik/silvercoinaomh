@@ -69,19 +69,42 @@ const Stories = () => {
 
             {/* Story Content */}
             <div className="p-6 lg:p-8">
-              <div className="prose max-w-none">
+              <div className="prose max-w-none space-y-6">
                 {selectedStory.chapters.map((chapter: string, chapterIndex: number) => (
-                  <p 
-                    key={chapterIndex} 
-                    className="mb-6 last:mb-0 text-sm text-gray-200 leading-relaxed text-justify indent-6 first-letter:text-2xl first-letter:font-bold first-letter:text-blue-300 first-letter:float-left first-letter:mr-1 first-letter:mt-0.5"
+                  <div 
+                    key={chapterIndex}
+                    className="group/paragraph relative"
                   >
-                    {chapter}
-                  </p>
+                    {/* Decorative line for first paragraph */}
+                    {chapterIndex === 0 && (
+                      <div className="mb-4 flex items-center gap-4">
+                        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-blue-400/50 to-transparent"></div>
+                        <div className="flex h-2 w-2 items-center justify-center rounded-full bg-blue-400/50"></div>
+                        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-blue-400/50 to-transparent"></div>
+                      </div>
+                    )}
+                    
+                    <p className="text-sm text-gray-200 leading-relaxed text-justify relative pl-4 border-l-2 border-transparent group-hover/paragraph:border-blue-400/30 transition-colors duration-300">
+                      <span className="absolute -left-1 top-0 h-full w-0.5 bg-gradient-to-b from-blue-400/20 via-purple-400/20 to-transparent opacity-0 group-hover/paragraph:opacity-100 transition-opacity duration-300"></span>
+                      {chapter}
+                    </p>
+                    
+                    {/* Subtle separator between paragraphs */}
+                    {chapterIndex < selectedStory.chapters.length - 1 && (
+                      <div className="mt-6 flex justify-center">
+                        <div className="flex items-center gap-2">
+                          <div className="h-1 w-1 rounded-full bg-gray-600"></div>
+                          <div className="h-1 w-1 rounded-full bg-gray-500"></div>
+                          <div className="h-1 w-1 rounded-full bg-gray-600"></div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 ))}
               </div>
 
               {/* Story Footer */}
-              <div className="mt-6 flex items-center justify-between border-t border-white/10 pt-4">
+              <div className="mt-8 flex items-center justify-between border-t border-white/10 pt-6">
                 <div className="flex items-center gap-2 text-xs text-gray-400">
                   <span className="material-icons-outlined text-sm">schedule</span>
                   <span>~{Math.ceil(selectedStory.chapters.join(' ').split(' ').length / 200)} min read</span>
