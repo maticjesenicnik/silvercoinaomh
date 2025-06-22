@@ -111,10 +111,10 @@ const Videos = () => {
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {filteredVideos.map((video: any, index: number) => (
               <AnimatedCard key={index} delay={600 + index * 100}>
-                <div className="group overflow-hidden rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white/10 hover:shadow-2xl">
-                  <Link href={video.url} target="_blank">
+                <div className="group h-full overflow-hidden rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white/10 hover:shadow-2xl">
+                  <Link href={video.url} target="_blank" className="flex h-full flex-col">
                     {/* Video Thumbnail */}
-                    <div className="relative aspect-video overflow-hidden">
+                    <div className="relative aspect-video overflow-hidden flex-shrink-0">
                       <Image
                         className="h-full w-full object-cover brightness-75 transition-all duration-500 group-hover:scale-110 group-hover:brightness-100"
                         src={"/" + video.image}
@@ -149,13 +149,24 @@ const Videos = () => {
                       </div>
                     </div>
 
-                    {/* Video Info */}
-                    <div className="p-4">
-                      <h3 className="mb-2 line-clamp-2 font-bold text-white transition-colors group-hover:text-blue-300">{video.title}</h3>
+                    {/* Video Info - Fixed Height Container */}
+                    <div className="flex flex-1 flex-col p-4">
+                      {/* Title - Fixed height with line clamping */}
+                      <h3 className="mb-2 line-clamp-2 h-12 font-bold text-white transition-colors group-hover:text-blue-300">
+                        {video.title}
+                      </h3>
 
-                      {video.description && <p className="mb-3 line-clamp-3 text-sm text-gray-400">{video.description}</p>}
+                      {/* Description - Fixed height with line clamping */}
+                      <div className="mb-3 flex-1">
+                        {video.description ? (
+                          <p className="line-clamp-3 h-16 text-sm text-gray-400">{video.description}</p>
+                        ) : (
+                          <div className="h-16"></div>
+                        )}
+                      </div>
 
-                      <div className="flex items-center justify-between text-xs text-gray-500">
+                      {/* Footer - Always at bottom */}
+                      <div className="flex items-center justify-between text-xs text-gray-500 mt-auto">
                         <span>{video.date}</span>
                         <span className="material-icons-outlined text-sm">open_in_new</span>
                       </div>
