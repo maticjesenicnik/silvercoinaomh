@@ -1,16 +1,34 @@
 "use client"
 
-import { useMemo, useState } from "react"
+import { useMemo, useState, useRef, useEffect } from "react"
 import { PageHeader } from "components/PageHeader"
 import { STORIES } from "data/stories"
 
 const Stories = () => {
   const [selectedStoryIndex, setSelectedStoryIndex] = useState<number>(0)
+  const storyHeaderRef = useRef<HTMLElement>(null)
 
   // Get the currently selected story
   const selectedStory = useMemo(() => {
     return STORIES.stories[selectedStoryIndex]
   }, [selectedStoryIndex])
+
+  // Function to scroll to story start
+  const scrollToStoryStart = () => {
+    if (storyHeaderRef.current) {
+      storyHeaderRef.current.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      })
+    }
+  }
+
+  // Handle story navigation with scroll
+  const navigateToStory = (newIndex: number) => {
+    setSelectedStoryIndex(newIndex)
+    // Small delay to ensure the content has updated before scrolling
+    setTimeout(scrollToStoryStart, 100)
+  }
 
   return (
     <div className="min-h-screen">
@@ -36,7 +54,7 @@ const Stories = () => {
             {STORIES.stories.map((story, index) => (
               <button
                 key={index}
-                onClick={() => setSelectedStoryIndex(index)}
+                onClick={() => navigateToStory(index)}
                 className={`rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 ${
                   selectedStoryIndex === index
                     ? "scale-105 bg-blue-600 text-white shadow-lg shadow-blue-600/25"
@@ -53,7 +71,7 @@ const Stories = () => {
         {selectedStory && (
           <article className="mx-auto max-w-4xl">
             {/* Story Header */}
-            <header className="mb-12 text-center">
+            <header ref={storyHeaderRef} className="mb-12 text-center">
               <div className="mb-6 flex justify-center">
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-white/10">
                   <span className="material-icons-outlined text-3xl text-blue-300">auto_stories</span>
@@ -118,7 +136,7 @@ const Stories = () => {
             <nav className="mt-16 border-t border-white/10 pt-8">
               <div className="flex items-center justify-between">
                 <button
-                  onClick={() => setSelectedStoryIndex(Math.max(0, selectedStoryIndex - 1))}
+                  onClick={() => navigateToStory(Math.max(0, selectedStoryIndex - 1))}
                   disabled={selectedStoryIndex === 0}
                   className="group flex items-center gap-3 rounded-lg bg-white/5 px-6 py-3 text-sm font-medium text-white transition-all hover:bg-white/10 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105"
                 >
@@ -139,7 +157,7 @@ const Stories = () => {
                 </div>
 
                 <button
-                  onClick={() => setSelectedStoryIndex(Math.min(STORIES.stories.length - 1, selectedStoryIndex + 1))}
+                  onClick={() => navigateToStory(Math.min(STORIES.stories.length - 1, selectedStoryIndex + 1))}
                   disabled={selectedStoryIndex === STORIES.stories.length - 1}
                   className="group flex items-center gap-3 rounded-lg bg-white/5 px-6 py-3 text-sm font-medium text-white transition-all hover:bg-white/10 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105"
                 >
