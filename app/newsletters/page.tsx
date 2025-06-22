@@ -142,14 +142,14 @@ const Newsletters = () => {
               <div className="mb-2">
                 <span className="material-icons-outlined text-3xl text-green-300">timeline</span>
               </div>
-              <div className="text-2xl font-bold text-white">{years.length - 1}</div>
+              <div className="text-2xl font-bold text-white">7</div>
               <div className="text-sm text-gray-400">Years of Development</div>
             </div>
             <div className="rounded-xl border border-white/10 bg-white/5 p-6 text-center backdrop-blur-sm">
               <div className="mb-2">
                 <span className="material-icons-outlined text-3xl text-purple-300">update</span>
               </div>
-              <div className="text-2xl font-bold text-white">Regular</div>
+              <div className="text-2xl font-bold text-white">As Needed</div>
               <div className="text-sm text-gray-400">Update Schedule</div>
             </div>
           </div>
@@ -274,7 +274,7 @@ const Newsletters = () => {
           <div className="mt-24">
             <div className="mb-8 text-center">
               <h3 className="mb-2 text-xl font-bold text-white">Development Timeline</h3>
-              <p className="text-sm text-gray-300">Our journey from concept to creation</p>
+              <p className="text-sm text-gray-300">Our 7-year journey from concept to creation</p>
             </div>
             
             <div className="relative">
@@ -289,12 +289,12 @@ const Newsletters = () => {
                       <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
                         <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
                           <h4 className="text-lg font-bold text-white">{year}</h4>
-                          <p className="text-sm text-gray-300">{yearNewsletters.length} newsletters published</p>
+                          <p className="text-sm text-gray-300">{yearNewsletters.length} development update{yearNewsletters.length !== 1 ? 's' : ''}</p>
                           <button 
                             onClick={() => setSelectedYear(year)}
                             className="mt-2 text-xs text-blue-300 hover:text-blue-200 transition-colors"
                           >
-                            View {year} newsletters →
+                            View {year} updates →
                           </button>
                         </div>
                       </div>
@@ -322,7 +322,7 @@ const Newsletters = () => {
               </div>
               <h3 className="mb-4 text-xl font-bold text-white">Stay in the Loop</h3>
               <p className="mb-8 text-base text-gray-300 leading-relaxed">
-                Don't miss out on the latest development updates! Subscribe to our newsletter to get exclusive insights, behind-the-scenes content, and be the first to know about major announcements.
+                Don't miss out on the latest development updates! Subscribe to our newsletter to get exclusive insights, behind-the-scenes content, and be the first to know about major announcements when we have news to share.
               </p>
               <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
                 <a 
