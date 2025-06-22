@@ -11,16 +11,16 @@ export default function Page() {
 
       <section className={"relative"}>
         <div className={"absolute left-0 top-0 z-0 h-full w-full"}>
-          <Image src="/cover_art.webp" fill className={"object-cover"} alt={"Background"} />
+          <Image src="/cover_art.webp" fill className="object-cover" alt="Background" />
         </div>
 
         <div className={"relative flex items-center justify-center bg-black/40 px-6 py-32"}>
           <div className={"flex flex-col items-center justify-center gap-x-32 lg:mr-16 lg:flex-row"}>
-            <Image src="/images/frontpage/box.webp" className={"flex-shrink-0 lg:w-1/2"} alt={"Box"} fill />
+            <Image src="/images/frontpage/box.webp" className={"flex-shrink-0 lg:w-1/2"} alt={"Box"} width={1916} height={1515} />
 
             <div className={"flex flex-col items-center gap-6"}>
-              <Image src="/images/kickstarter/late_pledge.webp" alt={"Late pledge"} fill />
-              <Image src="/images/kickstarter/subscribe_for_free_copy.webp" alt={"Subscribe for free copy"} fill />
+              <Image src="/images/kickstarter/late_pledge.webp" alt={"Late pledge"} width={7157} height={1326} />
+              <Image src="/images/kickstarter/subscribe_for_free_copy.webp" alt={"Subscribe for free copy"} width={643} height={153}  />
               <div className={"flex flex-col items-center gap-2"}>
                 <div className={"flex gap-3"}>
                   <label>Email address</label>
@@ -55,7 +55,7 @@ export default function Page() {
       </section>
 
       <section className={"container mx-auto mt-16 flex flex-col items-center gap-6 px-6 text-center"}>
-        <Image src="/images/frontpage/infographics.webp" alt={"Infographic"} fill />
+        <Image src="/images/frontpage/infographics.webp" alt={"Infographic"} width={742} height={97}  />
 
         <h2 className={"text-5xl font-bold"}>SILVER COIN: Age of Monster Hunters</h2>
 
@@ -77,13 +77,13 @@ export default function Page() {
       </section>
 
       <section className={"container mx-auto my-6 px-6"}>
-        <Image src="/images/frontpage/naslovna_slika_igre.webp" alt={"Game art"} fill />
+        <Image src="/images/frontpage/naslovna_slika_igre.webp" alt={"Game art"} width={1500} height={1563}  />
       </section>
 
       <hr className={"container mx-auto px-6"} />
 
       <section className={"container mx-auto my-6 flex flex-col items-center justify-center gap-6 px-6 md:flex-row"}>
-        <Image className={"w-full max-w-xl"} src="/images/frontpage/welcome.webp" alt={"Welcome"} fill />
+        <Image className={"w-full max-w-xl"} src="/images/frontpage/welcome.webp" alt={"Welcome"} width={1500} height={2854}  />
 
         <div className={"flex flex-col items-center gap-4 text-center"}>
           <h2 className={"mb-6 text-5xl font-bold"}>WHY BACK NOW</h2>
@@ -132,10 +132,10 @@ export default function Page() {
 
       <section className={"mt-24 flex flex-col items-center gap-6 px-6"}>
         <a href={"/playtest"}>
-          <Image src="/images/buttons/want_to_playtest.webp" alt={"Want to playtest?"} fill />
+          <Image src="/images/buttons/want_to_playtest.webp" alt={"Want to playtest?"} width={734} height={123}  />
         </a>
         <a href={"/#"}>
-          <Image src="/images/buttons/sign_up_newsletter.webp" alt={"Sign up for newsletter"} fill />
+          <Image src="/images/buttons/sign_up_newsletter.webp" alt={"Sign up for newsletter"} width={648} height={123}  />
         </a>
       </section>
     </>

@@ -13,7 +13,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className={"bg-background"}>
         <Header />
-        <main className={'min-h-screen pb-28 bg-[url("/images/bg_texture.webp")] text-white pt-20 text-2xl'}>{children}</main>
+        <main className={'min-h-screen bg-[url("/images/bg_texture.webp")] text-white pt-20 text-2xl'}>{children}</main>
         <Footer />
       </body>
     </html>
