@@ -107,7 +107,7 @@ const Kingdoms = () => {
               <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm">
                 <div className="relative aspect-[9/16] overflow-hidden">
                   <Image 
-                    className="h-full w-full object-cover brightness-75 transition-all duration-500 group-hover:scale-105 group-hover:brightness-90" 
+                    className="h-full w-full object-cover object-center brightness-75 transition-all duration-500 group-hover:scale-105 group-hover:brightness-90" 
                     width={600} 
                     height={1067} 
                     src={"/" + KINGDOMS.world.image} 
@@ -176,11 +176,12 @@ const Kingdoms = () => {
                   {/* Kingdom Image */}
                   <div className="order-2 lg:order-1">
                     <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm">
-                      <div className="relative aspect-video overflow-hidden">
+                      {/* Fixed aspect ratio container that works for any image dimensions */}
+                      <div className="relative aspect-[4/3] overflow-hidden">
                         <Image 
-                          className="h-full w-full object-cover brightness-75 transition-all duration-500 group-hover:scale-105 group-hover:brightness-90" 
+                          className="h-full w-full object-cover object-center brightness-75 transition-all duration-500 group-hover:scale-105 group-hover:brightness-90" 
                           width={800} 
-                          height={450} 
+                          height={600} 
                           src={"/" + selectedKingdom.image} 
                           alt={selectedKingdom.name}
                           priority
@@ -313,21 +314,24 @@ const Kingdoms = () => {
                 <article className="group cursor-pointer" onClick={() => navigateToKingdom(kingdomIndex)}>
                   <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:scale-[1.02] hover:shadow-2xl">
                     <div className="grid grid-cols-1 gap-0 lg:grid-cols-2">
-                      {/* Kingdom Image */}
-                      <div className={`relative aspect-video overflow-hidden lg:aspect-auto ${kingdomIndex % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
-                        <Image 
-                          className="h-full w-full object-cover brightness-75 transition-all duration-500 group-hover:scale-105 group-hover:brightness-90" 
-                          width={800} 
-                          height={450} 
-                          src={"/" + kingdom.image} 
-                          alt={kingdom.name}
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent lg:bg-gradient-to-r" />
-                        
-                        {/* Click indicator */}
-                        <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-                          <div className="flex h-16 w-16 items-center justify-center rounded-full border border-white/30 bg-white/20 backdrop-blur-sm">
-                            <span className="material-icons-outlined text-2xl text-white">visibility</span>
+                      {/* Kingdom Image - Fixed aspect ratio for consistency */}
+                      <div className={`relative overflow-hidden ${kingdomIndex % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
+                        {/* Consistent aspect ratio container */}
+                        <div className="relative aspect-[4/3] overflow-hidden">
+                          <Image 
+                            className="h-full w-full object-cover object-center brightness-75 transition-all duration-500 group-hover:scale-105 group-hover:brightness-90" 
+                            width={800} 
+                            height={600} 
+                            src={"/" + kingdom.image} 
+                            alt={kingdom.name}
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent lg:bg-gradient-to-r" />
+                          
+                          {/* Click indicator */}
+                          <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+                            <div className="flex h-16 w-16 items-center justify-center rounded-full border border-white/30 bg-white/20 backdrop-blur-sm">
+                              <span className="material-icons-outlined text-2xl text-white">visibility</span>
+                            </div>
                           </div>
                         </div>
                       </div>
