@@ -160,26 +160,26 @@ const Stories = () => {
         <div className="mt-24 text-center">
           <div className="mx-auto max-w-2xl">
             <div className="mb-6">
-              <span className="material-icons-outlined text-5xl text-blue-300">explore</span>
+              <span className="material-icons-outlined text-4xl text-blue-300">explore</span>
             </div>
-            <h3 className="mb-4 text-2xl font-bold text-white">Discover More of Atosia</h3>
-            <p className="mb-8 text-lg text-gray-300 leading-relaxed">
+            <h3 className="mb-4 text-xl font-bold text-white">Discover More of Atosia</h3>
+            <p className="mb-8 text-base text-gray-300 leading-relaxed">
               These stories are just the beginning. Explore the kingdoms, meet the characters, and uncover the mysteries that await in Silver Coin: Age of Monster Hunters.
             </p>
-            <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
+            <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
               <a 
                 href="/lore/kingdoms" 
-                className="inline-flex items-center justify-center gap-3 rounded-lg bg-blue-600 px-8 py-4 font-medium text-white transition-all hover:bg-blue-700 hover:scale-105"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-sm font-medium text-white transition-all hover:bg-blue-700 hover:scale-105"
               >
-                <span className="material-icons-outlined text-xl">public</span>
+                <span className="material-icons-outlined text-lg">public</span>
                 Explore Kingdoms
               </a>
               <a 
                 href="/lore/characters" 
-                className="inline-flex items-center justify-center gap-3 rounded-lg border border-white/20 bg-white/5 px-8 py-4 font-medium text-white transition-all hover:bg-white/10 hover:scale-105"
+                className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 bg-white/5 px-6 py-3 text-sm font-medium text-white transition-all hover:bg-white/10 hover:scale-105"
               >
-                <span className="material-icons-outlined text-xl">person</span>
-                Meet Characters
+                <span className="material-icons-outlined text-lg">person</span>
+                Meet the Characters
               </a>
             </div>
           </div>
