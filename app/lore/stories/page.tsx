@@ -62,7 +62,7 @@ const Stories = () => {
                   <span className="material-icons-outlined text-2xl text-blue-300">auto_stories</span>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white lg:text-2xl">{selectedStory.title}</h3>
+                  <h3 className="text-lg font-bold text-white lg:text-xl">{selectedStory.title}</h3>
                   <p className="text-sm text-gray-300">
                     Story {selectedStoryIndex + 1} of {STORIES.stories.length} • {selectedStory.chapters.length} part{selectedStory.chapters.length !== 1 ? 's' : ''}
                   </p>
@@ -72,16 +72,16 @@ const Stories = () => {
 
             {/* Story Content */}
             <div className="p-6 lg:p-8">
-              <div className="prose prose-lg prose-invert max-w-none">
+              <div className="prose max-w-none">
                 {selectedStory.chapters.map((chapter: string, chapterIndex: number) => (
-                  <div key={chapterIndex} className="mb-8 last:mb-0">
+                  <div key={chapterIndex} className="mb-6 last:mb-0">
                     {selectedStory.chapters.length > 1 && (
-                      <div className="mb-4 flex items-center gap-2">
-                        <div className="h-1 w-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
-                        <span className="text-sm font-medium text-gray-400">Part {chapterIndex + 1}</span>
+                      <div className="mb-3 flex items-center gap-2">
+                        <div className="h-1 w-6 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
+                        <span className="text-xs font-medium text-gray-400">Part {chapterIndex + 1}</span>
                       </div>
                     )}
-                    <p className="text-gray-200 leading-relaxed text-justify indent-8 first-letter:text-4xl first-letter:font-bold first-letter:text-blue-300 first-letter:float-left first-letter:mr-2 first-letter:mt-1">
+                    <p className="text-sm text-gray-200 leading-relaxed text-justify indent-6 first-letter:text-2xl first-letter:font-bold first-letter:text-blue-300 first-letter:float-left first-letter:mr-1 first-letter:mt-0.5">
                       {chapter}
                     </p>
                   </div>
@@ -89,13 +89,13 @@ const Stories = () => {
               </div>
 
               {/* Story Footer */}
-              <div className="mt-8 flex items-center justify-between border-t border-white/10 pt-6">
-                <div className="flex items-center gap-2 text-sm text-gray-400">
-                  <span className="material-icons-outlined text-lg">schedule</span>
+              <div className="mt-6 flex items-center justify-between border-t border-white/10 pt-4">
+                <div className="flex items-center gap-2 text-xs text-gray-400">
+                  <span className="material-icons-outlined text-sm">schedule</span>
                   <span>~{Math.ceil(selectedStory.chapters.join(' ').split(' ').length / 200)} min read</span>
                 </div>
-                <div className="flex items-center gap-2 text-sm text-gray-400">
-                  <span className="material-icons-outlined text-lg">description</span>
+                <div className="flex items-center gap-2 text-xs text-gray-400">
+                  <span className="material-icons-outlined text-sm">description</span>
                   <span>{selectedStory.chapters.join(' ').split(' ').length} words</span>
                 </div>
               </div>
