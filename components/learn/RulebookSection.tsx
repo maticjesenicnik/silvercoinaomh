@@ -1,17 +1,13 @@
-import Image from "next/image"
 import { useIntersectionObserver } from "hooks/useIntersectionObserver"
+import Image from "next/image"
 
 const AnimatedSection = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
   const { ref, hasIntersected } = useIntersectionObserver()
 
   return (
-    <div 
+    <div
       ref={ref}
-      className={`transition-all duration-1000 ease-out ${
-        hasIntersected 
-          ? 'opacity-100 translate-y-0' 
-          : 'opacity-0 translate-y-12'
-      }`}
+      className={`transition-all duration-1000 ease-out ${hasIntersected ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}
@@ -19,22 +15,13 @@ const AnimatedSection = ({ children, delay = 0 }: { children: React.ReactNode; d
   )
 }
 
-const RulebookCard = ({ title, image, subtitle, delay = 0 }: { 
-  title: string; 
-  image: string; 
-  subtitle: string; 
-  delay?: number;
-}) => {
+const RulebookCard = ({ title, image, subtitle, delay = 0 }: { title: string; image: string; subtitle: string; delay?: number }) => {
   const { ref, hasIntersected } = useIntersectionObserver()
 
   return (
-    <div 
+    <div
       ref={ref}
-      className={`transition-all duration-800 ease-out ${
-        hasIntersected 
-          ? 'opacity-100 translate-y-0 scale-100' 
-          : 'opacity-0 translate-y-8 scale-95'
-      }`}
+      className={`transition-all duration-800 ease-out ${hasIntersected ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-95"}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       <div className="group h-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:scale-105 hover:shadow-2xl">
@@ -48,7 +35,7 @@ const RulebookCard = ({ title, image, subtitle, delay = 0 }: {
             height={400}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-          
+
           {/* Download overlay */}
           <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-200 group-hover:opacity-100">
             <div className="flex h-16 w-16 items-center justify-center rounded-full border border-white/30 bg-white/20 backdrop-blur-sm">
@@ -67,11 +54,9 @@ const RulebookCard = ({ title, image, subtitle, delay = 0 }: {
 
         {/* Content */}
         <div className="p-6">
-          <h4 className="mb-2 text-xl font-bold text-white transition-colors group-hover:text-blue-300">
-            {title}
-          </h4>
+          <h4 className="mb-2 text-xl font-bold text-white transition-colors group-hover:text-blue-300">{title}</h4>
           <p className="mb-4 text-gray-300">{subtitle}</p>
-          
+
           {/* Features */}
           <div className="space-y-2 text-sm text-gray-400">
             <div className="flex items-center gap-2">
@@ -113,18 +98,8 @@ export const RulebookSection = () => {
         </div>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-          <RulebookCard
-            title="Standard Rules v1.0.9"
-            image="/images/rulebook/rulebook.webp"
-            subtitle="Complete game rules and mechanics"
-            delay={600}
-          />
-          <RulebookCard
-            title="Scenario Book v1.0.9"
-            image="/images/rulebook/scenario.webp"
-            subtitle="CO-OP and SOLO scenarios"
-            delay={700}
-          />
+          <RulebookCard title="Standard Rules v1.0.9" image="/images/rulebook/rulebook.webp" subtitle="Complete game rules and mechanics" delay={600} />
+          <RulebookCard title="Scenario Book v1.0.9" image="/images/rulebook/scenario.webp" subtitle="CO-OP and SOLO scenarios" delay={700} />
         </div>
 
         {/* Additional info */}
@@ -135,8 +110,8 @@ export const RulebookSection = () => {
             </div>
             <h4 className="mb-2 text-lg font-bold text-white">Living Documents</h4>
             <p className="text-sm text-gray-300">
-              These rulebooks are regularly updated based on playtesting feedback and community input. 
-              Always check for the latest version before your game sessions.
+              These rulebooks are regularly updated based on playtesting feedback and community input. Always check for the latest version before your game
+              sessions.
             </p>
           </div>
         </div>
