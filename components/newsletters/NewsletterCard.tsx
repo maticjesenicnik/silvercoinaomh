@@ -3,16 +3,15 @@ import Link from "next/link"
 
 interface NewsletterCardProps {
   newsletter: {
+    number: number
     title: string
     date: string
     url: string
     image: string
   }
-  index: number
-  totalCount: number
 }
 
-export const NewsletterCard = ({ newsletter, index, totalCount }: NewsletterCardProps) => {
+export const NewsletterCard = ({ newsletter }: NewsletterCardProps) => {
   // Format date for display
   const formatDate = (dateString: string) => {
     const date = new Date(dateString)
@@ -22,9 +21,6 @@ export const NewsletterCard = ({ newsletter, index, totalCount }: NewsletterCard
       day: 'numeric' 
     })
   }
-
-  // Calculate chronological number (oldest = #1, newest = highest number)
-  const chronologicalNumber = totalCount - index
 
   return (
     <article className="group h-full overflow-hidden rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white/10 hover:shadow-2xl">
@@ -45,7 +41,7 @@ export const NewsletterCard = ({ newsletter, index, totalCount }: NewsletterCard
             <div className="flex items-center gap-2 rounded-full border border-white/20 bg-black/60 px-3 py-1 backdrop-blur-sm">
               <span className="material-icons-outlined text-sm text-white">article</span>
               <span className="text-xs font-medium text-white">
-                #{chronologicalNumber}
+                #{newsletter.number}
               </span>
             </div>
           </div>

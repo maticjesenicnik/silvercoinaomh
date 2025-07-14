@@ -32,6 +32,7 @@ export type KingdomsType = {
 
 export type NewslettersType = {
   newsletters: {
+    number: number
     title: string
     date: string
     url: string
