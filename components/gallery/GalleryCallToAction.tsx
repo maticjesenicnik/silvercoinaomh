@@ -24,28 +24,26 @@ export const GalleryCallToAction = () => {
       <div className="mt-24 text-center">
         <div className="mx-auto max-w-2xl">
           <div className="mb-6">
-            <span className="material-icons-outlined text-4xl text-blue-300">brush</span>
+            <span className="material-icons-outlined text-4xl text-blue-300">groups</span>
           </div>
-          <h3 className="mb-4 text-xl font-bold text-white">Bring These Characters to Life</h3>
+          <h3 className="mb-4 text-xl font-bold text-white">Get to Know the Characters</h3>
           <p className="mb-8 text-base text-gray-300 leading-relaxed">
-            Every piece of artwork in Silver Coin: Age of Monster Hunters has been carefully crafted to immerse you in the world of Atosia. Ready to experience these characters and monsters in action?
+            Every piece of artwork in Silver Coin: Age of Monster Hunters has been carefully crafted to immerse you in the world of Atosia. Discover the rich backstories, unique abilities, and compelling lore behind each character and monster.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
             <a 
-              href="https://www.kickstarter.com/projects/bonafidegames/silver-coin-age-of-monster-hunters" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-green-600 px-6 py-3 text-sm font-medium text-white transition-all hover:bg-green-700 hover:scale-105"
+              href="/lore/characters" 
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-sm font-medium text-white transition-all hover:bg-blue-700 hover:scale-105"
             >
-              <span className="material-icons-outlined text-lg">rocket_launch</span>
-              Back on Kickstarter
+              <span className="material-icons-outlined text-lg">person</span>
+              Meet the Characters
             </a>
             <a 
-              href="/playtest" 
+              href="/lore/stories" 
               className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 bg-white/5 px-6 py-3 text-sm font-medium text-white transition-all hover:bg-white/10 hover:scale-105"
             >
-              <span className="material-icons-outlined text-lg">videogame_asset</span>
-              Try the Game
+              <span className="material-icons-outlined text-lg">auto_stories</span>
+              Read the Stories
             </a>
           </div>
         </div>
