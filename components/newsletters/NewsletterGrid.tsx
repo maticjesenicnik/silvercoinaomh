@@ -13,7 +13,7 @@ export const NewsletterGrid = ({ newsletters }: NewsletterGridProps) => {
   return (
     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
       {newsletters.map((newsletter, index) => (
-        <NewsletterCard key={index} newsletter={newsletter} index={index} />
+        <NewsletterCard key={index} newsletter={newsletter} index={index} totalCount={newsletters.length} />
       ))}
     </div>
   )
