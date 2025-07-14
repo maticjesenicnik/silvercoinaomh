@@ -71,7 +71,7 @@ const ImageCard = ({ item, type, delay = 0 }: { item: any; type: 'monster' | 'ch
             className={`h-full w-full object-cover brightness-75 transition-all duration-500 group-hover:scale-110 group-hover:brightness-100 ${
               imageLoaded ? 'opacity-100' : 'opacity-0'
             }`}
-            src={"/" + item.image}
+            src={item.image}
             alt={item.name}
             fill
             onLoad={() => setImageLoaded(true)}
