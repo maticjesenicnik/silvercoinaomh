@@ -6,7 +6,6 @@ import { PageHeader } from "components/PageHeader"
 import { NewsletterCallToAction } from "components/newsletters/NewsletterCallToAction"
 import { NewsletterGrid } from "components/newsletters/NewsletterGrid"
 import { NewsletterResultsCount } from "components/newsletters/NewsletterResultsCount"
-import { NewsletterStats } from "components/newsletters/NewsletterStats"
 import { NewsletterTimeline } from "components/newsletters/NewsletterTimeline"
 import { NoNewslettersFound } from "components/newsletters/NoNewslettersFound"
 import { YearFilter } from "components/newsletters/YearFilter"
@@ -55,12 +54,9 @@ const Newsletters = () => {
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-2xl font-bold text-white lg:text-3xl">Development Chronicles</h2>
           <p className="mx-auto max-w-3xl text-lg text-gray-300 leading-relaxed">
-            Follow our journey from concept to creation through detailed newsletters that chronicle the development of Silver Coin: Age of Monster Hunters. Get insights into our design process, behind-the-scenes updates, and exclusive content.
+            Follow our journey from concept to creation through detailed development updates that chronicle the making of Silver Coin: Age of Monster Hunters. Get insights into our design process, behind-the-scenes content, and see how the game evolved over 7 years.
           </p>
         </div>
-
-        {/* Newsletter Stats */}
-        <NewsletterStats totalNewsletters={NEWSLETTERS.newsletters.length} />
 
         {/* Year Filter */}
         <YearFilter 

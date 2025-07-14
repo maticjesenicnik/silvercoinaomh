@@ -3,19 +3,21 @@ export const NewsletterCallToAction = () => {
     <div className="mt-24 text-center">
       <div className="mx-auto max-w-2xl">
         <div className="mb-6">
-          <span className="material-icons-outlined text-4xl text-blue-300">mail</span>
+          <span className="material-icons-outlined text-4xl text-blue-300">campaign</span>
         </div>
-        <h3 className="mb-4 text-xl font-bold text-white">Stay in the Loop</h3>
+        <h3 className="mb-4 text-xl font-bold text-white">Support Our Journey</h3>
         <p className="mb-8 text-base text-gray-300 leading-relaxed">
-          Don't miss out on the latest development updates! Subscribe to our newsletter to get exclusive insights, behind-the-scenes content, and be the first to know about major announcements when we have news to share.
+          Follow our development story through these newsletters and see how Silver Coin: Age of Monster Hunters has evolved over the years. Ready to join the adventure? Back our project on Kickstarter!
         </p>
         <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
           <a 
-            href="/#newsletter-signup" 
-            className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-sm font-medium text-white transition-all hover:bg-blue-700 hover:scale-105"
+            href="https://www.kickstarter.com/projects/bonafidegames/silver-coin-age-of-monster-hunters" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-lg bg-green-600 px-6 py-3 text-sm font-medium text-white transition-all hover:bg-green-700 hover:scale-105"
           >
-            <span className="material-icons-outlined text-lg">mail</span>
-            Subscribe to Newsletter
+            <span className="material-icons-outlined text-lg">rocket_launch</span>
+            Back on Kickstarter
           </a>
           <a 
             href="/videos" 
