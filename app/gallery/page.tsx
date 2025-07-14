@@ -25,65 +25,65 @@ const AnimatedSection = ({ children, delay = 0 }: { children: React.ReactNode; d
   )
 }
 
-const AnimatedCard = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
+const MasonryItem = ({ item, type, delay = 0 }: { item: any; type: 'monster' | 'character'; delay?: number }) => {
   const { ref, hasIntersected } = useIntersectionObserver()
+  const [imageLoaded, setImageLoaded] = useState(false)
+  const [imageError, setImageError] = useState(false)
+  const [imageHeight, setImageHeight] = useState<number>(0)
+
+  const handleImageLoad = (event: any) => {
+    const img = event.target
+    setImageHeight(img.naturalHeight)
+    setImageLoaded(true)
+  }
 
   return (
     <div 
       ref={ref}
       className={`transition-all duration-800 ease-out ${
         hasIntersected 
-          ? 'opacity-100 translate-y-0 scale-100' 
-          : 'opacity-0 translate-y-8 scale-95'
+          ? 'opacity-100 translate-y-0' 
+          : 'opacity-0 translate-y-8'
       }`}
       style={{ transitionDelay: `${delay}ms` }}
     >
-      {children}
-    </div>
-  )
-}
+      <div className="group relative mb-6 overflow-hidden rounded-2xl bg-white/5 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:bg-white/10 hover:shadow-2xl">
+        {/* Loading placeholder */}
+        {!imageLoaded && !imageError && (
+          <div className="flex aspect-[3/4] items-center justify-center bg-white/5">
+            <div className="h-8 w-8 animate-spin rounded-full border-2 border-blue-400 border-t-transparent"></div>
+          </div>
+        )}
 
-const ImageCard = ({ item, type, delay = 0 }: { item: any; type: 'monster' | 'character'; delay?: number }) => {
-  const [imageLoaded, setImageLoaded] = useState(false)
-  const [imageError, setImageError] = useState(false)
+        {/* Error placeholder */}
+        {imageError && (
+          <div className="flex aspect-[3/4] flex-col items-center justify-center bg-white/5 text-gray-400">
+            <span className="material-icons-outlined mb-2 text-4xl">broken_image</span>
+            <span className="text-sm">Image not available</span>
+          </div>
+        )}
 
-  return (
-    <AnimatedCard delay={delay}>
-      <div className="group h-full overflow-hidden rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white/10 hover:shadow-2xl">
-        <div className="relative aspect-[3/4] overflow-hidden">
-          {/* Loading placeholder */}
-          {!imageLoaded && !imageError && (
-            <div className="absolute inset-0 flex items-center justify-center bg-white/5">
-              <div className="h-8 w-8 animate-spin rounded-full border-2 border-blue-400 border-t-transparent"></div>
-            </div>
-          )}
-
-          {/* Error placeholder */}
-          {imageError && (
-            <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/5 text-gray-400">
-              <span className="material-icons-outlined mb-2 text-4xl">broken_image</span>
-              <span className="text-sm">Image not available</span>
-            </div>
-          )}
-
-          {/* Main image */}
+        {/* Main image */}
+        <div className="relative overflow-hidden">
           <Image
-            className={`h-full w-full object-cover brightness-75 transition-all duration-500 group-hover:scale-110 group-hover:brightness-100 ${
+            className={`w-full object-cover brightness-90 transition-all duration-500 group-hover:scale-105 group-hover:brightness-100 ${
               imageLoaded ? 'opacity-100' : 'opacity-0'
             }`}
             src={item.image}
             alt={item.name}
-            fill
-            onLoad={() => setImageLoaded(true)}
+            width={400}
+            height={imageHeight || 500}
+            onLoad={handleImageLoad}
             onError={() => setImageError(true)}
+            style={{ height: 'auto' }}
           />
 
           {/* Gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
           {/* Type badge */}
-          <div className="absolute left-3 top-3">
-            <div className="flex items-center gap-2 rounded-full border border-white/20 bg-black/60 px-3 py-1 backdrop-blur-sm">
+          <div className="absolute left-4 top-4">
+            <div className="flex items-center gap-2 rounded-full border border-white/20 bg-black/60 px-3 py-1.5 backdrop-blur-sm">
               <span className="material-icons-outlined text-sm text-white">
                 {type === 'monster' ? 'pets' : 'person'}
               </span>
@@ -106,7 +106,7 @@ const ImageCard = ({ item, type, delay = 0 }: { item: any; type: 'monster' | 'ch
           </div>
         </div>
       </div>
-    </AnimatedCard>
+    </div>
   )
 }
 
@@ -218,12 +218,12 @@ const Gallery = () => {
           </div>
         </AnimatedSection>
 
-        {/* Gallery Grid */}
+        {/* Masonry Gallery */}
         <AnimatedSection delay={400}>
           {filteredItems.length > 0 ? (
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+            <div className="columns-1 gap-6 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5">
               {filteredItems.map((item, index) => (
-                <ImageCard
+                <MasonryItem
                   key={`${item.type}-${item.name}`}
                   item={item}
                   type={item.type}
