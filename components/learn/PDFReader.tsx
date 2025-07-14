@@ -25,11 +25,6 @@ const Page = dynamic(() => import("react-pdf").then(mod => ({ default: mod.Page 
   )
 })
 
-// Set up PDF.js worker
-if (typeof window !== 'undefined') {
-  pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`
-}
-
 interface PDFReaderProps {
   pdfUrl: string
   title: string
@@ -44,10 +39,17 @@ export const PDFReader = ({ pdfUrl, title, onClose }: PDFReaderProps) => {
   const [scale, setScale] = useState<number>(1.0)
   const [isClient, setIsClient] = useState<boolean>(false)
 
-  // Ensure we're on the client side
-  useState(() => {
+  // Set up PDF.js worker and ensure we're on the client side
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      // Set up the worker
+      pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+        'pdfjs-dist/build/pdf.worker.min.js',
+        import.meta.url,
+      ).toString()
+    }
     setIsClient(true)
-  })
+  }, [])
 
   const onDocumentLoadSuccess = useCallback(({ numPages }: { numPages: number }) => {
     setNumPages(numPages)
@@ -58,7 +60,8 @@ export const PDFReader = ({ pdfUrl, title, onClose }: PDFReaderProps) => {
   const onDocumentLoadError = useCallback((error: Error) => {
     setError(`Failed to load PDF: ${error.message}. Please try downloading instead.`)
     setLoading(false)
-    console.error("PDF load error:", error, "PDF URL:", pdfUrl)
+    console.error("PDF load error:", error)
+    console.log("PDF URL:", pdfUrl)
   }, [])
 
   const goToPrevPage = () => {
@@ -221,11 +224,6 @@ export const PDFReader = ({ pdfUrl, title, onClose }: PDFReaderProps) => {
                   onLoadError={onDocumentLoadError}
                   loading=""
                   error=""
-                  options={{
-                    cMapUrl: 'https://unpkg.com/pdfjs-dist@3.11.174/cmaps/',
-                    cMapPacked: true,
-                    standardFontDataUrl: 'https://unpkg.com/pdfjs-dist@3.11.174/standard_fonts/',
-                  }}
                 >
                   <div className="flex gap-2">
                     {/* Left Page */}
