@@ -1,9 +1,29 @@
 "use client"
 
 import { useState, useCallback } from "react"
-import { Document, Page, pdfjs } from "react-pdf"
+import { pdfjs } from "react-pdf"
+import dynamic from "next/dynamic"
 import "react-pdf/dist/Page/AnnotationLayer.css"
 import "react-pdf/dist/Page/TextLayer.css"
+
+// Dynamically import PDF components to prevent SSR issues
+const Document = dynamic(() => import("react-pdf").then(mod => ({ default: mod.Document })), {
+  ssr: false,
+  loading: () => (
+    <div className="flex h-96 w-full items-center justify-center bg-white/5">
+      <div className="h-6 w-6 animate-spin rounded-full border-2 border-blue-400 border-t-transparent"></div>
+    </div>
+  )
+})
+
+const Page = dynamic(() => import("react-pdf").then(mod => ({ default: mod.Page })), {
+  ssr: false,
+  loading: () => (
+    <div className="flex h-96 w-72 items-center justify-center bg-white/5">
+      <div className="h-6 w-6 animate-spin rounded-full border-2 border-blue-400 border-t-transparent"></div>
+    </div>
+  )
+})
 
 // Set up PDF.js worker
 if (typeof window !== 'undefined') {
