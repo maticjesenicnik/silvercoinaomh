@@ -6,7 +6,9 @@ import "react-pdf/dist/Page/AnnotationLayer.css"
 import "react-pdf/dist/Page/TextLayer.css"
 
 // Set up PDF.js worker
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`
+if (typeof window !== 'undefined') {
+  pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`
+}
 
 interface PDFReaderProps {
   pdfUrl: string
@@ -20,6 +22,12 @@ export const PDFReader = ({ pdfUrl, title, onClose }: PDFReaderProps) => {
   const [loading, setLoading] = useState<boolean>(true)
   const [error, setError] = useState<string>("")
   const [scale, setScale] = useState<number>(1.0)
+  const [isClient, setIsClient] = useState<boolean>(false)
+
+  // Ensure we're on the client side
+  useState(() => {
+    setIsClient(true)
+  })
 
   const onDocumentLoadSuccess = useCallback(({ numPages }: { numPages: number }) => {
     setNumPages(numPages)
@@ -75,6 +83,31 @@ export const PDFReader = ({ pdfUrl, title, onClose }: PDFReaderProps) => {
   const leftPage = currentPage
   const rightPage = currentPage + 1
 
+  // Don't render PDF components on server
+  if (!isClient) {
+    return (
+      <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm">
+        <div className="flex h-full flex-col">
+          <div className="flex items-center justify-between border-b border-white/10 bg-black/50 p-4">
+            <h3 className="text-lg font-bold text-white">{title}</h3>
+            <button
+              onClick={onClose}
+              className="rounded-lg p-2 text-white transition-colors hover:bg-white/20"
+              title="Close"
+            >
+              <span className="material-icons-outlined text-xl">close</span>
+            </button>
+          </div>
+          <div className="flex flex-1 flex-col items-center justify-center overflow-auto p-4">
+            <div className="flex items-center gap-3 text-white">
+              <div className="h-6 w-6 animate-spin rounded-full border-2 border-blue-400 border-t-transparent"></div>
+              <span>Loading PDF reader...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
   return (
     <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm">
       <div className="flex h-full flex-col">
@@ -168,6 +201,11 @@ export const PDFReader = ({ pdfUrl, title, onClose }: PDFReaderProps) => {
                   onLoadError={onDocumentLoadError}
                   loading=""
                   error=""
+                  options={{
+                    cMapUrl: 'https://unpkg.com/pdfjs-dist@3.11.174/cmaps/',
+                    cMapPacked: true,
+                    standardFontDataUrl: 'https://unpkg.com/pdfjs-dist@3.11.174/standard_fonts/',
+                  }}
                 >
                   <div className="flex gap-2">
                     {/* Left Page */}
@@ -185,6 +223,8 @@ export const PDFReader = ({ pdfUrl, title, onClose }: PDFReaderProps) => {
                             <span>Failed to load page</span>
                           </div>
                         }
+                        renderTextLayer={false}
+                        renderAnnotationLayer={false}
                       />
                     </div>
 
@@ -204,6 +244,8 @@ export const PDFReader = ({ pdfUrl, title, onClose }: PDFReaderProps) => {
                               <span>Failed to load page</span>
                             </div>
                           }
+                          renderTextLayer={false}
+                          renderAnnotationLayer={false}
                         />
                       </div>
                     )}
