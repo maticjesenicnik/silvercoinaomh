@@ -55,7 +55,7 @@ export const NewsletterCard = ({ newsletter }: NewsletterCardProps) => {
 
           {/* Date Badge */}
           <div className="absolute bottom-3 right-3">
-            <div className="rounded-lg border border-white/20 bg-black/60 px-2 py-1 backdrop-blur-sm">
+            <div className="rounded-lg border border-white/20 bg-black/60 px-2 py-0.5 backdrop-blur-sm">
               <span className="text-xs font-medium text-white">{new Date(newsletter.date).getFullYear()}</span>
             </div>
           </div>
