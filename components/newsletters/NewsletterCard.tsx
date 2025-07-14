@@ -22,12 +22,6 @@ export const NewsletterCard = ({ newsletter, index }: NewsletterCardProps) => {
     })
   }
 
-  // Get newsletter number from title
-  const getNewsletterNumber = (title: string) => {
-    const match = title.match(/#(\d+)/)
-    return match ? match[1] : null
-  }
-
   return (
     <article className="group h-full overflow-hidden rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white/10 hover:shadow-2xl">
       <Link href={newsletter.url} target="_blank" className="flex h-full flex-col">
@@ -47,7 +41,7 @@ export const NewsletterCard = ({ newsletter, index }: NewsletterCardProps) => {
             <div className="flex items-center gap-2 rounded-full border border-white/20 bg-black/60 px-3 py-1 backdrop-blur-sm">
               <span className="material-icons-outlined text-sm text-white">article</span>
               <span className="text-xs font-medium text-white">
-                {getNewsletterNumber(newsletter.title) ? `#${getNewsletterNumber(newsletter.title)}` : 'Newsletter'}
+                #{index + 1}
               </span>
             </div>
           </div>
