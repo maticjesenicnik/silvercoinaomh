@@ -56,9 +56,9 @@ export const PDFReader = ({ pdfUrl, title, onClose }: PDFReaderProps) => {
   }, [])
 
   const onDocumentLoadError = useCallback((error: Error) => {
-    setError("Failed to load PDF. Please try downloading instead.")
+    setError(`Failed to load PDF: ${error.message}. Please try downloading instead.`)
     setLoading(false)
-    console.error("PDF load error:", error)
+    console.error("PDF load error:", error, "PDF URL:", pdfUrl)
   }, [])
 
   const goToPrevPage = () => {
