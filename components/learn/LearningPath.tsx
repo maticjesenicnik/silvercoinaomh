@@ -43,13 +43,13 @@ const PathStep = ({
       }`}
       style={{ transitionDelay: `${delay}ms` }}
     >
-      <div className="group relative">
+      <div className="group relative h-full">
         {/* Connector line */}
         {number < 4 && (
           <div className="absolute left-8 top-16 h-16 w-px bg-gradient-to-b from-blue-600 to-purple-600 lg:left-1/2 lg:top-8 lg:h-px lg:w-full lg:-translate-x-1/2"></div>
         )}
         
-        <div className="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:scale-105">
+        <div className="flex h-full flex-col rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:scale-105">
           {/* Step number and icon */}
           <div className="mb-4 flex items-center gap-4">
             <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue-600/20 to-purple-600/20 border border-white/10">
@@ -63,7 +63,7 @@ const PathStep = ({
           <h4 className="mb-3 text-lg font-bold text-white group-hover:text-blue-300 transition-colors">
             {title}
           </h4>
-          <p className="text-sm text-gray-300 leading-relaxed">
+          <p className="flex-1 text-sm text-gray-300 leading-relaxed">
             {description}
           </p>
         </div>
