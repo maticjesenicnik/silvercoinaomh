@@ -35,8 +35,16 @@ const Gallery = () => {
 
   // Combine all items with type information
   const allItems = useMemo(() => {
-    const monsters = GALLERY.monsters.map(monster => ({ ...monster, type: 'monster' as const }))
-    const characters = GALLERY.characters.map(character => ({ ...character, type: 'character' as const }))
+    const monsters = GALLERY.monsters.map(monster => ({ 
+      name: monster.name, 
+      image: monster.image, 
+      type: 'monster' as const 
+    }))
+    const characters = GALLERY.characters.map(character => ({ 
+      name: character.name, 
+      image: character.image, 
+      type: 'character' as const 
+    }))
     return [...monsters, ...characters]
   }, [])
 
@@ -45,8 +53,10 @@ const Gallery = () => {
     let items = allItems
 
     // Filter by category
-    if (selectedCategory !== "All") {
-      items = items.filter(item => item.type === selectedCategory.toLowerCase())
+    if (selectedCategory === "Monsters") {
+      items = items.filter(item => item.type === 'monster')
+    } else if (selectedCategory === "Characters") {
+      items = items.filter(item => item.type === 'character')
     }
 
     // Filter by search query
@@ -65,7 +75,9 @@ const Gallery = () => {
   // Get count for each category
   const getCategoryCount = (category: string) => {
     if (category === "All") return allItems.length
-    return allItems.filter(item => item.type === category.toLowerCase()).length
+    if (category === "Monsters") return allItems.filter(item => item.type === 'monster').length
+    if (category === "Characters") return allItems.filter(item => item.type === 'character').length
+    return 0
   }
 
   return (

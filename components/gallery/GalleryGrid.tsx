@@ -12,16 +12,17 @@ interface GalleryGridProps {
   items: GalleryItem[]
 }
 
-const GalleryItem = ({ item, type, delay = 0 }: { item: any; type: 'monster' | 'character'; delay?: number }) => {
+const GalleryItem = ({ item, delay = 0 }: { item: GalleryItem; delay?: number }) => {
   const { ref, hasIntersected } = useIntersectionObserver()
   const [imageLoaded, setImageLoaded] = useState(false)
   const [imageError, setImageError] = useState(false)
-  const [imageHeight, setImageHeight] = useState<number>(0)
 
-  const handleImageLoad = (event: any) => {
-    const img = event.target
-    setImageHeight(img.naturalHeight)
+  const handleImageLoad = () => {
     setImageLoaded(true)
+  }
+
+  const handleImageError = () => {
+    setImageError(true)
   }
 
   return (
@@ -34,35 +35,35 @@ const GalleryItem = ({ item, type, delay = 0 }: { item: any; type: 'monster' | '
       }`}
       style={{ transitionDelay: `${delay}ms` }}
     >
-      <div className="group relative mb-6 overflow-hidden rounded-2xl bg-white/5 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:bg-white/10 hover:shadow-2xl">
-        {/* Loading placeholder */}
-        {!imageLoaded && !imageError && (
-          <div className="flex aspect-[3/4] items-center justify-center bg-white/5">
-            <div className="h-8 w-8 animate-spin rounded-full border-2 border-blue-400 border-t-transparent"></div>
-          </div>
-        )}
+      <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:bg-white/10 hover:shadow-2xl">
+        {/* Fixed aspect ratio container */}
+        <div className="relative aspect-[3/4] overflow-hidden">
+          {/* Loading placeholder */}
+          {!imageLoaded && !imageError && (
+            <div className="absolute inset-0 flex items-center justify-center bg-white/5">
+              <div className="h-8 w-8 animate-spin rounded-full border-2 border-blue-400 border-t-transparent"></div>
+            </div>
+          )}
 
-        {/* Error placeholder */}
-        {imageError && (
-          <div className="flex aspect-[3/4] flex-col items-center justify-center bg-white/5 text-gray-400">
-            <span className="material-icons-outlined mb-2 text-4xl">broken_image</span>
-            <span className="text-sm">Image not available</span>
-          </div>
-        )}
+          {/* Error placeholder */}
+          {imageError && (
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/5 text-gray-400">
+              <span className="material-icons-outlined mb-2 text-4xl">broken_image</span>
+              <span className="text-sm">Image not available</span>
+            </div>
+          )}
 
-        {/* Main image */}
-        <div className="relative overflow-hidden">
+          {/* Main image */}
           <Image
-            className={`w-full object-cover brightness-90 transition-all duration-500 group-hover:scale-105 group-hover:brightness-100 ${
+            className={`h-full w-full object-cover brightness-90 transition-all duration-500 group-hover:scale-105 group-hover:brightness-100 ${
               imageLoaded ? 'opacity-100' : 'opacity-0'
             }`}
             src={item.image}
             alt={item.name}
-            width={400}
-            height={imageHeight || 500}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
             onLoad={handleImageLoad}
-            onError={() => setImageError(true)}
-            style={{ height: 'auto' }}
+            onError={handleImageError}
           />
 
           {/* Gradient overlay */}
@@ -72,9 +73,9 @@ const GalleryItem = ({ item, type, delay = 0 }: { item: any; type: 'monster' | '
           <div className="absolute left-4 top-4">
             <div className="flex items-center gap-2 rounded-full border border-white/20 bg-black/60 px-3 py-1.5 backdrop-blur-sm">
               <span className="material-icons-outlined text-sm text-white">
-                {type === 'monster' ? 'pets' : 'person'}
+                {item.type === 'monster' ? 'pets' : 'person'}
               </span>
-              <span className="text-xs font-medium capitalize text-white">{type}</span>
+              <span className="text-xs font-medium capitalize text-white">{item.type}</span>
             </div>
           </div>
 
@@ -111,12 +112,11 @@ export const GalleryGrid = ({ items }: GalleryGridProps) => {
   }
 
   return (
-    <div className="columns-1 gap-6 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5">
+    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
       {items.map((item, index) => (
         <GalleryItem
           key={`${item.type}-${item.name}`}
           item={item}
-          type={item.type}
           delay={index * 50}
         />
       ))}
