@@ -1,24 +1,15 @@
 import Image from "next/image"
 import Link from "next/link"
+import { NewsletterType } from "types"
 
-interface NewsletterCardProps {
-  newsletter: {
-    number: number
-    title: string
-    date: string
-    url: string
-    image: string
-  }
-}
-
-export const NewsletterCard = ({ newsletter }: NewsletterCardProps) => {
+export const NewsletterCard = ({ newsletter }: { newsletter: NewsletterType }) => {
   // Format date for display
   const formatDate = (dateString: string) => {
     const date = new Date(dateString)
-    return date.toLocaleDateString('en-US', { 
-      year: 'numeric', 
-      month: 'long', 
-      day: 'numeric' 
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
     })
   }
 
@@ -40,9 +31,7 @@ export const NewsletterCard = ({ newsletter }: NewsletterCardProps) => {
           <div className="absolute left-3 top-3">
             <div className="flex items-center gap-2 rounded-full border border-white/20 bg-black/60 px-3 py-1 backdrop-blur-sm">
               <span className="material-icons-outlined text-sm text-white">article</span>
-              <span className="text-xs font-medium text-white">
-                #{newsletter.number}
-              </span>
+              <span className="text-xs font-medium text-white">#{newsletter.number}</span>
             </div>
           </div>
 
@@ -55,7 +44,7 @@ export const NewsletterCard = ({ newsletter }: NewsletterCardProps) => {
 
           {/* Date Badge */}
           <div className="absolute bottom-3 right-3">
-            <div className="rounded-lg border border-white/20 bg-black/60 px-2 py-0.5 backdrop-blur-sm">
+            <div className="flex items-center rounded-lg border border-white/20 bg-black/60 p-2 backdrop-blur-sm">
               <span className="text-xs font-medium text-white">{new Date(newsletter.date).getFullYear()}</span>
             </div>
           </div>
@@ -64,9 +53,7 @@ export const NewsletterCard = ({ newsletter }: NewsletterCardProps) => {
         {/* Newsletter Content */}
         <div className="flex flex-1 flex-col p-6">
           {/* Title */}
-          <h3 className="mb-3 line-clamp-2 text-lg font-bold text-white transition-colors group-hover:text-blue-300">
-            {newsletter.title}
-          </h3>
+          <h3 className="mb-3 line-clamp-2 text-lg font-bold text-white transition-colors group-hover:text-blue-300">{newsletter.title}</h3>
 
           {/* Date and Meta Info */}
           <div className="mb-4 flex items-center gap-4 text-sm text-gray-400">
@@ -83,7 +70,7 @@ export const NewsletterCard = ({ newsletter }: NewsletterCardProps) => {
           {/* Newsletter Description/Preview */}
           <div className="mb-4 flex-1">
             <p className="line-clamp-3 text-sm text-gray-300 leading-relaxed">
-              Get the latest updates on Silver Coin: Age of Monster Hunters development, including new artwork, gameplay mechanics, team insights, and behind-the-scenes content from our passionate development team.
+              {newsletter.preview || "This is a preview of the newsletter content. It provides a brief overview of what to expect in this edition."}
             </p>
           </div>
 

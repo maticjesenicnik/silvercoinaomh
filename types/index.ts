@@ -30,14 +30,17 @@ export type KingdomsType = {
   }[]
 }
 
-export type NewslettersType = {
-  newsletters: {
-    number: number
+export type NewsletterType = {
+  number: number
     title: string
+    preview: string
     date: string
     url: string
     image: string
-  }[]
+}
+
+export type NewslettersType = {
+  newsletters: NewsletterType[]
 }
 
 export type PodcastsType = {
