@@ -1,17 +1,13 @@
-import Image from "next/image"
 import { useIntersectionObserver } from "hooks/useIntersectionObserver"
+import Image from "next/image"
 
 const AnimatedSection = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
   const { ref, hasIntersected } = useIntersectionObserver()
 
   return (
-    <div 
+    <div
       ref={ref}
-      className={`transition-all duration-1000 ease-out ${
-        hasIntersected 
-          ? 'opacity-100 translate-y-0' 
-          : 'opacity-0 translate-y-12'
-      }`}
+      className={`transition-all duration-1000 ease-out ${hasIntersected ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}
@@ -40,7 +36,7 @@ export const AccessMethods = () => {
                 height={714}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-              
+
               {/* Steam Badge */}
               <div className="absolute left-4 top-4">
                 <div className="flex items-center gap-2 rounded-full border border-white/20 bg-black/60 px-3 py-1.5 backdrop-blur-sm">
@@ -53,9 +49,10 @@ export const AccessMethods = () => {
             <div className="p-6">
               <h4 className="mb-3 text-xl font-bold text-white">Via Steam</h4>
               <p className="mb-4 text-gray-300">
-                Download Steam (or open if you already have it), search for "Tabletopia" in the store, and click the green "Play Game" button.
+                Download Steam (or open if you already have it), search for &quot;Tabletopia&quot; in the store, and click the green &quot;Play Game&quot;
+                button.
               </p>
-              
+
               <div className="space-y-2 text-sm text-gray-400">
                 <div className="flex items-center gap-2">
                   <span className="material-icons-outlined text-sm text-green-400">check</span>
@@ -84,7 +81,7 @@ export const AccessMethods = () => {
                 height={466}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-              
+
               {/* Browser Badge */}
               <div className="absolute left-4 top-4">
                 <div className="flex items-center gap-2 rounded-full border border-white/20 bg-black/60 px-3 py-1.5 backdrop-blur-sm">
@@ -97,9 +94,9 @@ export const AccessMethods = () => {
             <div className="p-6">
               <h4 className="mb-3 text-xl font-bold text-white">Via Browser</h4>
               <p className="mb-4 text-gray-300">
-                Simply search for "Tabletopia" in Google and click the first link. No downloads required - start playing immediately!
+                Simply search for &quot;Tabletopia&quot; in Google and click the first link. No downloads required - start playing immediately!
               </p>
-              
+
               <div className="space-y-2 text-sm text-gray-400">
                 <div className="flex items-center gap-2">
                   <span className="material-icons-outlined text-sm text-orange-400">check</span>

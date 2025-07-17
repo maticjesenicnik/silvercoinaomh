@@ -2,12 +2,12 @@
 
 import { useMemo, useState } from "react"
 
-import { PageHeader } from "components/PageHeader"
-import { GalleryTabs } from "components/gallery/GalleryTabs"
-import { GallerySearch } from "components/gallery/GallerySearch"
-import { GalleryGrid } from "components/gallery/GalleryGrid"
-import { GalleryStats } from "components/gallery/GalleryStats"
 import { GalleryCallToAction } from "components/gallery/GalleryCallToAction"
+import { GalleryGrid } from "components/gallery/GalleryGrid"
+import { GallerySearch } from "components/gallery/GallerySearch"
+import { GalleryStats } from "components/gallery/GalleryStats"
+import { GalleryTabs } from "components/gallery/GalleryTabs"
+import { PageHeader } from "components/PageHeader"
 import { GALLERY } from "data/gallery"
 import { useIntersectionObserver } from "hooks/useIntersectionObserver"
 
@@ -125,7 +125,7 @@ const Gallery = () => {
               <p className="text-sm text-gray-400">
                 Showing <span className="font-semibold text-white">{filteredItems.length}</span>
                 {selectedCategory !== "All" && <span> {selectedCategory.toLowerCase()}</span>}
-                {searchQuery && <span> matching "{searchQuery}"</span>}
+                {searchQuery && <span> matching &qout;{searchQuery}&qout;</span>}
                 {filteredItems.length === 1 ? " artwork" : " artworks"}
               </p>
             </div>

@@ -24,8 +24,8 @@ export const LearnCallToAction = () => {
           </div>
           <h3 className="mb-4 text-xl font-bold text-white">Ready to Start Your Adventure?</h3>
           <p className="mb-8 text-base text-gray-300 leading-relaxed">
-            Now that you know the rules, it's time to put your skills to the test! Join our community of monster hunters and start your legendary journey in the
-            world of Atosia.
+            Now that you know the rules, it&lsquo;s time to put your skills to the test! Join our community of monster hunters and start your legendary journey
+            in the world of Atosia.
           </p>
 
           <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">

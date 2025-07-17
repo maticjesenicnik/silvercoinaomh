@@ -3,7 +3,6 @@
 import { useIntersectionObserver } from "hooks/useIntersectionObserver"
 import Image from "next/image"
 import { useState } from "react"
-import { PDFReader } from "./PDFReader"
 
 const AnimatedSection = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
   const { ref, hasIntersected } = useIntersectionObserver()
@@ -117,7 +116,7 @@ const RulebookCard = ({ title, image, subtitle, pdfUrl, delay = 0 }: { title: st
       </div>
 
       {/* PDF Reader Modal */}
-      {showPDFReader && <PDFReader pdfUrl={pdfUrl} title={title} onClose={() => setShowPDFReader(false)} />}
+      {/* {showPDFReader && <PDFReader pdfUrl={pdfUrl} title={title} onClose={() => setShowPDFReader(false)} />} */}
     </>
   )
 }

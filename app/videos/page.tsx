@@ -82,7 +82,7 @@ const Videos = () => {
           <div className="mb-12">
             <div className="mb-6 text-center">
               <h3 className="mb-2 text-lg font-bold text-white">Browse by Category</h3>
-              <p className="text-sm text-gray-300">Filter content to find exactly what you're looking for</p>
+              <p className="text-sm text-gray-300">Filter content to find exactly what you&lsquo;re looking for</p>
             </div>
 
             <div className="flex flex-wrap justify-center gap-2">
@@ -195,7 +195,7 @@ const Videos = () => {
               <div className="mx-auto max-w-md rounded-xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
                 <span className="material-icons-outlined mb-4 block text-4xl text-gray-400">video_library</span>
                 <h3 className="mb-2 text-xl font-bold text-white">No videos found</h3>
-                <p className="mb-4 text-gray-400">No videos match the selected category "{selectedCategory}".</p>
+                <p className="mb-4 text-gray-400">No videos match the selected category &quot;{selectedCategory}&quot;.</p>
                 <button onClick={() => setSelectedCategory("All")} className="rounded-lg bg-blue-600 px-6 py-2 text-white transition-colors hover:bg-blue-700">
                   Show All Videos
                 </button>
@@ -213,7 +213,7 @@ const Videos = () => {
               </div>
               <h3 className="mb-4 text-xl font-bold text-white">Stay Updated</h3>
               <p className="mb-8 text-base text-gray-300 leading-relaxed">
-                Don't miss out on new content! Subscribe to our YouTube channel and follow us on social media for the latest videos, development updates, and behind-the-scenes content.
+                Don&lsquo;t miss out on new content! Subscribe to our YouTube channel and follow us on social media for the latest videos, development updates, and behind-the-scenes content.
               </p>
               <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
                 <a 

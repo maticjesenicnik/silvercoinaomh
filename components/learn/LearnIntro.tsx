@@ -26,8 +26,8 @@ export const LearnIntro = () => {
 
         <h2 className="mb-4 text-3xl font-bold text-white lg:text-4xl">Master the Hunt</h2>
         <p className="mx-auto max-w-3xl text-lg text-gray-300 leading-relaxed">
-          Learn everything you need to know about Silver Coin: Age of Monster Hunters. From basic rules to advanced strategies, we'll guide you through your
-          journey to becoming a legendary monster hunter.
+          Learn everything you need to know about Silver Coin: Age of Monster Hunters. From basic rules to advanced strategies, we&lsquo;ll guide you through
+          your journey to becoming a legendary monster hunter.
         </p>
 
         <div className="mt-8 flex flex-wrap justify-center gap-4 text-sm text-gray-400">
