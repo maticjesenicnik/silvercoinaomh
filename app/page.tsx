@@ -1,7 +1,8 @@
+"use client"
+
+import { useIntersectionObserver } from "hooks/useIntersectionObserver"
 import Image from "next/image"
 import Link from "next/link"
-import { useIntersectionObserver } from "hooks/useIntersectionObserver"
-import { SOCIALS } from "data/socials"
 
 const AnimatedSection = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
   const { ref, hasIntersected } = useIntersectionObserver()
@@ -92,7 +93,7 @@ export default function Page() {
                       height={1515}
                       priority
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 transition-opacity duration-300" />
                   </div>
                 </div>
               </AnimatedSection>
@@ -315,28 +316,7 @@ export default function Page() {
                   </Link>
                 </div>
 
-                {/* Social Links */}
-                <div className="flex justify-center gap-4">
-                  {SOCIALS.socials.map((social: any, index: number) => (
-                    <a
-                      key={index}
-                      className="flex h-14 w-14 items-center justify-center rounded-full border border-white/20 bg-white/10 transition-all duration-200 hover:scale-110 hover:bg-white/20 backdrop-blur-sm"
-                      href={social.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label={social.name}
-                      title={social.name}
-                    >
-                      <Image
-                        width={28}
-                        height={28}
-                        src={social.image}
-                        alt={social.name}
-                        className="object-contain brightness-90 transition-all hover:brightness-100"
-                      />
-                    </a>
-                  ))}
-                </div>
+                
               </div>
             </div>
           </AnimatedSection>

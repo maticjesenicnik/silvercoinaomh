@@ -1,12 +1,12 @@
 "use client"
 
-import { PageHeader } from "components/PageHeader"
-import { LearnIntro } from "components/learn/LearnIntro"
 import { HowToPlayVideo } from "components/learn/HowToPlayVideo"
-import { RulebookSection } from "components/learn/RulebookSection"
-import { LearningPath } from "components/learn/LearningPath"
-import { QuickReference } from "components/learn/QuickReference"
 import { LearnCallToAction } from "components/learn/LearnCallToAction"
+import { LearningPath } from "components/learn/LearningPath"
+import { LearnIntro } from "components/learn/LearnIntro"
+import { QuickReference } from "components/learn/QuickReference"
+import { RulebookSection } from "components/learn/RulebookSection"
+import { PageHeader } from "components/PageHeader"
 
 const Learn = () => {
   return (
