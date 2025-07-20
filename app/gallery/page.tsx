@@ -103,7 +103,7 @@ const GalleryContent = () => {
             <p className="text-sm text-gray-400">
               Showing <span className="font-semibold text-white">{filteredItems.length}</span>
               {selectedCategory !== "All" && <span> {selectedCategory.toLowerCase()}</span>}
-              {searchQuery && <span> matching &qout;{searchQuery}&qout;</span>}
+              {searchQuery && <span> matching &quot;{searchQuery}&quot;</span>}
               {filteredItems.length === 1 ? " artwork" : " artworks"}
             </p>
           </div>
@@ -211,38 +211,9 @@ const Gallery = () => {
           </AnimatedSection>
 
           <GalleryContent />
-        </AnimatedSection>
-
-        {/* Gallery Grid */}
-        <AnimatedSection delay={600}>
-          <GalleryGrid items={filteredItems} />
-        </AnimatedSection>
-
-        {/* Results Count */}
-        {filteredItems.length > 0 && (
-          <AnimatedSection delay={800}>
-            <div className="mt-8 text-center">
-              <p className="text-sm text-gray-400">
-                Showing <span className="font-semibold text-white">{filteredItems.length}</span>
-                {selectedCategory !== "All" && <span> {selectedCategory.toLowerCase()}</span>}
-                {searchQuery && <span> matching &qout;{searchQuery}&qout;</span>}
-                {filteredItems.length === 1 ? " artwork" : " artworks"}
-              </p>
-            </div>
-          </AnimatedSection>
-        )}
-
-        {/* Statistics */}
-        <GalleryStats 
-          monstersCount={GALLERY.monsters.length}
-          charactersCount={GALLERY.characters.length}
-          totalCount={allItems.length}
-        />
-
-        {/* Call to Action */}
-        <GalleryCallToAction />
+        </div>
       </div>
-    </div>
+    </ImageViewerProvider>
   )
 }
 
