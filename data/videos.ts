@@ -1,4 +1,4 @@
-import { VideosType } from "types"
+import { VideosType } from "types";
 
 export const VIDEOS: VideosType = {
   videos: [
@@ -37,7 +37,8 @@ export const VIDEOS: VideosType = {
     {
       title: "Silver Coin: Age of Monster Hunters - Kickstarter Teaser",
       category: ["Kickstarter", "Video"],
-      description: "",
+      description:
+        "Silver Coin: Age of Monster Hunters is an adventure role playing game combined with Euro game mechanics for 1-5 players, playable in solo, co-op or competitive mode. Players will be travelling the world of Atosia to slay the monsters that are troubling the local populace. By doing so they will earn coins and the player with the most coins at the end of the game will be declared the winner. Join us on our journey towards making this board game a reality & become part of our Community.",
       url: "https://www.youtube.com/watch?v=9kn28wMxXNk",
       image: "images/videos/kickstarter1.webp",
     },
@@ -122,4 +123,4 @@ export const VIDEOS: VideosType = {
       image: "images/videos/how_to_play1.webp",
     },
   ],
-}
+};

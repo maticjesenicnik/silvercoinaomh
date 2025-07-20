@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import { HowToPlayVideo } from "components/learn/HowToPlayVideo"
-import { LearnCallToAction } from "components/learn/LearnCallToAction"
-import { LearningPath } from "components/learn/LearningPath"
-import { LearnIntro } from "components/learn/LearnIntro"
-import { QuickReference } from "components/learn/QuickReference"
-import { RulebookSection } from "components/learn/RulebookSection"
-import { PageHeader } from "components/PageHeader"
+import { HowToPlayVideo } from "components/learn/HowToPlayVideo";
+import { LearnCallToAction } from "components/learn/LearnCallToAction";
+import { LearningPath } from "components/learn/LearningPath";
+import { LearnIntro } from "components/learn/LearnIntro";
+import { QuickReference } from "components/learn/QuickReference";
+import { RulebookSection } from "components/learn/RulebookSection";
+import { PageHeader } from "components/PageHeader";
 
 const Learn = () => {
   return (
@@ -33,7 +33,7 @@ const Learn = () => {
         <LearnCallToAction />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Learn
+export default Learn;

@@ -1,4 +1,4 @@
-import { NewslettersType } from "types"
+import { NewslettersType } from "types";
 
 export const NEWSLETTERS: NewslettersType = {
   newsletters: [
@@ -497,4 +497,4 @@ export const NEWSLETTERS: NewslettersType = {
       image: "images/newsletter/preview01.webp",
     },
   ],
-}
+};

@@ -1,7 +1,7 @@
-import { useIntersectionObserver } from "hooks/useIntersectionObserver"
+import { useIntersectionObserver } from "hooks/useIntersectionObserver";
 
 export const AnimatedSection = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
-  const { ref, hasIntersected } = useIntersectionObserver()
+  const { ref, hasIntersected } = useIntersectionObserver();
 
   return (
     <div
@@ -11,5 +11,5 @@ export const AnimatedSection = ({ children, delay = 0 }: { children: React.React
     >
       {children}
     </div>
-  )
-}
+  );
+};

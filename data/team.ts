@@ -1,4 +1,4 @@
-import { TeamType } from "types"
+import { TeamType } from "types";
 
 export const TEAM: TeamType = {
   members: [
@@ -79,4 +79,4 @@ export const TEAM: TeamType = {
     "Rowen Chumacera",
     "DadsgamingDK",
   ],
-}
+};

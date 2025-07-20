@@ -1,6 +1,6 @@
 interface NoNewslettersFoundProps {
-  selectedYear: string
-  onShowAll: () => void
+  selectedYear: string;
+  onShowAll: () => void;
 }
 
 export const NoNewslettersFound = ({ selectedYear, onShowAll }: NoNewslettersFoundProps) => {
@@ -15,5 +15,5 @@ export const NoNewslettersFound = ({ selectedYear, onShowAll }: NoNewslettersFou
         </button>
       </div>
     </div>
-  )
-}
+  );
+};

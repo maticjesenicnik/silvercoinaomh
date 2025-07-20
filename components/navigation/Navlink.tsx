@@ -1,5 +1,5 @@
-import Link from "next/link"
-import { NavlinkProps } from "types"
+import Link from "next/link";
+import { NavlinkProps } from "types";
 
 export const Navlink = ({ icon, text, href, children, mobile = false, submenu = false }: NavlinkProps) => {
   if (mobile) {
@@ -8,7 +8,7 @@ export const Navlink = ({ icon, text, href, children, mobile = false, submenu = 
         <span className="material-icons-outlined text-lg">{icon}</span>
         <span className="font-medium">{text}</span>
       </Link>
-    )
+    );
   }
 
   return (
@@ -25,5 +25,5 @@ export const Navlink = ({ icon, text, href, children, mobile = false, submenu = 
         </div>
       )}
     </div>
-  )
-}
+  );
+};

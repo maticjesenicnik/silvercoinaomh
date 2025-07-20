@@ -1,4 +1,4 @@
-import { AnimatedSection } from "components/layout/AnimatedSection"
+import { AnimatedSection } from "components/layout/AnimatedSection";
 
 export const LearnCallToAction = () => {
   return (
@@ -43,5 +43,5 @@ export const LearnCallToAction = () => {
         </div>
       </div>
     </AnimatedSection>
-  )
-}
+  );
+};

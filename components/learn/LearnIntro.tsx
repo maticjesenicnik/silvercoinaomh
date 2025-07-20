@@ -1,4 +1,4 @@
-import { AnimatedSection } from "components/layout/AnimatedSection"
+import { AnimatedSection } from "components/layout/AnimatedSection";
 
 export const LearnIntro = () => {
   return (
@@ -32,5 +32,5 @@ export const LearnIntro = () => {
         </div>
       </div>
     </AnimatedSection>
-  )
-}
+  );
+};

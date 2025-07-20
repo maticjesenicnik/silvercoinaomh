@@ -1,4 +1,4 @@
-import { PageHeader } from "components/PageHeader"
+import { PageHeader } from "components/PageHeader";
 
 const TermsAndConditions = () => {
   return (
@@ -376,7 +376,7 @@ const TermsAndConditions = () => {
         </p>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default TermsAndConditions
+export default TermsAndConditions;

@@ -1,5 +1,5 @@
-import Image from "next/image"
-import { PageHeaderProps } from "types"
+import Image from "next/image";
+import { PageHeaderProps } from "types";
 
 export const PageHeader = ({ title }: PageHeaderProps) => {
   return (
@@ -12,5 +12,5 @@ export const PageHeader = ({ title }: PageHeaderProps) => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};

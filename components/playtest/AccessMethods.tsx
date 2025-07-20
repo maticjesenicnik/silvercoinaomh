@@ -1,5 +1,5 @@
-import { AnimatedSection } from "components/layout/AnimatedSection"
-import Image from "next/image"
+import { AnimatedSection } from "components/layout/AnimatedSection";
+import Image from "next/image";
 
 export const AccessMethods = () => {
   return (
@@ -102,5 +102,5 @@ export const AccessMethods = () => {
         </div>
       </div>
     </AnimatedSection>
-  )
-}
+  );
+};

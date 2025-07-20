@@ -1,4 +1,4 @@
-import { PodcastsType } from "types"
+import { PodcastsType } from "types";
 
 export const PODCASTS: PodcastsType = {
   podcasts: [
@@ -73,4 +73,4 @@ export const PODCASTS: PodcastsType = {
       url: "https://youtu.be/_YITZ5n_COI",
     },
   ],
-}
+};

@@ -1,78 +1,68 @@
-"use client"
-import { useMemo, useRef, useState } from "react"
+"use client";
+import { useMemo, useRef, useState } from "react";
 
-import { PageHeader } from "components/PageHeader"
-import { READ_TIME_PER_WORD } from "data/constants"
-import { STORIES } from "data/stories"
-import { useIntersectionObserver } from "hooks/useIntersectionObserver"
+import { PageHeader } from "components/PageHeader";
+import { READ_TIME_PER_WORD } from "data/constants";
+import { STORIES } from "data/stories";
+import { useIntersectionObserver } from "hooks/useIntersectionObserver";
 
 const AnimatedParagraph = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
-  const { ref, hasIntersected } = useIntersectionObserver()
+  const { ref, hasIntersected } = useIntersectionObserver();
 
   return (
-    <div 
+    <div
       ref={ref}
-      className={`group/paragraph relative transition-all duration-1000 ease-out ${
-        hasIntersected 
-          ? 'opacity-100 translate-y-0' 
-          : 'opacity-0 translate-y-8'
-      }`}
+      className={`group/paragraph relative transition-all duration-1000 ease-out ${hasIntersected ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
-      <p className="text-base text-gray-200 leading-relaxed text-justify relative transition-all duration-300 hover:text-gray-100">
-        {children}
-      </p>
+      <p className="text-base text-gray-200 leading-relaxed text-justify relative transition-all duration-300 hover:text-gray-100">{children}</p>
     </div>
-  )
-}
+  );
+};
 
 const AnimatedSection = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
-  const { ref, hasIntersected } = useIntersectionObserver()
+  const { ref, hasIntersected } = useIntersectionObserver();
 
   return (
-    <div 
+    <div
       ref={ref}
-      className={`transition-all duration-1000 ease-out ${
-        hasIntersected 
-          ? 'opacity-100 translate-y-0' 
-          : 'opacity-0 translate-y-12'
-      }`}
+      className={`transition-all duration-1000 ease-out ${hasIntersected ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}
     </div>
-  )
-}
+  );
+};
 
 const Stories = () => {
-  const [selectedStoryIndex, setSelectedStoryIndex] = useState<number>(0)
-  const selectorRef = useRef<HTMLDivElement>(null)
+  const [selectedStoryIndex, setSelectedStoryIndex] = useState<number>(0);
+  const selectorRef = useRef<HTMLDivElement>(null);
 
   // Get the currently selected story
   const selectedStory = useMemo(() => {
-    return STORIES.stories[selectedStoryIndex]
-  }, [selectedStoryIndex])
+    return STORIES.stories[selectedStoryIndex];
+  }, [selectedStoryIndex]);
 
   // Function to scroll to selector section with proper offset for header
   const scrollToSelector = () => {
     if (selectorRef.current) {
-      const headerHeight = 80 // Approximate header height
-      const elementPosition = selectorRef.current.getBoundingClientRect().top + window.pageYOffset
-      const offsetPosition = elementPosition - headerHeight
+      const headerHeight = 80; // Approximate header height
+      const elementPosition = selectorRef.current.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - headerHeight;
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'smooth'
-      })
+        behavior: "smooth",
+      });
     }
-  }
+  };
 
   // Handle story navigation with scroll
   const navigateToStory = (newIndex: number) => {
-    setSelectedStoryIndex(newIndex)
+    setSelectedStoryIndex(newIndex);
     // Small delay to ensure the content has updated before scrolling
-    setTimeout(scrollToSelector, 100)
-  }
+    setTimeout(scrollToSelector, 100);
+  };
 
   return (
     <div className="min-h-screen">
@@ -126,21 +116,23 @@ const Stories = () => {
                     <span className="material-icons-outlined text-3xl text-blue-300">auto_stories</span>
                   </div>
                 </div>
-                
+
                 <h1 className="mb-4 text-3xl font-bold text-white lg:text-4xl">{selectedStory.title}</h1>
-                
+
                 <div className="flex items-center justify-center gap-6 text-sm text-gray-400">
                   <div className="flex items-center gap-2">
                     <span className="material-icons-outlined text-sm">schedule</span>
-                    <span>~{Math.ceil(selectedStory.chapters.join(' ').split(' ').length / READ_TIME_PER_WORD)} min read</span>
+                    <span>~{Math.ceil(selectedStory.chapters.join(" ").split(" ").length / READ_TIME_PER_WORD)} min read</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="material-icons-outlined text-sm">description</span>
-                    <span>{selectedStory.chapters.join(' ').split(' ').length} words</span>
+                    <span>{selectedStory.chapters.join(" ").split(" ").length} words</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="material-icons-outlined text-sm">bookmark</span>
-                    <span>Story {selectedStoryIndex + 1} of {STORIES.stories.length}</span>
+                    <span>
+                      Story {selectedStoryIndex + 1} of {STORIES.stories.length}
+                    </span>
                   </div>
                 </div>
 
@@ -158,10 +150,8 @@ const Stories = () => {
               <div className="space-y-8">
                 {selectedStory.chapters.map((chapter: string, chapterIndex: number) => (
                   <div key={chapterIndex}>
-                    <AnimatedParagraph delay={chapterIndex * 150}>
-                      {chapter}
-                    </AnimatedParagraph>
-                    
+                    <AnimatedParagraph delay={chapterIndex * 150}>{chapter}</AnimatedParagraph>
+
                     {/* Elegant separator between paragraphs */}
                     {chapterIndex < selectedStory.chapters.length - 1 && (
                       <AnimatedSection delay={chapterIndex * 150 + 75}>
@@ -193,9 +183,7 @@ const Stories = () => {
                     <span className="material-icons-outlined text-lg transition-transform group-hover:-translate-x-1">chevron_left</span>
                     <div className="text-left">
                       <div className="text-xs text-gray-400">Previous</div>
-                      <div>
-                        {selectedStoryIndex > 0 ? STORIES.stories[selectedStoryIndex - 1].title : 'No previous story'}
-                      </div>
+                      <div>{selectedStoryIndex > 0 ? STORIES.stories[selectedStoryIndex - 1].title : "No previous story"}</div>
                     </div>
                   </button>
 
@@ -213,9 +201,7 @@ const Stories = () => {
                   >
                     <div className="text-right">
                       <div className="text-xs text-gray-400">Next</div>
-                      <div>
-                        {selectedStoryIndex < STORIES.stories.length - 1 ? STORIES.stories[selectedStoryIndex + 1].title : 'No next story'}
-                      </div>
+                      <div>{selectedStoryIndex < STORIES.stories.length - 1 ? STORIES.stories[selectedStoryIndex + 1].title : "No next story"}</div>
                     </div>
                     <span className="material-icons-outlined text-lg transition-transform group-hover:translate-x-1">chevron_right</span>
                   </button>
@@ -234,18 +220,19 @@ const Stories = () => {
               </div>
               <h3 className="mb-4 text-xl font-bold text-white">Discover More of Atosia</h3>
               <p className="mb-8 text-base text-gray-300 leading-relaxed">
-                These stories are just the beginning. Explore the kingdoms, meet the characters, and uncover the mysteries that await in Silver Coin: Age of Monster Hunters.
+                These stories are just the beginning. Explore the kingdoms, meet the characters, and uncover the mysteries that await in Silver Coin: Age of
+                Monster Hunters.
               </p>
               <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
-                <a 
-                  href="/lore/kingdoms" 
+                <a
+                  href="/lore/kingdoms"
                   className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-sm font-medium text-white transition-all hover:bg-blue-700 hover:scale-105"
                 >
                   <span className="material-icons-outlined text-lg">public</span>
                   Explore Kingdoms
                 </a>
-                <a 
-                  href="/lore/characters" 
+                <a
+                  href="/lore/characters"
                   className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 bg-white/5 px-6 py-3 text-sm font-medium text-white transition-all hover:bg-white/10 hover:scale-105"
                 >
                   <span className="material-icons-outlined text-lg">person</span>
@@ -257,7 +244,7 @@ const Stories = () => {
         </AnimatedSection>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Stories
+export default Stories;

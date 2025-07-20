@@ -1,8 +1,8 @@
-import { AnimatedSection } from "components/layout/AnimatedSection"
-import { useIntersectionObserver } from "hooks/useIntersectionObserver"
+import { AnimatedSection } from "components/layout/AnimatedSection";
+import { useIntersectionObserver } from "hooks/useIntersectionObserver";
 
 const PathStep = ({ number, title, description, icon, delay = 0 }: { number: number; title: string; description: string; icon: string; delay?: number }) => {
-  const { ref, hasIntersected } = useIntersectionObserver()
+  const { ref, hasIntersected } = useIntersectionObserver();
 
   return (
     <div
@@ -30,8 +30,8 @@ const PathStep = ({ number, title, description, icon, delay = 0 }: { number: num
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export const LearningPath = () => {
   return (
@@ -77,5 +77,5 @@ export const LearningPath = () => {
         </div>
       </div>
     </AnimatedSection>
-  )
-}
+  );
+};

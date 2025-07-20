@@ -1,4 +1,4 @@
-import { AnimatedSection } from "components/layout/AnimatedSection"
+import { AnimatedSection } from "components/layout/AnimatedSection";
 
 export const PlaytestingInfo = () => {
   return (
@@ -81,5 +81,5 @@ export const PlaytestingInfo = () => {
         </div>
       </div>
     </AnimatedSection>
-  )
-}
+  );
+};

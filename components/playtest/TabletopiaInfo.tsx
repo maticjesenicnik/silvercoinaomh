@@ -1,23 +1,19 @@
-import Image from "next/image"
-import { useIntersectionObserver } from "hooks/useIntersectionObserver"
+import Image from "next/image";
+import { useIntersectionObserver } from "hooks/useIntersectionObserver";
 
 const AnimatedSection = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
-  const { ref, hasIntersected } = useIntersectionObserver()
+  const { ref, hasIntersected } = useIntersectionObserver();
 
   return (
-    <div 
+    <div
       ref={ref}
-      className={`transition-all duration-1000 ease-out ${
-        hasIntersected 
-          ? 'opacity-100 translate-y-0' 
-          : 'opacity-0 translate-y-12'
-      }`}
+      className={`transition-all duration-1000 ease-out ${hasIntersected ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}
     </div>
-  )
-}
+  );
+};
 
 export const TabletopiaInfo = () => {
   return (
@@ -37,9 +33,7 @@ export const TabletopiaInfo = () => {
               <span className="material-icons-outlined text-2xl text-blue-400">cloud</span>
             </div>
             <h4 className="mb-2 text-lg font-semibold text-white">Cloud-Based</h4>
-            <p className="text-sm text-gray-300">
-              No downloads required! Play directly in your browser or through Steam with automatic updates.
-            </p>
+            <p className="text-sm text-gray-300">No downloads required! Play directly in your browser or through Steam with automatic updates.</p>
           </div>
 
           {/* Feature 2 */}
@@ -59,12 +53,10 @@ export const TabletopiaInfo = () => {
               <span className="material-icons-outlined text-2xl text-purple-400">devices</span>
             </div>
             <h4 className="mb-2 text-lg font-semibold text-white">Cross-Platform</h4>
-            <p className="text-sm text-gray-300">
-              Play on Windows, Mac, Linux, or any modern web browser. Your progress syncs across all devices.
-            </p>
+            <p className="text-sm text-gray-300">Play on Windows, Mac, Linux, or any modern web browser. Your progress syncs across all devices.</p>
           </div>
         </div>
       </div>
     </AnimatedSection>
-  )
-}
+  );
+};

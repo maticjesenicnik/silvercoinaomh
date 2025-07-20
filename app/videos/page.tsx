@@ -1,66 +1,58 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import Link from "next/link"
-import { useMemo, useState } from "react"
+import Image from "next/image";
+import Link from "next/link";
+import { useMemo, useState } from "react";
 
-import { PageHeader } from "components/PageHeader"
-import { VIDEOS } from "data/videos"
-import { useIntersectionObserver } from "hooks/useIntersectionObserver"
+import { PageHeader } from "components/PageHeader";
+import { VIDEOS } from "data/videos";
+import { useIntersectionObserver } from "hooks/useIntersectionObserver";
 
 const AnimatedSection = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
-  const { ref, hasIntersected } = useIntersectionObserver()
+  const { ref, hasIntersected } = useIntersectionObserver();
 
   return (
-    <div 
+    <div
       ref={ref}
-      className={`transition-all duration-1000 ease-out ${
-        hasIntersected 
-          ? 'opacity-100 translate-y-0' 
-          : 'opacity-0 translate-y-12'
-      }`}
+      className={`transition-all duration-1000 ease-out ${hasIntersected ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}
     </div>
-  )
-}
+  );
+};
 
 const AnimatedCard = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
-  const { ref, hasIntersected } = useIntersectionObserver()
+  const { ref, hasIntersected } = useIntersectionObserver();
 
   return (
-    <div 
+    <div
       ref={ref}
-      className={`transition-all duration-800 ease-out ${
-        hasIntersected 
-          ? 'opacity-100 translate-y-0 scale-100' 
-          : 'opacity-0 translate-y-8 scale-95'
-      }`}
+      className={`transition-all duration-800 ease-out ${hasIntersected ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-95"}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}
     </div>
-  )
-}
+  );
+};
 
 const Videos = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string>("All")
+  const [selectedCategory, setSelectedCategory] = useState<string>("All");
 
   // Extract unique categories from all videos
   const categories = useMemo(() => {
-    const allCategories = VIDEOS.videos.flatMap((video: any) => video.category)
-    const uniqueCategories = Array.from(new Set(allCategories))
-    return ["All", ...uniqueCategories.sort()]
-  }, [])
+    const allCategories = VIDEOS.videos.flatMap((video: any) => video.category);
+    const uniqueCategories = Array.from(new Set(allCategories));
+    return ["All", ...uniqueCategories.sort()];
+  }, []);
 
   // Filter videos based on selected category
   const filteredVideos = useMemo(() => {
     if (selectedCategory === "All") {
-      return VIDEOS.videos
+      return VIDEOS.videos;
     }
-    return VIDEOS.videos.filter((video: any) => video.category.includes(selectedCategory))
-  }, [selectedCategory])
+    return VIDEOS.videos.filter((video: any) => video.category.includes(selectedCategory));
+  }, [selectedCategory]);
 
   return (
     <div className="min-h-screen">
@@ -72,7 +64,8 @@ const Videos = () => {
           <div className="mb-12 text-center">
             <h2 className="mb-4 text-2xl font-bold text-white lg:text-3xl">Explore Our Content</h2>
             <p className="mx-auto max-w-3xl text-lg text-gray-300 leading-relaxed">
-              Discover gameplay videos, development insights, and behind-the-scenes content that brings the world of Silver Coin: Age of Monster Hunters to life.
+              Discover gameplay videos, development insights, and behind-the-scenes content that brings the world of Silver Coin: Age of Monster Hunters to
+              life.
             </p>
           </div>
         </AnimatedSection>
@@ -152,17 +145,11 @@ const Videos = () => {
                     {/* Video Info - Fixed Height Container */}
                     <div className="flex flex-1 flex-col p-4">
                       {/* Title - Fixed height with line clamping */}
-                      <h3 className="mb-2 line-clamp-2 h-12 font-bold text-white transition-colors group-hover:text-blue-300">
-                        {video.title}
-                      </h3>
+                      <h3 className="mb-2 line-clamp-2 h-16 font-bold text-white transition-colors group-hover:text-blue-300">{video.title}</h3>
 
                       {/* Description - Fixed height with line clamping */}
                       <div className="mb-3 flex-1">
-                        {video.description ? (
-                          <p className="line-clamp-3 h-16 text-sm text-gray-400">{video.description}</p>
-                        ) : (
-                          <div className="h-16"></div>
-                        )}
+                        {video.description ? <p className="line-clamp-3 h-16 text-sm text-gray-400">{video.description}</p> : <div className="h-16"></div>}
                       </div>
 
                       {/* Footer - Always at bottom */}
@@ -213,11 +200,12 @@ const Videos = () => {
               </div>
               <h3 className="mb-4 text-xl font-bold text-white">Stay Updated</h3>
               <p className="mb-8 text-base text-gray-300 leading-relaxed">
-                Don&lsquo;t miss out on new content! Subscribe to our YouTube channel and follow us on social media for the latest videos, development updates, and behind-the-scenes content.
+                Don&lsquo;t miss out on new content! Subscribe to our YouTube channel and follow us on social media for the latest videos, development updates,
+                and behind-the-scenes content.
               </p>
               <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
-                <a 
-                  href="https://www.youtube.com/channel/UCJubiQxl7DSBweyIGmaK6-A" 
+                <a
+                  href="https://www.youtube.com/channel/UCJubiQxl7DSBweyIGmaK6-A"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 rounded-lg bg-red-600 px-6 py-3 text-sm font-medium text-white transition-all hover:bg-red-700 hover:scale-105"
@@ -225,8 +213,8 @@ const Videos = () => {
                   <span className="material-icons-outlined text-lg">play_circle</span>
                   Subscribe on YouTube
                 </a>
-                <a 
-                  href="/newsletters" 
+                <a
+                  href="/newsletters"
                   className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 bg-white/5 px-6 py-3 text-sm font-medium text-white transition-all hover:bg-white/10 hover:scale-105"
                 >
                   <span className="material-icons-outlined text-lg">rss_feed</span>
@@ -238,7 +226,7 @@ const Videos = () => {
         </AnimatedSection>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Videos
+export default Videos;

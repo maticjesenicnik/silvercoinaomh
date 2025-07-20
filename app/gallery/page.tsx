@@ -1,19 +1,19 @@
-"use client"
+"use client";
 
-import { useMemo } from "react"
+import { useMemo } from "react";
 
-import { GalleryCallToAction } from "components/gallery/GalleryCallToAction"
-import { GalleryGrid } from "components/gallery/GalleryGrid"
-import { GalleryStats } from "components/gallery/GalleryStats"
-import { ImageViewer } from "components/gallery/ImageViewer"
-import { AnimatedSection } from "components/layout/AnimatedSection"
-import { PageHeader } from "components/PageHeader"
-import { useImageViewer } from "context/ImageViewerContext"
-import { GALLERY } from "data/gallery"
-import React from "react"
+import { GalleryCallToAction } from "components/gallery/GalleryCallToAction";
+import { GalleryGrid } from "components/gallery/GalleryGrid";
+import { GalleryStats } from "components/gallery/GalleryStats";
+import { ImageViewer } from "components/gallery/ImageViewer";
+import { AnimatedSection } from "components/layout/AnimatedSection";
+import { PageHeader } from "components/PageHeader";
+import { useImageViewer } from "context/ImageViewerContext";
+import { GALLERY } from "data/gallery";
+import React from "react";
 
 const Gallery = () => {
-  const { setImages } = useImageViewer()
+  const { setImages } = useImageViewer();
 
   // Combine all items with type information
   const allItems = useMemo(() => {
@@ -21,19 +21,19 @@ const Gallery = () => {
       name: monster.name,
       image: monster.image,
       type: "monster" as const,
-    }))
+    }));
     const characters = GALLERY.characters.map((character) => ({
       name: character.name,
       image: character.image,
       type: "character" as const,
-    }))
-    return [...monsters, ...characters]
-  }, [])
+    }));
+    return [...monsters, ...characters];
+  }, []);
 
   // Update images in context when filtered items change
   React.useEffect(() => {
-    setImages(allItems)
-  }, [allItems, setImages])
+    setImages(allItems);
+  }, [allItems, setImages]);
 
   return (
     <div className="min-h-screen">
@@ -74,7 +74,7 @@ const Gallery = () => {
         <ImageViewer />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Gallery
+export default Gallery;

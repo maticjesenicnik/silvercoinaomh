@@ -1,7 +1,7 @@
-import { useIntersectionObserver } from "hooks/useIntersectionObserver"
+import { useIntersectionObserver } from "hooks/useIntersectionObserver";
 
 export const StatCard = ({ number, label, delay = 0 }: { number: string; label: string; delay?: number }) => {
-  const { ref, hasIntersected } = useIntersectionObserver()
+  const { ref, hasIntersected } = useIntersectionObserver();
 
   return (
     <div
@@ -14,5 +14,5 @@ export const StatCard = ({ number, label, delay = 0 }: { number: string; label: 
         <div className="text-sm text-gray-300 uppercase tracking-wide">{label}</div>
       </div>
     </div>
-  )
-}
+  );
+};

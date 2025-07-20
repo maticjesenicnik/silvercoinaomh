@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { FeatureCard } from "components/frontpage/FeatureCard"
-import { StatCard } from "components/frontpage/StatCard"
-import { AnimatedSection } from "components/layout/AnimatedSection"
-import Image from "next/image"
-import Link from "next/link"
+import { FeatureCard } from "components/frontpage/FeatureCard";
+import { StatCard } from "components/frontpage/StatCard";
+import { AnimatedSection } from "components/layout/AnimatedSection";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Page() {
   return (
@@ -252,5 +252,5 @@ export default function Page() {
         </div>
       </section>
     </>
-  )
+  );
 }

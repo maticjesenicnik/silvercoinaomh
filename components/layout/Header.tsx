@@ -1,13 +1,21 @@
-"use client"
-import { useScrolled } from "hooks/useScrolled"
-import Image from "next/image"
-import Link from "next/link"
-import { useState } from "react"
-import { Navlink } from "../navigation/Navlink"
+"use client";
+
+import { useScrolled } from "hooks/useScrolled";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import { Navlink } from "../navigation/Navlink";
 
 export const Header = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false)
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const isScrolled = useScrolled();
+
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
 
   return (
     <header
@@ -21,7 +29,14 @@ export const Header = () => {
           <div className="flex-shrink-0">
             <Link href="/" className="block">
               <div className={`relative transition-all duration-300 ease-in-out ${isScrolled ? "h-8 w-32 lg:h-9 lg:w-36" : "h-10 w-40 lg:h-12 lg:w-48"}`}>
-                <Image src="/images/logos/silvercoin.webp" alt="Silver Coin: Age of Monster Hunters" width={2362} height={591} className="object-contain" priority />
+                <Image
+                  src="/images/logos/silvercoin.webp"
+                  alt="Silver Coin: Age of Monster Hunters"
+                  width={2362}
+                  height={591}
+                  className="object-contain"
+                  priority
+                />
               </div>
             </Link>
           </div>
@@ -73,5 +88,5 @@ export const Header = () => {
         </div>
       </div>
     </header>
-  )
-}
+  );
+};

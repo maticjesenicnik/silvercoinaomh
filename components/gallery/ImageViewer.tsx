@@ -1,58 +1,50 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import { useEffect } from "react"
-import { useImageViewer } from "../../context/ImageViewerContext"
+import Image from "next/image";
+import { useEffect } from "react";
+import { useImageViewer } from "../../context/ImageViewerContext";
 
 export const ImageViewer = () => {
-  const {
-    isOpen,
-    currentImageIndex,
-    images,
-    closeImageViewer,
-    goToNextImage,
-    goToPreviousImage,
-    goToImage,
-  } = useImageViewer()
+  const { isOpen, currentImageIndex, images, closeImageViewer, goToNextImage, goToPreviousImage, goToImage } = useImageViewer();
 
   // Handle keyboard events
   useEffect(() => {
-    if (!isOpen) return
+    if (!isOpen) return;
 
     const handleKeyDown = (event: KeyboardEvent) => {
       switch (event.key) {
-        case 'Escape':
-          closeImageViewer()
-          break
-        case 'ArrowLeft':
-          goToPreviousImage()
-          break
-        case 'ArrowRight':
-          goToNextImage()
-          break
+        case "Escape":
+          closeImageViewer();
+          break;
+        case "ArrowLeft":
+          goToPreviousImage();
+          break;
+        case "ArrowRight":
+          goToNextImage();
+          break;
       }
-    }
+    };
 
-    document.addEventListener('keydown', handleKeyDown)
-    return () => document.removeEventListener('keydown', handleKeyDown)
-  }, [isOpen, closeImageViewer, goToNextImage, goToPreviousImage])
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen, closeImageViewer, goToNextImage, goToPreviousImage]);
 
   // Prevent body scroll when modal is open
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden'
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset'
+      document.body.style.overflow = "unset";
     }
 
     return () => {
-      document.body.style.overflow = 'unset'
-    }
-  }, [isOpen])
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
 
-  if (!isOpen || images.length === 0) return null
+  if (!isOpen || images.length === 0) return null;
 
-  const currentImage = images[currentImageIndex]
+  const currentImage = images[currentImageIndex];
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm">
@@ -90,14 +82,7 @@ export const ImageViewer = () => {
       {/* Main image */}
       <div className="relative h-full w-full max-h-[80vh] max-w-[80vw] flex items-center justify-center">
         <div className="relative h-full w-full">
-          <Image
-            src={currentImage.image}
-            alt={currentImage.name}
-            fill
-            className="object-contain"
-            sizes="80vw"
-            priority
-          />
+          <Image src={currentImage.image} alt={currentImage.name} fill className="object-contain" sizes="80vw" priority />
         </div>
       </div>
 
@@ -106,12 +91,12 @@ export const ImageViewer = () => {
         <div className="text-center">
           <h3 className="text-lg font-bold text-white">{currentImage.name}</h3>
           <div className="flex items-center justify-center gap-2 text-sm text-gray-300">
-            <span className="material-icons-outlined text-sm">
-              {currentImage.type === 'monster' ? 'pets' : 'person'}
-            </span>
+            <span className="material-icons-outlined text-sm">{currentImage.type === "monster" ? "pets" : "person"}</span>
             <span className="capitalize">{currentImage.type}</span>
             <span>•</span>
-            <span>{currentImageIndex + 1} of {images.length}</span>
+            <span>
+              {currentImageIndex + 1} of {images.length}
+            </span>
           </div>
         </div>
       </div>
@@ -125,18 +110,10 @@ export const ImageViewer = () => {
                 key={`${image.type}-${image.name}`}
                 onClick={() => goToImage(index)}
                 className={`relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-lg transition-all hover:scale-110 ${
-                  index === currentImageIndex
-                    ? 'ring-2 ring-blue-400 ring-offset-2 ring-offset-black/50'
-                    : 'opacity-70 hover:opacity-100'
+                  index === currentImageIndex ? "ring-2 ring-blue-400 ring-offset-2 ring-offset-black/50" : "opacity-70 hover:opacity-100"
                 }`}
               >
-                <Image
-                  src={image.image}
-                  alt={image.name}
-                  fill
-                  className="object-cover"
-                  sizes="64px"
-                />
+                <Image src={image.image} alt={image.name} fill className="object-cover" sizes="64px" />
               </button>
             ))}
           </div>
@@ -144,11 +121,7 @@ export const ImageViewer = () => {
       )}
 
       {/* Click outside to close */}
-      <div
-        className="absolute inset-0 -z-10"
-        onClick={closeImageViewer}
-        aria-label="Close image viewer"
-      />
+      <div className="absolute inset-0 -z-10" onClick={closeImageViewer} aria-label="Close image viewer" />
     </div>
-  )
-}
+  );
+};

@@ -1,12 +1,12 @@
 interface NewsletterTimelineProps {
-  years: string[]
-  getNewsletterCountForYear: (year: string) => number
-  onYearSelect: (year: string) => void
+  years: string[];
+  getNewsletterCountForYear: (year: string) => number;
+  onYearSelect: (year: string) => void;
 }
 
 export const NewsletterTimeline = ({ years, getNewsletterCountForYear, onYearSelect }: NewsletterTimelineProps) => {
   // Remove "All" from years for timeline
-  const timelineYears = years.filter((year) => year !== "All")
+  const timelineYears = years.filter((year) => year !== "All");
 
   return (
     <div className="mt-24">
@@ -21,7 +21,7 @@ export const NewsletterTimeline = ({ years, getNewsletterCountForYear, onYearSel
 
         <div className="space-y-8">
           {timelineYears.map((year, index) => {
-            const yearNewsletters = getNewsletterCountForYear(year)
+            const yearNewsletters = getNewsletterCountForYear(year);
             return (
               <div key={year} className={`flex items-center ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}>
                 <div className={`w-1/2 ${index % 2 === 0 ? "pr-8 text-right" : "pl-8 text-left"}`}>
@@ -43,10 +43,10 @@ export const NewsletterTimeline = ({ years, getNewsletterCountForYear, onYearSel
 
                 <div className="w-1/2"></div>
               </div>
-            )
+            );
           })}
         </div>
       </div>
     </div>
-  )
-}
+  );
+};

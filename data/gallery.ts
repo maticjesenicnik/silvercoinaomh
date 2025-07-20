@@ -1,4 +1,4 @@
-import { GalleryType } from "types"
+import { GalleryType } from "types";
 
 export const GALLERY: GalleryType = {
   characters: [
@@ -43,4 +43,4 @@ export const GALLERY: GalleryType = {
     { name: "Werewolf", image: "/images/monsters/werewolf.webp" },
     { name: "Witch", image: "/images/monsters/witch.webp" },
   ],
-}
+};

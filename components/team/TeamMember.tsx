@@ -1,5 +1,5 @@
-import Image from "next/image"
-import { TeamMemberProps } from "types"
+import Image from "next/image";
+import { TeamMemberProps } from "types";
 
 export const TeamMember = ({ name, title, image, bio, socials }: TeamMemberProps) => {
   return (
@@ -48,5 +48,5 @@ export const TeamMember = ({ name, title, image, bio, socials }: TeamMemberProps
         </div>
       </div>
     </div>
-  )
-}
+  );
+};

@@ -1,5 +1,5 @@
-import { NewslettersType } from "types"
-import { NewsletterCard } from "./NewsletterCard"
+import { NewslettersType } from "types";
+import { NewsletterCard } from "./NewsletterCard";
 
 export const NewsletterGrid = ({ newsletters }: NewslettersType) => {
   return (
@@ -8,5 +8,5 @@ export const NewsletterGrid = ({ newsletters }: NewslettersType) => {
         <NewsletterCard key={index} newsletter={newsletter} />
       ))}
     </div>
-  )
-}
+  );
+};

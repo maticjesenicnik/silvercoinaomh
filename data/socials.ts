@@ -1,4 +1,4 @@
-import { SocialsType } from "types"
+import { SocialsType } from "types";
 
 export const SOCIALS: SocialsType = {
   socials: [
@@ -8,4 +8,4 @@ export const SOCIALS: SocialsType = {
     { name: "Discord", url: "https://discord.gg/NfQqrSgW3u", image: "/images/socials/discord.webp" },
     { name: "Youtube", url: "https://www.youtube.com/channel/UCJubiQxl7DSBweyIGmaK6-A", image: "/images/socials/yt.webp" },
   ],
-}
+};

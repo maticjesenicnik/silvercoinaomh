@@ -1,5 +1,5 @@
-import { SOCIALS } from "data/socials"
-import Image from "next/image"
+import { SOCIALS } from "data/socials";
+import Image from "next/image";
 
 export const Footer = () => {
   return (
@@ -73,5 +73,5 @@ export const Footer = () => {
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};

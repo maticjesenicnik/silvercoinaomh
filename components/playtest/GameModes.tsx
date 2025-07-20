@@ -1,22 +1,18 @@
-import { useIntersectionObserver } from "hooks/useIntersectionObserver"
+import { useIntersectionObserver } from "hooks/useIntersectionObserver";
 
 const AnimatedSection = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
-  const { ref, hasIntersected } = useIntersectionObserver()
+  const { ref, hasIntersected } = useIntersectionObserver();
 
   return (
-    <div 
+    <div
       ref={ref}
-      className={`transition-all duration-1000 ease-out ${
-        hasIntersected 
-          ? 'opacity-100 translate-y-0' 
-          : 'opacity-0 translate-y-12'
-      }`}
+      className={`transition-all duration-1000 ease-out ${hasIntersected ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}
     </div>
-  )
-}
+  );
+};
 
 export const GameModes = () => {
   return (
@@ -55,9 +51,7 @@ export const GameModes = () => {
               <span className="material-icons-outlined text-3xl text-green-400">groups</span>
             </div>
             <h4 className="mb-3 text-xl font-bold text-white">Co-op Mode</h4>
-            <p className="mb-4 text-gray-300">
-              Team up with friends to tackle the most dangerous monsters together. Cooperation is key to survival.
-            </p>
+            <p className="mb-4 text-gray-300">Team up with friends to tackle the most dangerous monsters together. Cooperation is key to survival.</p>
             <div className="space-y-2 text-sm text-gray-400">
               <div className="flex items-center gap-2">
                 <span className="material-icons-outlined text-sm">handshake</span>
@@ -76,9 +70,7 @@ export const GameModes = () => {
               <span className="material-icons-outlined text-3xl text-red-400">emoji_events</span>
             </div>
             <h4 className="mb-3 text-xl font-bold text-white">Competitive Mode</h4>
-            <p className="mb-4 text-gray-300">
-              Compete against other hunters for the most silver coins. May the best monster hunter win!
-            </p>
+            <p className="mb-4 text-gray-300">Compete against other hunters for the most silver coins. May the best monster hunter win!</p>
             <div className="space-y-2 text-sm text-gray-400">
               <div className="flex items-center gap-2">
                 <span className="material-icons-outlined text-sm">trending_up</span>
@@ -93,5 +85,5 @@ export const GameModes = () => {
         </div>
       </div>
     </AnimatedSection>
-  )
-}
+  );
+};

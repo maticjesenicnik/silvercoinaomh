@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import { PageHeader } from "components/PageHeader"
-import { PlaytestIntro } from "components/playtest/PlaytestIntro"
-import { TabletopiaInfo } from "components/playtest/TabletopiaInfo"
-import { AccessMethods } from "components/playtest/AccessMethods"
-import { GameModes } from "components/playtest/GameModes"
-import { PlaytestingInfo } from "components/playtest/PlaytestingInfo"
-import { PlaytestCallToAction } from "components/playtest/PlaytestCallToAction"
+import { PageHeader } from "components/PageHeader";
+import { PlaytestIntro } from "components/playtest/PlaytestIntro";
+import { TabletopiaInfo } from "components/playtest/TabletopiaInfo";
+import { AccessMethods } from "components/playtest/AccessMethods";
+import { GameModes } from "components/playtest/GameModes";
+import { PlaytestingInfo } from "components/playtest/PlaytestingInfo";
+import { PlaytestCallToAction } from "components/playtest/PlaytestCallToAction";
 
 const Playtest = () => {
   return (
@@ -33,7 +33,7 @@ const Playtest = () => {
         <PlaytestCallToAction />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Playtest
+export default Playtest;

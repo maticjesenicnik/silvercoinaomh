@@ -1,85 +1,75 @@
-"use client"
-import { useMemo, useRef, useState } from "react"
+"use client";
+import { useMemo, useRef, useState } from "react";
 
-import { PageHeader } from "components/PageHeader"
-import { READ_TIME_PER_WORD } from "data/constants"
-import { KINGDOMS } from "data/kingdoms"
-import { useIntersectionObserver } from "hooks/useIntersectionObserver"
-import Image from "next/image"
+import { PageHeader } from "components/PageHeader";
+import { READ_TIME_PER_WORD } from "data/constants";
+import { KINGDOMS } from "data/kingdoms";
+import { useIntersectionObserver } from "hooks/useIntersectionObserver";
+import Image from "next/image";
 
 const AnimatedSection = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
-  const { ref, hasIntersected } = useIntersectionObserver()
+  const { ref, hasIntersected } = useIntersectionObserver();
 
   return (
-    <div 
+    <div
       ref={ref}
-      className={`transition-all duration-1000 ease-out ${
-        hasIntersected 
-          ? 'opacity-100 translate-y-0' 
-          : 'opacity-0 translate-y-12'
-      }`}
+      className={`transition-all duration-1000 ease-out ${hasIntersected ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}
     </div>
-  )
-}
+  );
+};
 
 const AnimatedParagraph = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
-  const { ref, hasIntersected } = useIntersectionObserver()
+  const { ref, hasIntersected } = useIntersectionObserver();
 
   return (
-    <div 
+    <div
       ref={ref}
-      className={`transition-all duration-800 ease-out ${
-        hasIntersected 
-          ? 'opacity-100 translate-y-0' 
-          : 'opacity-0 translate-y-6'
-      }`}
+      className={`transition-all duration-800 ease-out ${hasIntersected ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
-      <div className="text-base text-gray-200 leading-relaxed text-justify transition-all duration-300 hover:text-gray-100">
-        {children}
-      </div>
+      <div className="text-base text-gray-200 leading-relaxed text-justify transition-all duration-300 hover:text-gray-100">{children}</div>
     </div>
-  )
-}
+  );
+};
 
 const Kingdoms = () => {
-  const [selectedKingdomIndex, setSelectedKingdomIndex] = useState<number | null>(null)
-  const selectorRef = useRef<HTMLDivElement>(null)
+  const [selectedKingdomIndex, setSelectedKingdomIndex] = useState<number | null>(null);
+  const selectorRef = useRef<HTMLDivElement>(null);
 
   // Get the currently selected kingdom
   const selectedKingdom = useMemo(() => {
-    return selectedKingdomIndex !== null ? KINGDOMS.kingdoms[selectedKingdomIndex] : null
-  }, [selectedKingdomIndex])
+    return selectedKingdomIndex !== null ? KINGDOMS.kingdoms[selectedKingdomIndex] : null;
+  }, [selectedKingdomIndex]);
 
   // Function to scroll to selector section with proper offset for header
   const scrollToSelector = () => {
     if (selectorRef.current) {
-      const headerHeight = 80 // Approximate header height
-      const elementPosition = selectorRef.current.getBoundingClientRect().top + window.pageYOffset
-      const offsetPosition = elementPosition - headerHeight
+      const headerHeight = 80; // Approximate header height
+      const elementPosition = selectorRef.current.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - headerHeight;
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'smooth'
-      })
+        behavior: "smooth",
+      });
     }
-  }
+  };
 
   // Handle kingdom navigation with scroll
   const navigateToKingdom = (newIndex: number) => {
-    setSelectedKingdomIndex(newIndex)
+    setSelectedKingdomIndex(newIndex);
     // Small delay to ensure the content has updated before scrolling
-    setTimeout(scrollToSelector, 100)
-  }
+    setTimeout(scrollToSelector, 100);
+  };
 
   // Show all kingdoms overview
   const showOverview = () => {
-    setSelectedKingdomIndex(null)
-    setTimeout(scrollToSelector, 100)
-  }
+    setSelectedKingdomIndex(null);
+    setTimeout(scrollToSelector, 100);
+  };
 
   return (
     <div className="min-h-screen">
@@ -91,7 +81,8 @@ const Kingdoms = () => {
           <div className="mb-12 text-center">
             <h2 className="mb-4 text-2xl font-bold text-white lg:text-3xl">Realms of Atosia</h2>
             <p className="mx-auto max-w-3xl text-lg text-gray-300 leading-relaxed">
-              Explore the diverse kingdoms that make up the world of Atosia, each with their own unique culture, history, and challenges that shape the monster hunting landscape.
+              Explore the diverse kingdoms that make up the world of Atosia, each with their own unique culture, history, and challenges that shape the monster
+              hunting landscape.
             </p>
           </div>
         </AnimatedSection>
@@ -103,19 +94,19 @@ const Kingdoms = () => {
               <h3 className="mb-2 text-lg font-bold text-white">The World of Atosia</h3>
               <p className="text-sm text-gray-300">A continent divided into six mighty kingdoms</p>
             </div>
-            
+
             <div className="mx-auto max-w-2xl">
               <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm">
                 <div className="relative aspect-[3/4.08] overflow-hidden">
-                  <Image 
-                    className="h-full w-full object-cover object-center brightness-75 transition-all duration-500 group-hover:scale-105 group-hover:brightness-90" 
+                  <Image
+                    className="h-full w-full object-cover object-center brightness-75 transition-all duration-500 group-hover:scale-105 group-hover:brightness-90"
                     fill
-                    src={"/" + KINGDOMS.world.image} 
+                    src={"/" + KINGDOMS.world.image}
                     alt={KINGDOMS.world.name}
                     priority
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                  
+
                   {/* Map Title Overlay */}
                   <div className="absolute bottom-6 left-6 right-6">
                     <div className="rounded-lg border border-white/20 bg-black/60 p-4 backdrop-blur-sm">
@@ -178,11 +169,11 @@ const Kingdoms = () => {
                     <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm">
                       {/* Fixed aspect ratio container that works for all image orientations */}
                       <div className="relative overflow-hidden">
-                        <Image 
-                          className="h-full w-full object-cover object-center brightness-75 transition-all duration-500 group-hover:scale-105 group-hover:brightness-90" 
-                          width={800} 
-                          height={600} 
-                          src={"/" + selectedKingdom.image} 
+                        <Image
+                          className="h-full w-full object-cover object-center brightness-75 transition-all duration-500 group-hover:scale-105 group-hover:brightness-90"
+                          width={800}
+                          height={600}
+                          src={"/" + selectedKingdom.image}
                           alt={selectedKingdom.name}
                           priority
                         />
@@ -194,10 +185,8 @@ const Kingdoms = () => {
                   {/* Kingdom Info */}
                   <div className="order-1 lg:order-2 flex flex-col justify-center">
                     <div className="mb-6">
-                      <h1 className="mb-4 text-4xl font-bold text-white lg:text-5xl xl:text-6xl">
-                        {selectedKingdom.name}
-                      </h1>
-                      
+                      <h1 className="mb-4 text-4xl font-bold text-white lg:text-5xl xl:text-6xl">{selectedKingdom.name}</h1>
+
                       <div className="mb-6 flex flex-wrap items-center gap-4 text-sm text-gray-400">
                         <div className="flex items-center gap-2">
                           <span className="material-icons-outlined text-sm">public</span>
@@ -205,17 +194,20 @@ const Kingdoms = () => {
                         </div>
                         <div className="flex items-center gap-2">
                           <span className="material-icons-outlined text-sm">schedule</span>
-                          <span>~{Math.ceil(selectedKingdom.description.join(' ').split(' ').length / READ_TIME_PER_WORD)} min read</span>
+                          <span>~{Math.ceil(selectedKingdom.description.join(" ").split(" ").length / READ_TIME_PER_WORD)} min read</span>
                         </div>
                         <div className="flex items-center gap-2">
                           <span className="material-icons-outlined text-sm">bookmark</span>
-                          <span>Kingdom {selectedKingdomIndex! + 1} of {KINGDOMS.kingdoms.length}</span>
+                          <span>
+                            Kingdom {selectedKingdomIndex! + 1} of {KINGDOMS.kingdoms.length}
+                          </span>
                         </div>
                       </div>
 
                       {/* Kingdom Introduction */}
                       <p className="text-lg text-gray-300 leading-relaxed">
-                        Discover the rich history and unique culture of {selectedKingdom.name}, one of the six great kingdoms that shape the political and social landscape of Atosia.
+                        Discover the rich history and unique culture of {selectedKingdom.name}, one of the six great kingdoms that shape the political and
+                        social landscape of Atosia.
                       </p>
                     </div>
 
@@ -236,10 +228,8 @@ const Kingdoms = () => {
                 <div className="space-y-8">
                   {selectedKingdom.description.map((description: string, descriptionIndex: number) => (
                     <div key={descriptionIndex}>
-                      <AnimatedParagraph delay={descriptionIndex * 150}>
-                        {description}
-                      </AnimatedParagraph>
-                      
+                      <AnimatedParagraph delay={descriptionIndex * 150}>{description}</AnimatedParagraph>
+
                       {/* Elegant separator between paragraphs */}
                       {descriptionIndex < selectedKingdom.description.length - 1 && (
                         <AnimatedSection delay={descriptionIndex * 150 + 75}>
@@ -272,9 +262,7 @@ const Kingdoms = () => {
                     <span className="material-icons-outlined text-lg transition-transform group-hover:-translate-x-1">chevron_left</span>
                     <div className="text-left">
                       <div className="text-xs text-gray-400">Previous</div>
-                      <div>
-                        {selectedKingdomIndex! > 0 ? KINGDOMS.kingdoms[selectedKingdomIndex! - 1].name : 'No previous kingdom'}
-                      </div>
+                      <div>{selectedKingdomIndex! > 0 ? KINGDOMS.kingdoms[selectedKingdomIndex! - 1].name : "No previous kingdom"}</div>
                     </div>
                   </button>
 
@@ -292,9 +280,7 @@ const Kingdoms = () => {
                   >
                     <div className="text-right">
                       <div className="text-xs text-gray-400">Next</div>
-                      <div>
-                        {selectedKingdomIndex! < KINGDOMS.kingdoms.length - 1 ? KINGDOMS.kingdoms[selectedKingdomIndex! + 1].name : 'No next kingdom'}
-                      </div>
+                      <div>{selectedKingdomIndex! < KINGDOMS.kingdoms.length - 1 ? KINGDOMS.kingdoms[selectedKingdomIndex! + 1].name : "No next kingdom"}</div>
                     </div>
                     <span className="material-icons-outlined text-lg transition-transform group-hover:translate-x-1">chevron_right</span>
                   </button>
@@ -311,18 +297,18 @@ const Kingdoms = () => {
                   <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:scale-[1.02] hover:shadow-2xl">
                     <div className="grid grid-cols-1 gap-0 lg:grid-cols-2">
                       {/* Kingdom Image - Fixed aspect ratio for overview cards */}
-                      <div className={`relative overflow-hidden ${kingdomIndex % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
+                      <div className={`relative overflow-hidden ${kingdomIndex % 2 === 0 ? "lg:order-1" : "lg:order-2"}`}>
                         {/* Fixed aspect ratio container for consistent overview layout */}
                         <div className="relative max-w-2xl overflow-hidden">
-                          <Image 
-                            className="h-full w-full object-cover object-center brightness-75 transition-all duration-500 group-hover:scale-105 group-hover:brightness-90" 
-                            width={800} 
-                            height={600} 
-                            src={"/" + kingdom.image} 
+                          <Image
+                            className="h-full w-full object-cover object-center brightness-75 transition-all duration-500 group-hover:scale-105 group-hover:brightness-90"
+                            width={800}
+                            height={600}
+                            src={"/" + kingdom.image}
                             alt={kingdom.name}
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent lg:bg-gradient-to-r" />
-                          
+
                           {/* Click indicator */}
                           <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-200 group-hover:opacity-100">
                             <div className="flex h-16 w-16 items-center justify-center rounded-full border border-white/30 bg-white/20 backdrop-blur-sm">
@@ -333,24 +319,22 @@ const Kingdoms = () => {
                       </div>
 
                       {/* Kingdom Content */}
-                      <div className={`flex flex-col justify-center p-8 lg:p-12 ${kingdomIndex % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}>
+                      <div className={`flex flex-col justify-center p-8 lg:p-12 ${kingdomIndex % 2 === 0 ? "lg:order-2" : "lg:order-1"}`}>
                         <div className="mb-4">
-                          <h3 className="mb-3 text-2xl font-bold text-white transition-colors group-hover:text-blue-300 lg:text-3xl">
-                            {kingdom.name}
-                          </h3>
-                          
+                          <h3 className="mb-3 text-2xl font-bold text-white transition-colors group-hover:text-blue-300 lg:text-3xl">{kingdom.name}</h3>
+
                           <div className="mb-4 flex items-center gap-2 text-sm text-gray-400">
                             <span className="material-icons-outlined text-sm">public</span>
-                            <span>Kingdom {kingdomIndex + 1} of {KINGDOMS.kingdoms.length}</span>
+                            <span>
+                              Kingdom {kingdomIndex + 1} of {KINGDOMS.kingdoms.length}
+                            </span>
                             <span>•</span>
-                            <span>~{Math.ceil(kingdom.description.join(' ').split(' ').length / READ_TIME_PER_WORD)} min read</span>
+                            <span>~{Math.ceil(kingdom.description.join(" ").split(" ").length / READ_TIME_PER_WORD)} min read</span>
                           </div>
                         </div>
 
                         {/* First paragraph as preview */}
-                        <p className="mb-6 text-base text-gray-300 leading-relaxed line-clamp-4">
-                          {kingdom.description[0]}
-                        </p>
+                        <p className="mb-6 text-base text-gray-300 leading-relaxed line-clamp-4">{kingdom.description[0]}</p>
 
                         {/* Read more indicator */}
                         <div className="flex items-center gap-2 text-sm font-medium text-blue-300 transition-colors group-hover:text-blue-200">
@@ -375,18 +359,19 @@ const Kingdoms = () => {
               </div>
               <h3 className="mb-4 text-xl font-bold text-white">Explore the World</h3>
               <p className="mb-8 text-base text-gray-300 leading-relaxed">
-                Each kingdom offers unique challenges, contracts, and monsters to hunt. Discover the political intrigue, ancient mysteries, and diverse cultures that make Atosia a rich and immersive world.
+                Each kingdom offers unique challenges, contracts, and monsters to hunt. Discover the political intrigue, ancient mysteries, and diverse cultures
+                that make Atosia a rich and immersive world.
               </p>
               <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
-                <a 
-                  href="/lore/characters" 
+                <a
+                  href="/lore/characters"
                   className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-sm font-medium text-white transition-all hover:bg-blue-700 hover:scale-105"
                 >
                   <span className="material-icons-outlined text-lg">person</span>
                   Meet the Characters
                 </a>
-                <a 
-                  href="/lore/stories" 
+                <a
+                  href="/lore/stories"
                   className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 bg-white/5 px-6 py-3 text-sm font-medium text-white transition-all hover:bg-white/10 hover:scale-105"
                 >
                   <span className="material-icons-outlined text-lg">auto_stories</span>
@@ -398,7 +383,7 @@ const Kingdoms = () => {
         </AnimatedSection>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Kingdoms
+export default Kingdoms;

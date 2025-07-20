@@ -1,4 +1,4 @@
-import { TeamSectionProps } from "types"
+import { TeamSectionProps } from "types";
 
 export const TeamSection = ({ title, subtitle, children }: TeamSectionProps) => {
   return (
@@ -9,5 +9,5 @@ export const TeamSection = ({ title, subtitle, children }: TeamSectionProps) => 
       </div>
       {children}
     </section>
-  )
-}
+  );
+};

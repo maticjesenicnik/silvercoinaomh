@@ -1,28 +1,24 @@
-import { useIntersectionObserver } from "hooks/useIntersectionObserver"
+import { useIntersectionObserver } from "hooks/useIntersectionObserver";
 
 interface GalleryStatsProps {
-  monstersCount: number
-  charactersCount: number
-  totalCount: number
+  monstersCount: number;
+  charactersCount: number;
+  totalCount: number;
 }
 
 const AnimatedSection = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
-  const { ref, hasIntersected } = useIntersectionObserver()
+  const { ref, hasIntersected } = useIntersectionObserver();
 
   return (
-    <div 
+    <div
       ref={ref}
-      className={`transition-all duration-1000 ease-out ${
-        hasIntersected 
-          ? 'opacity-100 translate-y-0' 
-          : 'opacity-0 translate-y-12'
-      }`}
+      className={`transition-all duration-1000 ease-out ${hasIntersected ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}
     </div>
-  )
-}
+  );
+};
 
 export const GalleryStats = ({ monstersCount, charactersCount, totalCount }: GalleryStatsProps) => {
   return (
@@ -53,5 +49,5 @@ export const GalleryStats = ({ monstersCount, charactersCount, totalCount }: Gal
         </div>
       </div>
     </AnimatedSection>
-  )
-}
+  );
+};

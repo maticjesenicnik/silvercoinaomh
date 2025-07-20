@@ -1,26 +1,26 @@
-"use client"
+"use client";
 
-import { AnimatedSection } from "components/layout/AnimatedSection"
-import { useIntersectionObserver } from "hooks/useIntersectionObserver"
-import Image from "next/image"
-import { useState } from "react"
+import { AnimatedSection } from "components/layout/AnimatedSection";
+import { useIntersectionObserver } from "hooks/useIntersectionObserver";
+import Image from "next/image";
+import { useState } from "react";
 
 const RulebookCard = ({ title, image, subtitle, pdfUrl, delay = 0 }: { title: string; image: string; subtitle: string; pdfUrl: string; delay?: number }) => {
-  const { ref, hasIntersected } = useIntersectionObserver()
-  const [showPDFReader, setShowPDFReader] = useState(false)
+  const { ref, hasIntersected } = useIntersectionObserver();
+  const [showPDFReader, setShowPDFReader] = useState(false);
 
   const handleReadOnline = () => {
-    setShowPDFReader(true)
-  }
+    setShowPDFReader(true);
+  };
 
   const handleDownload = () => {
-    const link = document.createElement("a")
-    link.href = pdfUrl
-    link.download = `${title.replace(/\s+/g, "_")}.pdf`
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
-  }
+    const link = document.createElement("a");
+    link.href = pdfUrl;
+    link.download = `${title.replace(/\s+/g, "_")}.pdf`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <>
@@ -105,8 +105,8 @@ const RulebookCard = ({ title, image, subtitle, pdfUrl, delay = 0 }: { title: st
       {/* PDF Reader Modal */}
       {/* {showPDFReader && <PDFReader pdfUrl={pdfUrl} title={title} onClose={() => setShowPDFReader(false)} />} */}
     </>
-  )
-}
+  );
+};
 
 export const RulebookSection = () => {
   return (
@@ -149,5 +149,5 @@ export const RulebookSection = () => {
         </div>
       </div>
     </AnimatedSection>
-  )
-}
+  );
+};

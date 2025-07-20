@@ -1,8 +1,8 @@
 interface YearFilterProps {
-  years: string[]
-  selectedYear: string
-  onYearChange: (year: string) => void
-  getNewsletterCountForYear: (year: string) => number
+  years: string[];
+  selectedYear: string;
+  onYearChange: (year: string) => void;
+  getNewsletterCountForYear: (year: string) => number;
 }
 
 export const YearFilter = ({ years, selectedYear, onYearChange, getNewsletterCountForYear }: YearFilterProps) => {
@@ -25,12 +25,10 @@ export const YearFilter = ({ years, selectedYear, onYearChange, getNewsletterCou
             }`}
           >
             {year}
-            <span className="ml-1 text-xs opacity-75">
-              ({getNewsletterCountForYear(year)})
-            </span>
+            <span className="ml-1 text-xs opacity-75">({getNewsletterCountForYear(year)})</span>
           </button>
         ))}
       </div>
     </div>
-  )
-}
+  );
+};

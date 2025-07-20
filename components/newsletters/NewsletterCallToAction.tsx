@@ -30,5 +30,5 @@ export const NewsletterCallToAction = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};

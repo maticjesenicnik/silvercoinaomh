@@ -1,6 +1,6 @@
 interface NewsletterResultsCountProps {
-  count: number
-  selectedYear: string
+  count: number;
+  selectedYear: string;
 }
 
 export const NewsletterResultsCount = ({ count, selectedYear }: NewsletterResultsCountProps) => {
@@ -11,5 +11,5 @@ export const NewsletterResultsCount = ({ count, selectedYear }: NewsletterResult
         {selectedYear !== "All" && <span> from {selectedYear}</span>} newsletter{count !== 1 ? "s" : ""}
       </p>
     </div>
-  )
-}
+  );
+};

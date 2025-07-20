@@ -1,8 +1,8 @@
-import { AnimatedSection } from "components/layout/AnimatedSection"
-import { useIntersectionObserver } from "hooks/useIntersectionObserver"
+import { AnimatedSection } from "components/layout/AnimatedSection";
+import { useIntersectionObserver } from "hooks/useIntersectionObserver";
 
 const ReferenceCard = ({ title, items, icon, color, delay = 0 }: { title: string; items: string[]; icon: string; color: string; delay?: number }) => {
-  const { ref, hasIntersected } = useIntersectionObserver()
+  const { ref, hasIntersected } = useIntersectionObserver();
 
   return (
     <div
@@ -28,8 +28,8 @@ const ReferenceCard = ({ title, items, icon, color, delay = 0 }: { title: string
         </ul>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export const QuickReference = () => {
   return (
@@ -73,5 +73,5 @@ export const QuickReference = () => {
         </div>
       </div>
     </AnimatedSection>
-  )
-}
+  );
+};

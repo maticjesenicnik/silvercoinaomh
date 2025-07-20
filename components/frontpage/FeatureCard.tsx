@@ -1,7 +1,7 @@
-import { useIntersectionObserver } from "hooks/useIntersectionObserver"
+import { useIntersectionObserver } from "hooks/useIntersectionObserver";
 
 export const FeatureCard = ({ icon, title, description, delay = 0 }: { icon: string; title: string; description: string; delay?: number }) => {
-  const { ref, hasIntersected } = useIntersectionObserver()
+  const { ref, hasIntersected } = useIntersectionObserver();
 
   return (
     <div
@@ -17,5 +17,5 @@ export const FeatureCard = ({ icon, title, description, delay = 0 }: { icon: str
         <p className="text-gray-300 leading-relaxed">{description}</p>
       </div>
     </div>
-  )
-}
+  );
+};

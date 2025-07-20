@@ -1,17 +1,17 @@
-import Image from "next/image"
-import Link from "next/link"
-import { NewsletterType } from "types"
+import Image from "next/image";
+import Link from "next/link";
+import { NewsletterType } from "types";
 
 export const NewsletterCard = ({ newsletter }: { newsletter: NewsletterType }) => {
   // Format date for display
   const formatDate = (dateString: string) => {
-    const date = new Date(dateString)
+    const date = new Date(dateString);
     return date.toLocaleDateString("en-US", {
       year: "numeric",
       month: "long",
       day: "numeric",
-    })
-  }
+    });
+  };
 
   return (
     <article className="group h-full overflow-hidden rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white/10 hover:shadow-2xl">
@@ -88,5 +88,5 @@ export const NewsletterCard = ({ newsletter }: { newsletter: NewsletterType }) =
         </div>
       </Link>
     </article>
-  )
-}
+  );
+};

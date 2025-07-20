@@ -1,4 +1,4 @@
-import { CharactersType } from "types"
+import { CharactersType } from "types";
 
 export const CHARACTERS: CharactersType = {
   characters: [
@@ -121,4 +121,4 @@ export const CHARACTERS: CharactersType = {
       ],
     },
   ],
-}
+};

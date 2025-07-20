@@ -1,47 +1,43 @@
-import Image from "next/image"
-import { useState } from "react"
-import { useIntersectionObserver } from "hooks/useIntersectionObserver"
-import { useImageViewer } from "../../context/ImageViewerContext"
+import Image from "next/image";
+import { useState } from "react";
+import { useIntersectionObserver } from "hooks/useIntersectionObserver";
+import { useImageViewer } from "../../context/ImageViewerContext";
 
 interface GalleryItem {
-  name: string
-  image: string
-  type: 'monster' | 'character'
+  name: string;
+  image: string;
+  type: "monster" | "character";
 }
 
 interface GalleryGridProps {
-  items: GalleryItem[]
+  items: GalleryItem[];
 }
 
 const GalleryItem = ({ item, index, delay = 0 }: { item: GalleryItem; index: number; delay?: number }) => {
-  const { ref, hasIntersected } = useIntersectionObserver()
-  const [imageLoaded, setImageLoaded] = useState(false)
-  const [imageError, setImageError] = useState(false)
-  const { openImageViewer } = useImageViewer()
+  const { ref, hasIntersected } = useIntersectionObserver();
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageError, setImageError] = useState(false);
+  const { openImageViewer } = useImageViewer();
 
   const handleImageLoad = () => {
-    setImageLoaded(true)
-  }
+    setImageLoaded(true);
+  };
 
   const handleImageError = () => {
-    setImageError(true)
-  }
+    setImageError(true);
+  };
 
   const handleClick = () => {
-    openImageViewer(index)
-  }
+    openImageViewer(index);
+  };
 
   return (
-    <div 
+    <div
       ref={ref}
-      className={`transition-all duration-800 ease-out ${
-        hasIntersected 
-          ? 'opacity-100 translate-y-0' 
-          : 'opacity-0 translate-y-8'
-      }`}
+      className={`transition-all duration-800 ease-out ${hasIntersected ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
-      <div 
+      <div
         className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:bg-white/10 hover:shadow-2xl cursor-pointer"
         onClick={handleClick}
       >
@@ -65,7 +61,7 @@ const GalleryItem = ({ item, index, delay = 0 }: { item: GalleryItem; index: num
           {/* Main image */}
           <Image
             className={`h-full w-full object-cover brightness-90 transition-all duration-500 group-hover:scale-105 group-hover:brightness-100 ${
-              imageLoaded ? 'opacity-100' : 'opacity-0'
+              imageLoaded ? "opacity-100" : "opacity-0"
             }`}
             src={item.image}
             alt={item.name}
@@ -81,9 +77,7 @@ const GalleryItem = ({ item, index, delay = 0 }: { item: GalleryItem; index: num
           {/* Type badge */}
           <div className="absolute left-4 top-4">
             <div className="flex items-center gap-2 rounded-full border border-white/20 bg-black/60 px-3 py-1.5 backdrop-blur-sm">
-              <span className="material-icons-outlined text-sm text-white">
-                {item.type === 'monster' ? 'pets' : 'person'}
-              </span>
+              <span className="material-icons-outlined text-sm text-white">{item.type === "monster" ? "pets" : "person"}</span>
               <span className="text-xs font-medium capitalize text-white">{item.type}</span>
             </div>
           </div>
@@ -97,15 +91,13 @@ const GalleryItem = ({ item, index, delay = 0 }: { item: GalleryItem; index: num
 
           {/* Name overlay */}
           <div className="absolute bottom-0 left-0 right-0 p-4">
-            <h3 className="text-lg font-bold text-white transition-colors group-hover:text-blue-300">
-              {item.name}
-            </h3>
+            <h3 className="text-lg font-bold text-white transition-colors group-hover:text-blue-300">{item.name}</h3>
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export const GalleryGrid = ({ items }: GalleryGridProps) => {
   if (items.length === 0) {
@@ -117,19 +109,14 @@ export const GalleryGrid = ({ items }: GalleryGridProps) => {
           <p className="text-gray-400">Try adjusting your search or category filters.</p>
         </div>
       </div>
-    )
+    );
   }
 
   return (
     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
       {items.map((item, index) => (
-        <GalleryItem
-          key={`${item.type}-${item.name}`}
-          item={item}
-          index={index}
-          delay={index * 50}
-        />
+        <GalleryItem key={`${item.type}-${item.name}`} item={item} index={index} delay={index * 50} />
       ))}
     </div>
-  )
-}
+  );
+};

@@ -1,4 +1,4 @@
-import { TeamHelperProps } from "types"
+import { TeamHelperProps } from "types";
 
 export const TeamHelper = ({ name, role }: TeamHelperProps) => {
   return (
@@ -6,5 +6,5 @@ export const TeamHelper = ({ name, role }: TeamHelperProps) => {
       <h4 className="font-semibold text-white mb-1">{name}</h4>
       <p className="text-sm text-gray-300">{role}</p>
     </div>
-  )
-}
+  );
+};
