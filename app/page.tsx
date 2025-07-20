@@ -1,71 +1,10 @@
 "use client"
 
-import { useIntersectionObserver } from "hooks/useIntersectionObserver"
+import { FeatureCard } from "components/frontpage/FeatureCard"
+import { StatCard } from "components/frontpage/StatCard"
+import { AnimatedSection } from "components/layout/AnimatedSection"
 import Image from "next/image"
 import Link from "next/link"
-
-const AnimatedSection = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
-  const { ref, hasIntersected } = useIntersectionObserver()
-
-  return (
-    <div 
-      ref={ref}
-      className={`transition-all duration-1000 ease-out ${
-        hasIntersected 
-          ? 'opacity-100 translate-y-0' 
-          : 'opacity-0 translate-y-12'
-      }`}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
-      {children}
-    </div>
-  )
-}
-
-const FeatureCard = ({ icon, title, description, delay = 0 }: { icon: string; title: string; description: string; delay?: number }) => {
-  const { ref, hasIntersected } = useIntersectionObserver()
-
-  return (
-    <div 
-      ref={ref}
-      className={`transition-all duration-800 ease-out ${
-        hasIntersected 
-          ? 'opacity-100 translate-y-0 scale-100' 
-          : 'opacity-0 translate-y-8 scale-95'
-      }`}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
-      <div className="group h-full rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:scale-105 hover:shadow-2xl">
-        <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-blue-600/20 to-purple-600/20 border border-white/10 transition-all group-hover:scale-110">
-          <span className="material-icons-outlined text-3xl text-blue-300">{icon}</span>
-        </div>
-        <h3 className="mb-3 text-xl font-bold text-white group-hover:text-blue-300 transition-colors">{title}</h3>
-        <p className="text-gray-300 leading-relaxed">{description}</p>
-      </div>
-    </div>
-  )
-}
-
-const StatCard = ({ number, label, delay = 0 }: { number: string; label: string; delay?: number }) => {
-  const { ref, hasIntersected } = useIntersectionObserver()
-
-  return (
-    <div 
-      ref={ref}
-      className={`transition-all duration-800 ease-out ${
-        hasIntersected 
-          ? 'opacity-100 translate-y-0' 
-          : 'opacity-0 translate-y-8'
-      }`}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
-      <div className="text-center">
-        <div className="mb-2 text-4xl font-bold text-white lg:text-5xl">{number}</div>
-        <div className="text-sm text-gray-300 uppercase tracking-wide">{label}</div>
-      </div>
-    </div>
-  )
-}
 
 export default function Page() {
   return (
@@ -85,11 +24,11 @@ export default function Page() {
               <AnimatedSection>
                 <div className="flex justify-center lg:justify-start">
                   <div className="group relative max-w-lg">
-                    <Image 
-                      src="/images/frontpage/box.webp" 
-                      className="w-full transition-all duration-500 group-hover:scale-105" 
-                      alt="Silver Coin: Age of Monster Hunters Box" 
-                      width={1916} 
+                    <Image
+                      src="/images/frontpage/box.webp"
+                      className="w-full transition-all duration-500 group-hover:scale-105"
+                      alt="Silver Coin: Age of Monster Hunters Box"
+                      width={1916}
                       height={1515}
                       priority
                     />
@@ -102,19 +41,15 @@ export default function Page() {
               <div className="text-center lg:text-left">
                 <AnimatedSection delay={200}>
                   <div className="mb-6">
-                    <h1 className="mb-4 text-4xl font-bold text-white lg:text-6xl xl:text-7xl leading-tight">
-                      Silver Coin
-                    </h1>
-                    <h2 className="text-2xl font-semibold text-blue-300 lg:text-3xl xl:text-4xl">
-                      Age of Monster Hunters
-                    </h2>
+                    <h1 className="mb-4 text-4xl font-bold text-white lg:text-6xl xl:text-7xl leading-tight">Silver Coin</h1>
+                    <h2 className="text-2xl font-semibold text-blue-300 lg:text-3xl xl:text-4xl">Age of Monster Hunters</h2>
                   </div>
                 </AnimatedSection>
 
                 <AnimatedSection delay={400}>
                   <p className="mb-8 text-lg text-gray-200 leading-relaxed lg:text-xl max-w-2xl">
-                    Embark on an epic adventure in the fantasy realm of Atosia. Hunt legendary monsters, 
-                    earn silver coins, and become the most renowned monster hunter in the land.
+                    Embark on an epic adventure in the fantasy realm of Atosia. Hunt legendary monsters, earn silver coins, and become the most renowned monster
+                    hunter in the land.
                   </p>
                 </AnimatedSection>
 
@@ -126,25 +61,25 @@ export default function Page() {
                     </div>
                     <div className="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-sm">
                       <span className="material-icons-outlined text-lg text-blue-400">schedule</span>
-                      <span className="text-sm font-medium text-white">90-120 Min</span>
+                      <span className="text-sm font-medium text-white">60 Min/Player</span>
                     </div>
                     <div className="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-sm">
-                      <span className="material-icons-outlined text-lg text-purple-400">star</span>
-                      <span className="text-sm font-medium text-white">Age 14+</span>
+                      <span className="material-icons-outlined text-lg text-purple-400">gamepad</span>
+                      <span className="text-sm font-medium text-white">Solo/Co-op/Competitive</span>
                     </div>
                   </div>
                 </AnimatedSection>
 
                 <AnimatedSection delay={800}>
                   <div className="flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
-                    <Link 
+                    <Link
                       href="/playtest"
                       className="inline-flex items-center justify-center gap-3 rounded-lg bg-blue-600 px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-blue-700 hover:scale-105 shadow-lg shadow-blue-600/25"
                     >
                       <span className="material-icons-outlined text-xl">videogame_asset</span>
                       Play Now
                     </Link>
-                    <Link 
+                    <Link
                       href="/learn"
                       className="inline-flex items-center justify-center gap-3 rounded-lg border border-white/20 bg-white/10 px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-white/20 hover:scale-105 backdrop-blur-sm"
                     >
@@ -180,7 +115,7 @@ export default function Page() {
             />
             <FeatureCard
               icon="pets"
-              title="30+ Unique Monsters"
+              title="40+ Unique Monsters"
               description="Face legendary creatures that grow stronger based on when and where you encounter them. Each monster offers unique challenges and rewards."
               delay={300}
             />
@@ -218,18 +153,16 @@ export default function Page() {
           <AnimatedSection>
             <div className="mb-12 text-center">
               <h2 className="mb-4 text-4xl font-bold text-white lg:text-5xl">Immersive Game World</h2>
-              <p className="mx-auto max-w-2xl text-lg text-gray-300">
-                Every component has been carefully designed to bring the world of Atosia to life
-              </p>
+              <p className="mx-auto max-w-2xl text-lg text-gray-300">Every component has been carefully designed to bring the world of Atosia to life</p>
             </div>
           </AnimatedSection>
 
           <AnimatedSection delay={200}>
             <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm">
-              <Image 
-                src="/images/frontpage/naslovna_slika_igre.webp" 
-                alt="Silver Coin Game Board" 
-                width={1500} 
+              <Image
+                src="/images/frontpage/naslovna_slika_igre.webp"
+                alt="Silver Coin Game Board"
+                width={1500}
                 height={1563}
                 className="w-full transition-all duration-700 group-hover:scale-105"
               />
@@ -251,7 +184,7 @@ export default function Page() {
 
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
             <StatCard number="7+" label="Years in Development" delay={200} />
-            <StatCard number="30+" label="Unique Monsters" delay={300} />
+            <StatCard number="40+" label="Unique Monsters" delay={300} />
             <StatCard number="9" label="Character Classes" delay={400} />
             <StatCard number="6" label="Kingdoms to Explore" delay={500} />
           </div>
@@ -264,9 +197,7 @@ export default function Page() {
           <AnimatedSection>
             <div className="mb-12 text-center">
               <h2 className="mb-4 text-4xl font-bold text-white lg:text-5xl">Learn to Hunt</h2>
-              <p className="mx-auto max-w-2xl text-lg text-gray-300">
-                Watch our comprehensive tutorial and start your monster hunting journey
-              </p>
+              <p className="mx-auto max-w-2xl text-lg text-gray-300">Watch our comprehensive tutorial and start your monster hunting journey</p>
             </div>
           </AnimatedSection>
 
@@ -300,14 +231,14 @@ export default function Page() {
                 </p>
 
                 <div className="mb-12 flex flex-col gap-6 sm:flex-row sm:justify-center">
-                  <Link 
+                  <Link
                     href="/playtest"
                     className="inline-flex items-center justify-center gap-3 rounded-lg bg-blue-600 px-10 py-5 text-xl font-semibold text-white transition-all hover:bg-blue-700 hover:scale-105 shadow-lg shadow-blue-600/25"
                   >
                     <span className="material-icons-outlined text-2xl">play_circle</span>
                     Start Playing
                   </Link>
-                  <Link 
+                  <Link
                     href="/lore/kingdoms"
                     className="inline-flex items-center justify-center gap-3 rounded-lg border border-white/20 bg-white/10 px-10 py-5 text-xl font-semibold text-white transition-all hover:bg-white/20 hover:scale-105 backdrop-blur-sm"
                   >
@@ -315,8 +246,6 @@ export default function Page() {
                     Explore Lore
                   </Link>
                 </div>
-
-                
               </div>
             </div>
           </AnimatedSection>

@@ -6,25 +6,11 @@ import { GalleryCallToAction } from "components/gallery/GalleryCallToAction"
 import { GalleryGrid } from "components/gallery/GalleryGrid"
 import { GalleryStats } from "components/gallery/GalleryStats"
 import { ImageViewer } from "components/gallery/ImageViewer"
+import { AnimatedSection } from "components/layout/AnimatedSection"
 import { PageHeader } from "components/PageHeader"
 import { useImageViewer } from "context/ImageViewerContext"
 import { GALLERY } from "data/gallery"
-import { useIntersectionObserver } from "hooks/useIntersectionObserver"
 import React from "react"
-
-const AnimatedSection = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
-  const { ref, hasIntersected } = useIntersectionObserver()
-
-  return (
-    <div
-      ref={ref}
-      className={`transition-all duration-1000 ease-out ${hasIntersected ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
-      {children}
-    </div>
-  )
-}
 
 const Gallery = () => {
   const { setImages } = useImageViewer()
@@ -65,13 +51,11 @@ const Gallery = () => {
         </AnimatedSection>
 
         {/* Gallery Grid */}
-        <AnimatedSection delay={600}>
-          <GalleryGrid items={allItems} />
-        </AnimatedSection>
+        <GalleryGrid items={allItems} />
 
         {/* Results Count */}
 
-        <AnimatedSection delay={800}>
+        <AnimatedSection delay={200}>
           <div className="mt-8 text-center">
             <p className="text-sm text-gray-400">
               Showing <span className="font-semibold text-white">{allItems.length}</span>
