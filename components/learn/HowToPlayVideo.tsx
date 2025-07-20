@@ -42,7 +42,7 @@ export const HowToPlayVideo = () => {
           <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3">
             <div className="rounded-lg border border-white/10 bg-white/5 p-4 text-center backdrop-blur-sm">
               <span className="material-icons-outlined mb-2 block text-2xl text-blue-400">timer</span>
-              <h5 className="font-semibold text-white">~ 25 Minutes</h5>
+              <h5 className="font-semibold text-white">~ 50 Minutes</h5>
               <p className="text-sm text-gray-400">Complete walkthrough</p>
             </div>
 

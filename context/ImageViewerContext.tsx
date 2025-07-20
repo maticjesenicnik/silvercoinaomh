@@ -1,11 +1,11 @@
 "use client"
 
-import React, { createContext, useContext, useState, ReactNode } from 'react'
+import { createContext, ReactNode, useContext, useState } from "react"
 
 interface GalleryItem {
   name: string
   image: string
-  type: 'monster' | 'character'
+  type: "monster" | "character"
 }
 
 interface ImageViewerContextType {
@@ -25,7 +25,7 @@ const ImageViewerContext = createContext<ImageViewerContextType | undefined>(und
 export const useImageViewer = () => {
   const context = useContext(ImageViewerContext)
   if (context === undefined) {
-    throw new Error('useImageViewer must be used within an ImageViewerProvider')
+    throw new Error("useImageViewer must be used within an ImageViewerProvider")
   }
   return context
 }
@@ -49,15 +49,11 @@ export const ImageViewerProvider = ({ children }: ImageViewerProviderProps) => {
   }
 
   const goToNextImage = () => {
-    setCurrentImageIndex((prevIndex) => 
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    )
+    setCurrentImageIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1))
   }
 
   const goToPreviousImage = () => {
-    setCurrentImageIndex((prevIndex) => 
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    )
+    setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1))
   }
 
   const goToImage = (index: number) => {
@@ -76,9 +72,5 @@ export const ImageViewerProvider = ({ children }: ImageViewerProviderProps) => {
     setImages,
   }
 
-  return (
-    <ImageViewerContext.Provider value={value}>
-      {children}
-    </ImageViewerContext.Provider>
-  )
+  return <ImageViewerContext.Provider value={value}>{children}</ImageViewerContext.Provider>
 }
