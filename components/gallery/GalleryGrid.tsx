@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { useState } from "react"
 import { useIntersectionObserver } from "hooks/useIntersectionObserver"
+import { useImageViewer } from "../../context/ImageViewerContext"
 
 interface GalleryItem {
   name: string
@@ -12,10 +13,11 @@ interface GalleryGridProps {
   items: GalleryItem[]
 }
 
-const GalleryItem = ({ item, delay = 0 }: { item: GalleryItem; delay?: number }) => {
+const GalleryItem = ({ item, index, delay = 0 }: { item: GalleryItem; index: number; delay?: number }) => {
   const { ref, hasIntersected } = useIntersectionObserver()
   const [imageLoaded, setImageLoaded] = useState(false)
   const [imageError, setImageError] = useState(false)
+  const { openImageViewer } = useImageViewer()
 
   const handleImageLoad = () => {
     setImageLoaded(true)
@@ -23,6 +25,10 @@ const GalleryItem = ({ item, delay = 0 }: { item: GalleryItem; delay?: number })
 
   const handleImageError = () => {
     setImageError(true)
+  }
+
+  const handleClick = () => {
+    openImageViewer(index)
   }
 
   return (
@@ -35,7 +41,10 @@ const GalleryItem = ({ item, delay = 0 }: { item: GalleryItem; delay?: number })
       }`}
       style={{ transitionDelay: `${delay}ms` }}
     >
-      <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:bg-white/10 hover:shadow-2xl">
+      <div 
+        className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:bg-white/10 hover:shadow-2xl cursor-pointer"
+        onClick={handleClick}
+      >
         {/* Fixed aspect ratio container */}
         <div className="relative aspect-[3/4] overflow-hidden">
           {/* Loading placeholder */}
@@ -117,6 +126,7 @@ export const GalleryGrid = ({ items }: GalleryGridProps) => {
         <GalleryItem
           key={`${item.type}-${item.name}`}
           item={item}
+          index={index}
           delay={index * 50}
         />
       ))}
