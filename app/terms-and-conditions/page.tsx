@@ -1,5 +1,14 @@
 import { PageHeader } from "components/PageHeader";
 
+import { createMetadata } from "lib/metadata";
+import { Metadata } from "next";
+
+export const metadata: Metadata = createMetadata({
+  title: "Silver Coin: Age of Monster Hunters - Terms and Conditions",
+  description: "Read the Terms and Conditions and Privacy Policy for Silver Coin: Age of Monster Hunters. Learn how we handle your data and your rights.",
+  url: "/terms-and-conditions",
+});
+
 const TermsAndConditions = () => {
   return (
     <div className="text-center">

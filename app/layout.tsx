@@ -1,6 +1,15 @@
+import { Metadata } from "next";
 import { Footer } from "../components/layout/Footer";
 import { Header } from "../components/layout/Header";
 import "./globals.css";
+
+import { createMetadata } from "lib/metadata";
+
+export const metadata: Metadata = createMetadata({
+  title: "Silver Coin: Age of Monster Hunters – Official Board Game Website",
+  description: "Silver Coin: Age of Monster Hunters is a competitive adventure eurogame set in the dark fantasy world of Atosia...",
+  url: "/",
+});
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
