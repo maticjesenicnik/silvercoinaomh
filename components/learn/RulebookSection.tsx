@@ -3,15 +3,9 @@
 import { AnimatedSection } from "components/layout/AnimatedSection";
 import { useIntersectionObserver } from "hooks/useIntersectionObserver";
 import Image from "next/image";
-import { useState } from "react";
 
 const RulebookCard = ({ title, image, subtitle, pdfUrl, delay = 0 }: { title: string; image: string; subtitle: string; pdfUrl: string; delay?: number }) => {
   const { ref, hasIntersected } = useIntersectionObserver();
-  const [showPDFReader, setShowPDFReader] = useState(false);
-
-  const handleReadOnline = () => {
-    setShowPDFReader(true);
-  };
 
   const handleDownload = () => {
     const link = document.createElement("a");
@@ -29,7 +23,10 @@ const RulebookCard = ({ title, image, subtitle, pdfUrl, delay = 0 }: { title: st
         className={`transition-all duration-800 ease-out ${hasIntersected ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-95"}`}
         style={{ transitionDelay: `${delay}ms` }}
       >
-        <div className="group h-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:shadow-2xl">
+        <div
+          className="group h-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:shadow-2xl hover:cursor-pointer"
+          onClick={handleDownload}
+        >
           {/* Book Image */}
           <div className="relative aspect-square overflow-hidden">
             <Image
@@ -79,24 +76,13 @@ const RulebookCard = ({ title, image, subtitle, pdfUrl, delay = 0 }: { title: st
             </div>
 
             {/* Action buttons */}
-            <div className="mt-6">
-              <div className="flex gap-2">
-                <button
-                  onClick={handleReadOnline}
-                  className="flex-1 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-all hover:bg-blue-700 hover:scale-105"
-                >
-                  <span className="flex items-center justify-center gap-2">
-                    <span className="material-icons-outlined text-lg">menu_book</span>
-                    Read Online
-                  </span>
-                </button>
-                <button
-                  onClick={handleDownload}
-                  className="rounded-lg border border-white/20 bg-white/5 px-4 py-2 text-sm font-medium text-white transition-all hover:bg-white/10 hover:scale-105"
-                >
-                  <span className="material-icons-outlined text-lg">download</span>
-                </button>
-              </div>
+            <div className="mt-6 flex justify-end">
+              <button
+                onClick={handleDownload}
+                className="rounded-lg border border-white/20 bg-white/5 px-4 py-2 text-sm font-medium text-white transition-all hover:bg-white/10 hover:scale-105"
+              >
+                <span className="material-icons-outlined text-lg">download</span>
+              </button>
             </div>
           </div>
         </div>

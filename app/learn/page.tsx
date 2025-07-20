@@ -14,22 +14,11 @@ const Learn = () => {
       <PageHeader title="Learn" />
 
       <div className="container mx-auto px-4 pb-16 lg:px-6">
-        {/* Introduction */}
         <LearnIntro />
-
-        {/* How to Play Video */}
         <HowToPlayVideo />
-
-        {/* Official Rulebooks */}
         <RulebookSection />
-
-        {/* Learning Path */}
         <LearningPath />
-
-        {/* Quick Reference */}
         <QuickReference />
-
-        {/* Call to Action */}
         <LearnCallToAction />
       </div>
     </div>
