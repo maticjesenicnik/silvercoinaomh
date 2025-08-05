@@ -16,7 +16,7 @@ export const PlaytestCallToAction = () => {
 
           <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
             <a
-              href="https://discord.com/invite/MDxUced"
+              href="https://discord.com/invite/NfQqrSgW3u"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-sm font-medium text-white transition-all hover:bg-blue-700 hover:scale-105"
