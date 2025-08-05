@@ -7,7 +7,7 @@ export const Footer = () => {
       <div className="container mx-auto px-4 py-6 lg:px-6">
         <div className="flex flex-col items-center justify-between gap-6 lg:flex-row">
           {/* Partners - Logos Only */}
-          <div className="flex items-center gap-6">
+          <div className="flex items-center flex-grow-1 basis-0 gap-6">
             <a
               href="https://boardgamegeek.com/boardgamepublisher/50038/bona-fide-games"
               className="group transition-opacity hover:opacity-80"
@@ -21,19 +21,10 @@ export const Footer = () => {
                 className="object-contain transition-transform group-hover:scale-105"
               />
             </a>
-            <a href="https://gea-college.si/" className="group transition-opacity hover:opacity-80" title="Gea College">
-              <Image
-                height={60}
-                width={120}
-                src="/images/logos/gea_college.webp"
-                alt="Gea College"
-                className="object-contain transition-transform group-hover:scale-105"
-              />
-            </a>
           </div>
 
           {/* Center Content - Contact & Social */}
-          <div className="flex flex-col items-center gap-3">
+          <div className="flex flex-col flex-grow-1 basis-0 items-center gap-3">
             <div className="flex gap-3">
               {SOCIALS.socials.map((social: any, index: number) => (
                 <a
@@ -64,7 +55,7 @@ export const Footer = () => {
           </div>
 
           {/* Terms & Copyright */}
-          <div className="flex flex-col items-center gap-2 text-center lg:items-end lg:text-right">
+          <div className="flex flex-col items-center flex-grow-1 basis-0 gap-2 text-center lg:items-end lg:text-right">
             <a className="text-sm font-medium text-gray-300 transition-colors hover:text-white" href="/terms-and-conditions">
               Terms & Conditions
             </a>
