@@ -11,7 +11,7 @@ export const metadata: Metadata = createMetadata({
 
 const TermsAndConditions = () => {
   return (
-    <div className="text-center">
+    <div className="text-center pb-4">
       <PageHeader title={"Terms and conditions"} />
 
       <div className="container mx-auto w-full lg:w-1/2 text-justify">

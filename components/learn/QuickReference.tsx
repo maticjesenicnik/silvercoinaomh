@@ -42,33 +42,27 @@ export const QuickReference = () => {
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           <ReferenceCard
-            title="Game Setup"
-            icon="settings"
+            title="Game phases"
+            icon="access_time"
             color="blue"
             delay={1000}
-            items={[
-              "Place the game board in center",
-              "Shuffle monster and contract decks",
-              "Each player chooses a character",
-              "Distribute starting resources",
-              "Place weather tokens",
-            ]}
+            items={["Auction Phase (Bid for your starting character & resources)", "Game Round Phases", "Final Scoring"]}
           />
 
           <ReferenceCard
-            title="Turn Structure"
+            title="Game round phases"
             icon="refresh"
             color="green"
             delay={1100}
-            items={["Weather phase", "Action phase (3 actions)", "Contract resolution", "Monster movement", "End of turn cleanup"]}
+            items={["Preparation phase", "Action Phase (3 actions each)", "Cleanup phase"]}
           />
 
           <ReferenceCard
-            title="Victory Conditions"
+            title="How to win"
             icon="emoji_events"
             color="yellow"
             delay={1200}
-            items={["Collect silver coins", "Complete contracts", "Defeat monsters", "Game ends after 8 rounds", "Most coins wins"]}
+            items={["Travel the world", "Complete missions", "Collect coins", "Game ends in 24 rounds", "The one with most coins wins"]}
           />
         </div>
       </div>
