@@ -18,7 +18,7 @@ export const TEAM: TeamType = {
       name: "Rok Malovrh",
       title: "Artist",
       url: "/images/team/rok.webp",
-      info: ["Responsible for illustrations of monsters, cover art and video. In a few years of drawing career still didn't manage to paint his girlfriend"],
+      info: ["Responsible for illustrations of monsters, cover art and video. In a few years of drawing career still didn't manage to paint his girlfriend."],
       socials: [
         {
           name: "Instagram",
@@ -32,7 +32,7 @@ export const TEAM: TeamType = {
       title: "PR and Marketing",
       url: "/images/team/gal.webp",
       info: [
-        "Gal is the youngest member of this team. He is 23 years old and is currently finishing his masters degree in Communication and media studies. For our project he is in charge of PR, Social media and Marketing.",
+        "Youngest member of our team. Crowdfunding & gamification specialist with a Master's in Communication and Media Studies, focused on Kickstarter and board games.",
       ],
     },
   ],
