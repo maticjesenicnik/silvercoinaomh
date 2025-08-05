@@ -3,6 +3,14 @@ import { VideosType } from "types";
 export const VIDEOS: VideosType = {
   videos: [
     {
+      title: "Silver Coin Podcast #11 - Characters",
+      category: ["Podcast"],
+      description:
+        "Silver Coin Podcast is podcast series about the Kickstarter board game Silver Coin: Age of Monster Hunters. In this episode we are talking about our Kickstarter page and hopefully explain in more details all you need to know when browsing it and all the thoughts behind it.",
+      url: "https://youtu.be/II5xY84UniY?si=bYUOOyVLjHP5BAKJ",
+      image: "images/videos/podcast11.webp",
+    },
+    {
       title: "Silver Coin: Age of Monster Hunters - SOLO Playthrough",
       category: ["Playthrough", "Video", "How to play"],
       description:
