@@ -1,7 +1,6 @@
 "use client";
 
 import { FeatureCard } from "components/frontpage/FeatureCard";
-import { StatCard } from "components/frontpage/StatCard";
 import { AnimatedSection } from "components/layout/AnimatedSection";
 import Image from "next/image";
 import Link from "next/link";
@@ -73,11 +72,12 @@ export default function Page() {
                 <AnimatedSection delay={800}>
                   <div className="flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
                     <Link
-                      href="/playtest"
-                      className="inline-flex items-center justify-center gap-3 rounded-lg bg-blue-600 px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-blue-700 hover:scale-105 shadow-lg shadow-blue-600/25"
+                      href="https://silver-coin-aomh.backerkit.com/hosted_preorders"
+                      target="_blank"
+                      className="inline-flex items-center justify-center gap-3 rounded-lg bg-green-600 px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-green-700 hover:scale-105 shadow-lg shadow-blue-600/25"
                     >
-                      <span className="material-icons-outlined text-xl">videogame_asset</span>
-                      Play Now
+                      <span className="material-icons-outlined text-xl">shopping_cart</span>
+                      Order now
                     </Link>
                     <Link
                       href="/learn"
@@ -169,25 +169,6 @@ export default function Page() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
           </AnimatedSection>
-        </div>
-      </section>
-
-      {/* Game Stats */}
-      <section className="py-20 bg-gradient-to-b from-black/20 to-transparent">
-        <div className="container mx-auto px-6">
-          <AnimatedSection>
-            <div className="mb-16 text-center">
-              <h2 className="mb-4 text-4xl font-bold text-white lg:text-5xl">By the Numbers</h2>
-              <p className="text-lg text-gray-300">Years of development, countless hours of playtesting</p>
-            </div>
-          </AnimatedSection>
-
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-            <StatCard number="7+" label="Years in Development" delay={200} />
-            <StatCard number="40+" label="Unique Monsters" delay={300} />
-            <StatCard number="9" label="Character Classes" delay={400} />
-            <StatCard number="6" label="Kingdoms to Explore" delay={500} />
-          </div>
         </div>
       </section>
 
