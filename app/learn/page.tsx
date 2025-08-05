@@ -1,29 +1,28 @@
-import { PageHeader } from 'components/PageHeader'
-import rulebookImg from 'public/images/rulebook/rulebook.webp'
-import scenarioImg from 'public/images/rulebook/scenario.webp'
-import { BookEntry } from './BookEntry'
+"use client";
+
+import { HowToPlayVideo } from "components/learn/HowToPlayVideo";
+import { LearnCallToAction } from "components/learn/LearnCallToAction";
+import { LearningPath } from "components/learn/LearningPath";
+import { LearnIntro } from "components/learn/LearnIntro";
+import { QuickReference } from "components/learn/QuickReference";
+import { RulebookSection } from "components/learn/RulebookSection";
+import { PageHeader } from "components/PageHeader";
 
 const Learn = () => {
   return (
-    <>
-      <PageHeader title={'Learn'} />
+    <div className="min-h-screen">
+      <PageHeader title="Learn" />
 
-      <section>
-        <iframe
-          className={'w-full aspect-video container mx-auto'}
-          src="https://www.youtube.com/embed/5XEDSREG7TQ"
-          title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
-      </section>
+      <div className="container mx-auto px-4 pb-16 lg:px-6">
+        <LearnIntro />
+        <HowToPlayVideo />
+        <RulebookSection />
+        <LearningPath />
+        <QuickReference />
+        <LearnCallToAction />
+      </div>
+    </div>
+  );
+};
 
-      <section className={'container mx-auto mt-12 px-6 flex flex-col justify-center md:flex-row gap-8'}>
-        <BookEntry title={'Standard rules v1.0.9'} image={rulebookImg} subtitle={'Things are bound to change'} />
-        <BookEntry title={'Scenario book v1.0.9 '} image={scenarioImg} subtitle={'CO-OP and SOLO'} />
-      </section>
-    </>
-  )
-}
-
-export default Learn
+export default Learn;

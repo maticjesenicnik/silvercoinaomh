@@ -1,166 +1,237 @@
-import Image from 'next/image'
-import { ListTitle } from 'components/frontpage/ListTitle'
-import { ListBody } from 'components/frontpage/ListBody'
-import box from 'public/images/frontpage/box.webp'
-import latePledge from 'public/images/kickstarter/late_pledge.webp'
-import freeCopy from 'public/images/kickstarter/subscribe_for_free_copy.webp'
-import wantPlaytest from 'public/images/buttons/want_to_playtest.webp'
-import signUpNewsletter from 'public/images/buttons/sign_up_newsletter.webp'
-import welcome from 'public/images/frontpage/welcome.webp'
-import gameArt from 'public/images/frontpage/naslovna_slika_igre.webp'
-import coverArt from 'public/cover_art.webp'
-import infographic from 'public/images/frontpage/infographics.webp'
+"use client";
+
+import { FeatureCard } from "components/frontpage/FeatureCard";
+import { AnimatedSection } from "components/layout/AnimatedSection";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Page() {
-  const socialsData = require('/json/socials.json')
-
   return (
     <>
-      <title>Front Page</title>
+      <title>Silver Coin: Age of Monster Hunters</title>
 
-      <section className={'relative'}>
-        <div className={'absolute top-0 left-0 w-full h-full z-0'}>
-          <Image src={coverArt} fill={true} className={'object-cover'} alt={'Background'} />
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center">
+        <div className="absolute left-0 top-0 z-0 h-full w-full">
+          <Image src="/cover_art.webp" fill className="object-cover" alt="Background" priority />
         </div>
 
-        <div className={'relative bg-black/40 flex justify-center items-center py-32 px-6'}>
-          <div className={'lg:mr-16 flex flex-col lg:flex-row gap-x-32 items-center justify-center'}>
-            <Image src={box} className={'flex-shrink-0 lg:w-1/2'} alt={'Box'} />
-
-            <div className={'flex flex-col items-center gap-6'}>
-              <Image src={latePledge} alt={'Late pledge'} />
-              <Image src={freeCopy} alt={'Subscribe for free copy'} />
-              <div className={'flex flex-col items-center gap-2'}>
-                <div className={'flex gap-3'}>
-                  <label>Email address</label>
-                  <input
-                    type={'email'}
-                    className={'bg-transparent font-light focus:outline-none'}
-                    placeholder={'Your email address'}
-                  />
+        <div className="relative z-10 w-full bg-black/50 backdrop-blur-sm">
+          <div className="container mx-auto px-6 py-20">
+            <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+              {/* Game Box */}
+              <AnimatedSection>
+                <div className="flex justify-center lg:justify-start">
+                  <div className="group relative max-w-lg">
+                    <Image
+                      src="/images/frontpage/box.webp"
+                      className="w-full transition-all duration-500 group-hover:scale-105"
+                      alt="Silver Coin: Age of Monster Hunters Box"
+                      width={1916}
+                      height={1515}
+                      priority
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 transition-opacity duration-300" />
+                  </div>
                 </div>
-                <Image width={138} height={77} src={'/images/buttons/sign_up.webp'} alt={'Sign Up'} />
-              </div>
+              </AnimatedSection>
 
-              <p className={'text-sm font-light'}>
-                Earn a chance to <span className={'font-bold'}>win a free copy of the game</span> by subscribing.
-                Subscribe to be updated on the <span className={'font-bold'}>latest news</span>!
-              </p>
+              {/* Hero Content */}
+              <div className="text-center lg:text-left">
+                <AnimatedSection delay={200}>
+                  <div className="mb-6">
+                    <h1 className="mb-4 text-4xl font-bold text-white lg:text-6xl xl:text-7xl leading-tight">Silver Coin</h1>
+                    <h2 className="text-2xl font-semibold text-blue-300 lg:text-3xl xl:text-4xl">Age of Monster Hunters</h2>
+                  </div>
+                </AnimatedSection>
 
-              <div className={'flex gap-2'}>
-                {socialsData.socials.map((el: any, index: number) => {
-                  return (
-                    <a
-                      key={index}
-                      className={'flex justify-center items-center hover:opacity-80 transition-all'}
-                      href={el.url}
-                      target={'_blank'}
-                      rel={'noreferrer'}
+                <AnimatedSection delay={400}>
+                  <p className="mb-8 text-lg text-gray-200 leading-relaxed lg:text-xl max-w-2xl">
+                    Embark on an epic adventure in the fantasy realm of Atosia. Hunt legendary monsters, earn silver coins, and become the most renowned monster
+                    hunter in the land.
+                  </p>
+                </AnimatedSection>
+
+                <AnimatedSection delay={600}>
+                  <div className="mb-8 flex flex-wrap justify-center lg:justify-start gap-4">
+                    <div className="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-sm">
+                      <span className="material-icons-outlined text-lg text-green-400">groups</span>
+                      <span className="text-sm font-medium text-white">1-5 Players</span>
+                    </div>
+                    <div className="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-sm">
+                      <span className="material-icons-outlined text-lg text-blue-400">schedule</span>
+                      <span className="text-sm font-medium text-white">60 Min/Player</span>
+                    </div>
+                    <div className="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-sm">
+                      <span className="material-icons-outlined text-lg text-purple-400">gamepad</span>
+                      <span className="text-sm font-medium text-white">Solo/Co-op/Competitive</span>
+                    </div>
+                  </div>
+                </AnimatedSection>
+
+                <AnimatedSection delay={800}>
+                  <div className="flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
+                    <Link
+                      href="https://silver-coin-aomh.backerkit.com/hosted_preorders"
+                      target="_blank"
+                      className="inline-flex items-center justify-center gap-3 rounded-lg bg-green-600 px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-green-700 hover:scale-105 shadow-lg shadow-blue-600/25"
                     >
-                      <Image width={60} height={60} src={el.image} alt={el.name} />
-                    </a>
-                  )
-                })}
+                      <span className="material-icons-outlined text-xl">shopping_cart</span>
+                      Order now
+                    </Link>
+                    <Link
+                      href="/learn"
+                      className="inline-flex items-center justify-center gap-3 rounded-lg border border-white/20 bg-white/10 px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-white/20 hover:scale-105 backdrop-blur-sm"
+                    >
+                      <span className="material-icons-outlined text-xl">school</span>
+                      Learn Rules
+                    </Link>
+                  </div>
+                </AnimatedSection>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className={'container mx-auto mt-16 flex flex-col text-center items-center gap-6 px-6'}>
-        <Image src={infographic} alt={'Infographic'} />
+      {/* Game Features */}
+      <section className="py-20 bg-gradient-to-b from-transparent to-black/20">
+        <div className="container mx-auto px-6">
+          <AnimatedSection>
+            <div className="mb-16 text-center">
+              <h2 className="mb-4 text-4xl font-bold text-white lg:text-5xl">Epic Monster Hunting</h2>
+              <p className="mx-auto max-w-3xl text-lg text-gray-300 leading-relaxed">
+                Experience the perfect blend of adventure and strategy in a world where every decision matters
+              </p>
+            </div>
+          </AnimatedSection>
 
-        <h2 className={'text-5xl font-bold'}>SILVER COIN: Age of Monster Hunters</h2>
-
-        <ListBody>
-          Set in the fantasy realm of Atosia, <strong>Silver Coin: Age of Monster Hunters</strong> will make sure to
-          take you on a journey like no other.
-        </ListBody>
-
-        <ListBody>
-          Combining a{' '}
-          <strong>
-            true adventure like feeling with strong eurogames mechanics, Silver Coin: Age of Monster Hunters
-          </strong>{' '}
-          offers a unique gaming experience. Bid for your character, starting location and initial resources, while
-          putting your Victory Points on the line. Now you are ready to start your journey.
-        </ListBody>
-
-        <ListBody>
-          Set off and keep your eyes on the contracts offered by the various kingdoms. Plan carefully and prepare, as
-          <span>
-            over 30 monsters you may face will each offer different challenges and get stronger depending on when and
-            where you will face them
-          </span>
-          . Come unprepared and you may face difficulties, prepare for too long and precious time will be lost.
-        </ListBody>
-      </section>
-
-      <section className={'my-6 container mx-auto px-6'}>
-        <Image src={gameArt} alt={'Game art'} />
-      </section>
-
-      <hr className={'container mx-auto px-6'} />
-
-      <section className={'my-6 container mx-auto flex flex-col md:flex-row justify-center items-center gap-6 px-6'}>
-        <Image className={'max-w-xl w-full'} src={welcome} alt={'Welcome'} />
-
-        <div className={'flex flex-col gap-4 items-center text-center'}>
-          <h2 className={'text-5xl font-bold mb-6'}>WHY BACK NOW</h2>
-
-          <ListTitle>1. Kickstarter exclusive content!</ListTitle>
-          <ListBody>
-            Retail version and Kickstarter version will differ a lot, so make sure you get all the exclusive content.
-          </ListBody>
-
-          <ListTitle>2. Crowdfunding exclusive add-ons!</ListTitle>
-          <ListBody>Add-ons will only be available to buy in a crowdfunding campaign.</ListBody>
-
-          <ListTitle>3. Help this project come to life!</ListTitle>
-          <ListBody>
-            We are first time creators that have been working on this game every day for more than 4 years. The only way
-            it can get on the shelves and see the light of day is to help us get funded. Thank you!
-          </ListBody>
-
-          <ListTitle>4. Kickstarter exclusive price!</ListTitle>
-          <ListBody>Both pledges will be offered at a reduced price.</ListBody>
-
-          <ListTitle>5. Help shape the game!</ListTitle>
-          <ListBody>
-            Receive all the stretch goals for free! The more backers we get, the more content we can unlock through the
-            stretch goals and social goals.
-          </ListBody>
-
-          <ListTitle>6. Potential expansions!</ListTitle>
-          <ListBody>
-            The bigger the community will be and the the better the response, the bigger potential we have for creating
-            further content for this game (expansions, fan made scenarios, custom monsters and more)!
-          </ListBody>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <FeatureCard
+              icon="explore"
+              title="Open World Adventure"
+              description="Explore the vast continent of Atosia with complete freedom. Choose your path, discover hidden secrets, and forge your own legend."
+              delay={200}
+            />
+            <FeatureCard
+              icon="pets"
+              title="40+ Unique Monsters"
+              description="Face legendary creatures that grow stronger based on when and where you encounter them. Each monster offers unique challenges and rewards."
+              delay={300}
+            />
+            <FeatureCard
+              icon="psychology"
+              title="Strategic Gameplay"
+              description="Balance preparation time with action. Come unprepared and face difficulties, prepare too long and lose precious time."
+              delay={400}
+            />
+            <FeatureCard
+              icon="groups"
+              title="Multiple Game Modes"
+              description="Play solo, cooperatively with friends, or competitively. Each mode offers a unique experience tailored to your preferred playstyle."
+              delay={500}
+            />
+            <FeatureCard
+              icon="account_balance"
+              title="Rich Kingdoms"
+              description="Interact with six distinct kingdoms, each with their own culture, contracts, and political intrigue that affects your journey."
+              delay={600}
+            />
+            <FeatureCard
+              icon="emoji_events"
+              title="Earn Your Legend"
+              description="Collect silver coins, complete contracts, and build your reputation as the most skilled monster hunter in Atosia."
+              delay={700}
+            />
+          </div>
         </div>
       </section>
 
-      <hr className={'container mx-auto px-6'} />
+      {/* Game Board Showcase */}
+      <section className="py-20">
+        <div className="container mx-auto px-6">
+          <AnimatedSection>
+            <div className="mb-12 text-center">
+              <h2 className="mb-4 text-4xl font-bold text-white lg:text-5xl">Immersive Game World</h2>
+              <p className="mx-auto max-w-2xl text-lg text-gray-300">Every component has been carefully designed to bring the world of Atosia to life</p>
+            </div>
+          </AnimatedSection>
 
-      <section className={'my-6 flex flex-col items-center gap-6 px-6'}>
-        <h2 className={'text-5xl font-bold mb-6'}>How to play</h2>
-
-        <iframe
-          className={'w-full aspect-video container mx-auto'}
-          src="https://www.youtube.com/embed/5XEDSREG7TQ"
-          title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
+          <AnimatedSection delay={200}>
+            <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm">
+              <Image
+                src="/images/frontpage/naslovna_slika_igre.webp"
+                alt="Silver Coin Game Board"
+                width={1500}
+                height={1563}
+                className="w-full transition-all duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </div>
+          </AnimatedSection>
+        </div>
       </section>
 
-      <section className={'mt-24 flex flex-col items-center gap-6 px-6'}>
-        <a href={'/playtest'}>
-          <Image src={wantPlaytest} alt={'Want to playtest?'} />
-        </a>
-        <a href={'/#'}>
-          <Image src={signUpNewsletter} alt={'Sign up for newsletter'} />
-        </a>
+      {/* How to Play Video */}
+      <section className="py-20">
+        <div className="container mx-auto px-6">
+          <AnimatedSection>
+            <div className="mb-12 text-center">
+              <h2 className="mb-4 text-4xl font-bold text-white lg:text-5xl">Learn to Hunt</h2>
+              <p className="mx-auto max-w-2xl text-lg text-gray-300">Watch our comprehensive tutorial and start your monster hunting journey</p>
+            </div>
+          </AnimatedSection>
+
+          <AnimatedSection delay={200}>
+            <div className="mx-auto max-w-4xl">
+              <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm">
+                <div className="relative aspect-video">
+                  <iframe
+                    className="h-full w-full rounded-2xl"
+                    src="https://www.youtube.com/embed/5XEDSREG7TQ"
+                    title="How to Play - Silver Coin: Age of Monster Hunters"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="py-20 bg-gradient-to-b from-transparent to-black/40">
+        <div className="container mx-auto px-6">
+          <AnimatedSection>
+            <div className="text-center">
+              <div className="mx-auto max-w-3xl">
+                <h2 className="mb-6 text-4xl font-bold text-white lg:text-5xl">Ready for the Hunt?</h2>
+                <p className="mb-12 text-xl text-gray-300 leading-relaxed">
+                  Join thousands of players already exploring Atosia. Your legendary adventure awaits!
+                </p>
+
+                <div className="mb-12 flex flex-col gap-6 sm:flex-row sm:justify-center">
+                  <Link
+                    href="/playtest"
+                    className="inline-flex items-center justify-center gap-3 rounded-lg bg-blue-600 px-10 py-5 text-xl font-semibold text-white transition-all hover:bg-blue-700 hover:scale-105 shadow-lg shadow-blue-600/25"
+                  >
+                    <span className="material-icons-outlined text-2xl">play_circle</span>
+                    Start Playing
+                  </Link>
+                  <Link
+                    href="/lore/kingdoms"
+                    className="inline-flex items-center justify-center gap-3 rounded-lg border border-white/20 bg-white/10 px-10 py-5 text-xl font-semibold text-white transition-all hover:bg-white/20 hover:scale-105 backdrop-blur-sm"
+                  >
+                    <span className="material-icons-outlined text-2xl">explore</span>
+                    Explore Lore
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </AnimatedSection>
+        </div>
       </section>
     </>
-  )
+  );
 }

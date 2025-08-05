@@ -1,9 +1,19 @@
-@import '@material-design-icons/font/outlined.css';
-@import '@fontsource/roboto';
+@import "@material-design-icons/font/outlined.css" layer(base);
+@import "@fontsource/roboto" layer(base);
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@config "../tailwind.config.ts";
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 .flip-effect:hover {
   transform: rotateY(-20deg) rotateZ(0deg);

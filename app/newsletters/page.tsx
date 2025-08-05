@@ -1,41 +1,82 @@
-import React from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { PageHeader } from 'components/PageHeader'
+"use client";
 
-const Newsletters = (): JSX.Element => {
-  const rss = require('/json/newsletters.json')
+import { useMemo, useState } from "react";
+
+import { PageHeader } from "components/PageHeader";
+import { NewsletterCallToAction } from "components/newsletters/NewsletterCallToAction";
+import { NewsletterGrid } from "components/newsletters/NewsletterGrid";
+import { NewsletterResultsCount } from "components/newsletters/NewsletterResultsCount";
+import { NewsletterTimeline } from "components/newsletters/NewsletterTimeline";
+import { NoNewslettersFound } from "components/newsletters/NoNewslettersFound";
+import { YearFilter } from "components/newsletters/YearFilter";
+import { NEWSLETTERS } from "data/newsletters";
+
+const Newsletters = () => {
+  const [selectedYear, setSelectedYear] = useState<string>("All");
+
+  // Extract unique years from newsletters
+  const years = useMemo(() => {
+    const allYears = NEWSLETTERS.newsletters.map((newsletter: any) => {
+      const year = new Date(newsletter.date).getFullYear().toString();
+      return year;
+    });
+    const uniqueYears = Array.from(new Set(allYears)).sort((a, b) => parseInt(b) - parseInt(a));
+    return ["All", ...uniqueYears];
+  }, []);
+
+  // Filter newsletters based on selected year
+  const filteredNewsletters = useMemo(() => {
+    if (selectedYear === "All") {
+      return NEWSLETTERS.newsletters;
+    }
+    return NEWSLETTERS.newsletters.filter((newsletter: any) => {
+      const year = new Date(newsletter.date).getFullYear().toString();
+      return year === selectedYear;
+    });
+  }, [selectedYear]);
+
+  // Get newsletter count for a specific year
+  const getNewsletterCountForYear = (year: string) => {
+    if (year === "All") {
+      return NEWSLETTERS.newsletters.length;
+    }
+    return NEWSLETTERS.newsletters.filter((n: any) => new Date(n.date).getFullYear().toString() === year).length;
+  };
 
   return (
-    <div className="text-center">
-      <PageHeader title={'Newsletters'} />
+    <div className="min-h-screen">
+      <PageHeader title="Newsletters" />
 
-      <div className="container mx-auto">
-        <div className="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3 mt-12 ml-12 mr-12">
-          {rss.newsletters.map((newsletter: any, index: number) => (
-            <Link href={newsletter.url} target="_blank" key={index}>
-              <div className="bg-white/[.12] rounded-lg shadow-lg p-4 aspect-square pl-0 pr-0 pt-0 motion-safe:animate-fadeIn">
-                <Image
-                  className="w-full h-full object-cover rounded-t-lg"
-                  src={'/' + newsletter.image}
-                  alt={newsletter.title}
-                  width={400}
-                  height={400}
-                />
-                <div className="flex flex-col">
-                  <div className="flex flex-col pl-3 pr-3 pt-2">
-                    <p className="text-gray-200 text-start">NEWSLETTER</p>
-                    <p className="text-xl font-bold text-center">{newsletter.title}</p>
-                    <p className="text-gray-200 text-right">{newsletter.date}</p>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          ))}
+      <div className="container mx-auto px-4 pb-16 lg:px-6">
+        {/* Introduction */}
+        <div className="mb-12 text-center">
+          <h2 className="mb-4 text-2xl font-bold text-white lg:text-3xl">Development Chronicles</h2>
+          <p className="mx-auto max-w-3xl text-lg text-gray-300 leading-relaxed">
+            Follow our journey from concept to creation through detailed development updates that chronicle the making of Silver Coin: Age of Monster Hunters.
+            Get insights into our design process, behind-the-scenes content, and see how the game evolved over 7 years.
+          </p>
         </div>
+
+        {/* Year Filter */}
+        <YearFilter years={years} selectedYear={selectedYear} onYearChange={setSelectedYear} getNewsletterCountForYear={getNewsletterCountForYear} />
+
+        {/* Newsletters Grid */}
+        <NewsletterGrid newsletters={filteredNewsletters} />
+
+        {/* Results Count */}
+        <NewsletterResultsCount count={filteredNewsletters.length} selectedYear={selectedYear} />
+
+        {/* No Results */}
+        {filteredNewsletters.length === 0 && <NoNewslettersFound selectedYear={selectedYear} onShowAll={() => setSelectedYear("All")} />}
+
+        {/* Newsletter Timeline */}
+        <NewsletterTimeline years={years} getNewsletterCountForYear={getNewsletterCountForYear} onYearSelect={setSelectedYear} />
+
+        {/* Call to Action */}
+        <NewsletterCallToAction />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Newsletters
+export default Newsletters;
